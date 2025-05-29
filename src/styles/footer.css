@@ -1,0 +1,15 @@
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer svg {
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+footer svg:hover {
+  transform: scale(1.2);
+  color: #0096A6;
+}

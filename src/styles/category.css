@@ -1,0 +1,32 @@
+.category-container{
+    display:flex;
+   justify-content:center;
+   padding-top:50px;
+    width:100%;
+    align-items:center;
+     gap:8%;
+    flex-wrap:wrap;
+}
+
+.category-box{
+  background-color:lightgray;
+  height:200px;
+  width:200px;
+  border-radius:100%;
+ overflow:hidden;
+ cursor:pointer;
+}
+
+
+.category-box img{
+    height:100%;
+    width:100%;
+    background-size:cover;
+    object-fit:cover;
+    object-position: center top;
+}
+
+
+
+
+

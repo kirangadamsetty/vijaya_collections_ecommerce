@@ -1,0 +1,29 @@
+.trending-images{
+    overflow:hidden;
+    position:relative;
+
+}
+.trending-images img{
+    background-size:cover;
+    object-fit:cover;
+    width:100%;
+    height:100%;
+      border-radius:10px;
+
+
+}
+
+.trending-container{
+    margin-top:50px!important;
+    margin-bottom:50px!important;
+}
+
+
+
+
+
+
+
+
+
+
