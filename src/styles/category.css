@@ -1,7 +1,6 @@
 .category-container{
     display:flex;
    justify-content:center;
-   padding-top:50px;
     width:100%;
     align-items:center;
      gap:8%;

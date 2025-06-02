@@ -13,15 +13,17 @@ button{
   background-color:#0096A6 !important;
   color:white!important;
   font-weight:500!important;
-
+  transition:transform 0.3s;
 }
 button:hover{
-  background-color:transparent !important;
-  border:1px solid #0096A6 !important; 
-  color:#0096A6 !important;
+   transform:scale(1.04);
 }
 h3{
     font-weight:500;
     font-size:22px;
 }
 
+h1{
+  font-size:35px;
+font-weight:600!important;
+}

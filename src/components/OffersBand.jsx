@@ -13,9 +13,8 @@ function OffersBand(){
 </div>
       
 <div className  = "text-center">
-    <h1>Get <span>15% </span>OFF</h1>
+    <h1>Get <span>5% </span>OFF</h1>
     <h3 className  = "mb-3">On Your First Order at Vijaya Collections!</h3>
-    <Button>Know More</Button>
 </div>
 <div className = "offers-image">
     <img src = {offersImage2} alt = "offers-image"/>

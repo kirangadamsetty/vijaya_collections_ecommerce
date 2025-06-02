@@ -7,13 +7,17 @@ import ErrorElement from "./components/ErrorElement.jsx"
 import MenPage from "./pages/MenPage.jsx"
 import WomenPage from './pages/WomenPage.jsx';
 import KidPage from './pages/KidPage.jsx';
+import CategoryContextProvider from "./utils/CategoryContextProvider.jsx"
+
 
 function App(){
   return(
       <div>
+      <CategoryContextProvider>
       <Header/>
       <Outlet/>
       <Footer/>
+      </CategoryContextProvider>
       </div>
   )
 }

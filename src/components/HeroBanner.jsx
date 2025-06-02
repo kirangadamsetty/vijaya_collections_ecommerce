@@ -4,10 +4,10 @@ import "../styles/heroBanner.css"
 function HeroBanner({bannerData}) {
 
   return (
-    <Carousel fade className = "w-100" indicators = {false} interval = {900}>
+    <Carousel fade className = "w-100 banner-top" indicators = {false} interval = {900}>
     {bannerData.map((data)=>{
-      return  <Carousel.Item>
-      <div className = "banner-background banner-overlay">
+      return  <Carousel.Item key = {data.id}>
+      <div className = "banner-background">
 <img src = {data.image} alt = "sareeBanner"/>
       </div>      
       

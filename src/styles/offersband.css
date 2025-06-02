@@ -1,6 +1,7 @@
 .offers-container h1{
     font-weight:500;
     font-size:35px;
+    color:lightgray!important;
 }
 .offers-container span{
     font-size:50px;
@@ -8,13 +9,17 @@
     color:black!important;
     font-style:italic;
 }
-
+.offers-container h3{
+    color:lightgray!important;
+}
 
 .offers-image img{
     height:100px;
     width:150px;
 }
-
+.offers-container{
+    background-color: #0096A6 !important;
+}
 
 
 

@@ -2,17 +2,16 @@
     width:100vw;
     overflow:hidden;
     position:relative;
-    height:75dvh;
+    height:80dvh;
      background-attachment: fixed;
 }
 
 .banner-background img{
-    min-width:100vw;
+    min-width:100%;
     background-size:cover;
     object-fit:cover;
     height:100%!important;
-    object-position: center center; 
-    background-attachment: fixed;
+    object-position: center top; 
 }
 .banner-overlay::after {
   content: "";
@@ -25,7 +24,10 @@
   z-index: 1;
 }
 
-
+.banner-top{
+  margin-top:80px;
+  margin-bottom:80px;
+}
 
 
 

@@ -1,7 +1,6 @@
 import HeroBanner from "../components/HeroBanner.jsx"
 import OffersBand from "../components/OffersBand.jsx"
 import TrendingPage from "../components/TrendingPage.jsx"
-import CategorySlider from "../components/CategorySlider.jsx"
 import { bannerData } from "../utils/mockData.jsx"
 import { categoryData } from "../utils/mockData.jsx"
 import { brandOffers } from "../utils/mockData.jsx"

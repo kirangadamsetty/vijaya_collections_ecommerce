@@ -12,13 +12,13 @@ function TrendingPage({trendingData}){
    
     return(
             
-                <Container className = "my-5 trending-container">
+                <Container className = "my-3 trending-container">
                   <h3>{trendingData[0].paragraph}</h3>
-                <h1 className ="mb-4 fw-bold mt-n5" >{trendingData[0].heading}</h1>
+                <h1 className ="mb-4 mt-n5" >{trendingData[0].heading}</h1>
               
                     <Row>
                         {trendingData[1].map((data)=>{
-                            return  <Col md={3} className = "trending-images my-3 ">
+                            return  <Col md={3} key = {data.id} className = "trending-images my-3 ">
                             <Card style={{ width: '19rem', height:"100%"}}>
       <Card.Img variant="top" src={data.image} style = {{height:"400px"}}/>
     {data.name && <Card.Body>

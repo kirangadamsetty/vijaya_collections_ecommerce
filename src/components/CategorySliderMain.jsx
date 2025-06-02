@@ -9,7 +9,7 @@ function CategorySliderMain({categoryData}){
         <div className ="category-container">
         {categoryData.map((data)=>{
 
-            return <Link to = {`/${data.name === "Hand Bags" ? "women" : data.name }`}><div>
+            return <Link id = {data.id} to = {`/${data.name === "Hand Bags" ? "women" : data.name }`}><div>
 <div className = "category-box">
             <img src = {data.image} alt = "slider-image"/>
         </div>

@@ -31,86 +31,92 @@ import pattusaree from "../assets/womensCategory/women-category-pattusaree.jpg"
 import handbag from "../assets/womensCategory/women-category-handbags.webp"
 import kidshoddies from "../assets/kidsCategory/kids-category-hoddies.jpg"
 import babygirldresses from "../assets/kidsCategory/kids-category-babyboydresses.jpg"
-import babyboydresses from "../assets/kidsCategory/kids-category-babygirldresses.webp"
+import babyboydresses from "../assets/kidsCategory/kids-category-babygirldresses.jpg"
 import kidstraditional from "../assets/kidsCategory/kids-category-traditionalwear.jpg"
-import kidstshirts from "../assets/kidsCategory/kids-category-tshirts.webp"
+import kidstshirts from "../assets/kidsCategory/kids-category-tshirts.jpg"
+import menspagebanner1 from "../assets/bannerImages/menspagebannerimage1.webp"
+import menspagebanner2 from "../assets/bannerImages/menspagebannerimage2.webp"
+import kidspagebanner1 from "../assets/bannerImages/kidspagebannerimage6.webp"
+import kidspagebanner2 from "../assets/bannerImages/kidspagebannerimage5.jpg"
+
+
+
 
 export const womenCategory = [
-    {image : womensaree, name :"Daily Wear Sarees"},
-    {image : pattusaree, name :"Pattu Sarees"},
-     {image : womendresses, name :"Dresses"},
-      {image : nightwear, name :"Night Wear"},
-       
-        {image : handbag, name :"Hand Bags"},
-        
-
-]
+  { id: "women-1", image: womensaree, name: "Daily Wear Sarees", category :"dailywearsaree" },
+  { id: "women-2", image: pattusaree, name: "Pattu Sarees" ,category:"pattusaree"},
+  { id: "women-3", image: womendresses, name: "Dresses",category :"dress"},
+  { id: "women-4", image: nightwear, name: "Night Wear", category:"nightwear"},
+  { id: "women-5", image: handbag, name: "Hand Bags" ,category:"handbag"},
+];
 
 export const kidCategory = [
-    {image : kidshoddies, name :"Hoddies"},
-    {image : babygirldresses, name :"Baby Boy Dresses"},
-     {image : babyboydresses, name :"Baby Girl Dresses"},
-      {image : kidstraditional, name :"Traditional Wear"},
-       
-        {image : kidstshirts, name :"T-shirts"},
-        
+  { id: "kid-1", image: kidshoddies, name: "Hoddies" },
+  { id: "kid-2", image: babygirldresses, name: "Baby Boy Dresses" },
+  { id: "kid-3", image: babyboydresses, name: "Baby Girl Dresses" },
+  { id: "kid-4", image: kidstraditional, name: "Traditional Wear" },
+  { id: "kid-5", image: kidstshirts, name: "T-shirts" },
+];
 
-]
- export  const categoryData = [
-        {name : "Men", image : men},
-        {name : "Hand Bags", image : handbags},
-         {name : "Women", image : women},
-          {name : "Kids", image : kid}
-    ]
+export const categoryData = [
+  { id: "cat-1", name: "Men", image: men },
+  { id: "cat-2", name: "Hand Bags", image: handbags },
+  { id: "cat-3", name: "Women", image: women },
+  { id: "cat-4", name: "Kids", image: kid },
+];
 
-   export  const trendingData = [
-        {heading :"Trending Now...", paragraph : ""},
-        [
- {image: mensTrending, name : "Mens Wear"},
-         {image: sareeTreding, name : "Bridal Wear"},
-          {image: kidstrending, name : "Kids Wear"},
-           {image: trendingdresses, name : "Traditional & Westren Wear"},
-       
+export const trendingData = [
+  { heading: "Trending Now...", paragraph: "" },
+  [
+    { id: "trend-1", image: mensTrending, name: "Mens Wear" },
+    { id: "trend-2", image: sareeTreding, name: "Bridal Wear" },
+    { id: "trend-3", image: kidstrending, name: "Kids Wear" },
+    { id: "trend-4", image: trendingdresses, name: "Traditional & Westren Wear" },
+  ]
+];
+
+export const bannerData = [
+     { id: "banner-3", image: sareeBanner1 },
+  { id: "banner-1", image: womenBanner },
+
  
-      
-        ]
-    ]
-
-  export  const bannerData = [
-      
-        {image : womenBanner},
-        {image : menBanner},
-          {image : sareeBanner1},
-        {image : kidsBanner}
-      ]
-
- export   const homebanner =[
-        {image : womenBanner},
-        {image : womenBanner2}
-    ]
-    
- export   const brandOffers = [
-         {heading :"Hottest brands on offer...", paragraph : "IN THE SPOTLIGHT"},
-         [
-            {image : autumnlane},
-            {image : uspoloBrand},
-            {image : pumaBrand},
-            {image : preachersBrand},
-            {image : libasBrand},
-            {image : ciderBrand},
-            {image : foreverBrand},
-            {image : twentyBrand},
-         ]
-      ]
-
-
-export const menCategory  = [
-{image : menshirt, name : "Formal"},
-{image : mentshirt, name : "T-Shirts"},
-{image : mencasualshirt, name : "Casual Shirts"},
-{image : menhoddie, name : "Hoddies"},
-{image : mentraditional, name : "Traditional Wear"},
+  { id: "banner-4", image: kidsBanner },
+];
+export const kidsbanner = [
+    {id : "kidsbaner-1", image : kidspagebanner1},
+    {id : "kidsbanner-2", image : kidspagebanner2}
 ]
+export const homebanner = [
+  { id: "homebanner-1", image: womenBanner },
+  { id: "homebanner-2", image: womenBanner2 },
+    // { id: "homebanner-3", image: menBanner },
+];
+
+export const menspagebanner  = [
+   {id: "menspagebanner-1", image : menspagebanner1},
+   {id: "menspagebanner-2", image : menspagebanner2}
+]
+export const brandOffers = [
+  { heading: "Hottest brands on offer...", paragraph: "IN THE SPOTLIGHT" },
+  [
+    { id: "brand-1", image: autumnlane },
+    { id: "brand-2", image: uspoloBrand },
+    { id: "brand-3", image: pumaBrand },
+    { id: "brand-4", image: preachersBrand },
+    { id: "brand-5", image: libasBrand },
+    { id: "brand-6", image: ciderBrand },
+    { id: "brand-7", image: foreverBrand },
+    { id: "brand-8", image: twentyBrand },
+  ]
+];
+
+export const menCategory = [
+  { id: "men-1", image: menshirt, name: "Formal" , category : "formalshirt"},
+  { id: "men-2", image: mentshirt, name: "T-Shirts" ,category : "tshirt" },
+  { id: "men-3", image: mencasualshirt, name: "Casual Shirts", category : "casualshirt" },
+  { id: "men-4", image: menhoddie, name: "Hoddies", category : "hoddie" },
+  { id: "men-5", image: mentraditional, name: "Traditional Wear" , category : "traditional"},
+];
 
 
 

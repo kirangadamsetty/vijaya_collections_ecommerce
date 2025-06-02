@@ -2,29 +2,25 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import logo from "../assets/logo.png"
-import "../styles/header.css"
-import {Link} from "react-router-dom"
 import Button from 'react-bootstrap/Button';
+import logo from "../assets/logo.png";
+import "../styles/header.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
-    <Navbar expand="lg" className="bg-body-secondary shadow-md">
+    <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top" style = {{height:"100px"}}>
       <Container>
-        <Navbar.Brand href="#"><Link to = "/"><img src = {logo} style = {{height:"70px"}} alt = "logo"/></Link></Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          <img src={logo} style={{ height: "90px" }} alt="logo" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="ms-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link href="#"  className = "nav-links-custom mx-md-2" ><Link to = "/">Home</Link></Nav.Link>
-            <Nav.Link href="#" className = "nav-links-custom mx-md-2"><Link to = "/women">Women</Link></Nav.Link>
-            <Nav.Link href="#"  className = "nav-links-custom mx-md-2" ><Link to = "/men">Men</Link></Nav.Link>
-         
-            <Nav.Link href="#"  className = "nav-links-custom mx-md-2"><Link to = "/kids">Kids</Link></Nav.Link>
+          <Nav className="ms-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav.Link as={Link} to="/" className="nav-links-custom mx-md-2">Home</Nav.Link>
+            <Nav.Link as={Link} to="/women" className="nav-links-custom mx-md-2">Women</Nav.Link>
+            <Nav.Link as={Link} to="/men" className="nav-links-custom mx-md-2">Men</Nav.Link>
+            <Nav.Link as={Link} to="/kids" className="nav-links-custom mx-md-2">Kids</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
