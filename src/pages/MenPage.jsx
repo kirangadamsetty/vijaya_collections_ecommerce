@@ -13,14 +13,14 @@ import HeroBanner from "../components/HeroBanner.jsx"
 
 
 function MenPage(){
-   const {mensData, categoryItem, handleCategoryItem, handlePrice} = useContext(CategoryFilterContext)
+   const {mensData, categoryItem, handleCategoryItemMens, handlePrice} = useContext(CategoryFilterContext)
    const [sortTitle, setSortTitle] = useState("")
   const handleLow = () =>{
-    handlePrice("Low")
+    handlePrice("Low", "men")
     setSortTitle("Price : Low to High")
   }
   const handleHigh = () =>{
-    handlePrice("High")
+    handlePrice("High", "men")
     setSortTitle("Price : High to Low")
   }
     return(
@@ -30,18 +30,22 @@ function MenPage(){
         <Container className = "my-4">
         <div className = "d-flex justify-content-between align-items-center my-4"> 
  <h1>Men's Collection...</h1>
-          <DropdownButton id="dropdown-basic-button" className = "button"  title={<span className = "text-white">Sort by <strong  className = "text-white px-2">{sortTitle}</strong></span>}>
-      <Dropdown.Item onClick = {handleLow}>Price : Low to High</Dropdown.Item>
-      <Dropdown.Item onClick = {handleHigh} >Price : High to Low</Dropdown.Item>
-    </DropdownButton>
+         <DropdownButton
+  id="dropdown-basic-button"
+  className="custom-dropdown-btn"
+  title={<span className="text-white">Sort by <strong className="text-white px-2">{sortTitle}</strong></span>}
+>
+  <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
+  <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>
+</DropdownButton>
         </div>
-      {categoryItem && <h3 className  = "bg-body-secondary" style = {{maxWidth: "fit-content",padding:"8px 15px", borderRadius:"40px", fontSize:"20px", cursor:"pointer"}}>{categoryItem} <span onClick = {handleCategoryItem} className = "px-2">x</span></h3>}
+      {categoryItem && <h3 className  = "bg-body-secondary" style = {{maxWidth: "fit-content",padding:"8px 15px", borderRadius:"40px", fontSize:"20px", cursor:"pointer"}}>{categoryItem} <span onClick = {handleCategoryItemMens} className = "px-2">x</span></h3>}
     
             <Row> 
                          
                     {mensData.map((data)=>{
 
-                        return  <Col md={3} key = {data.id} className = "my-3">
+                        return  <Col sm={6} md={6} lg={3} key = {data.id} className = "my-3">
                          <ProductCard data = {data}/>
                          </Col>
                     })}

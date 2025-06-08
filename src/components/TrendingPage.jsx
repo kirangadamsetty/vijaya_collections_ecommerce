@@ -27,7 +27,7 @@ function TrendingPage({trendingData}){
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
-        <Button variant="primary">Shop Now</Button>
+        <Button variant="primary" className = "custom-button">Shop Now</Button>
       </Card.Body>
     }  
     </Card>

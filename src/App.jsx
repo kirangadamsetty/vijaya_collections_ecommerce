@@ -8,16 +8,19 @@ import MenPage from "./pages/MenPage.jsx"
 import WomenPage from './pages/WomenPage.jsx';
 import KidPage from './pages/KidPage.jsx';
 import CategoryContextProvider from "./utils/CategoryContextProvider.jsx"
-
-
+import ProductInfoPage from "./components/ProductInfoPage.jsx"
+import WishListContextProvider from "./utils/WishListContextProvider.jsx"
+import WishListPage from './pages/WishListPage.jsx';
 function App(){
   return(
       <div>
+      <WishListContextProvider>
       <CategoryContextProvider>
       <Header/>
       <Outlet/>
       <Footer/>
       </CategoryContextProvider>
+      </WishListContextProvider>
       </div>
   )
 }
@@ -44,6 +47,14 @@ export const appRouter = createBrowserRouter([
         path : "/kids",
         element :<KidPage/>,
         errorElement : <ErrorElement/>
+      },{
+        path : "/productInfo",
+        element : <ProductInfoPage/>,
+        errorElement : <Error/>
+      },{
+        path : "/wishList",
+        element : <WishListPage/>,
+        errorElement : <Error/>
       }
     ]
   }

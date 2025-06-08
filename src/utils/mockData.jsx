@@ -51,11 +51,11 @@ export const womenCategory = [
 ];
 
 export const kidCategory = [
-  { id: "kid-1", image: kidshoddies, name: "Hoddies" },
-  { id: "kid-2", image: babygirldresses, name: "Baby Boy Dresses" },
-  { id: "kid-3", image: babyboydresses, name: "Baby Girl Dresses" },
-  { id: "kid-4", image: kidstraditional, name: "Traditional Wear" },
-  { id: "kid-5", image: kidstshirts, name: "T-shirts" },
+  { id: "kid-1", image: kidshoddies, name: "Hoddies",category : "hoddie" },
+  { id: "kid-2", image: babygirldresses, name: "Baby Boy Dresses",category : "babyboydress" },
+  { id: "kid-3", image: babyboydresses, name: "Baby Girl Dresses" ,category : "babygirldress"},
+  { id: "kid-4", image: kidstraditional, name: "Traditional Wear" ,category : "traditional"},
+  { id: "kid-5", image: kidstshirts, name: "T-shirts",category : "tshirt" },
 ];
 
 export const categoryData = [
@@ -66,7 +66,7 @@ export const categoryData = [
 ];
 
 export const trendingData = [
-  { heading: "Trending Now...", paragraph: "" },
+  { heading: "Hot & Happening Now...", paragraph: "EXPLORE DIVERSE COLLECTIONS" },
   [
     { id: "trend-1", image: mensTrending, name: "Mens Wear" },
     { id: "trend-2", image: sareeTreding, name: "Bridal Wear" },
