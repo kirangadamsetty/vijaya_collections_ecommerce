@@ -1,17 +1,22 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ProductInfoPage from './ProductInfoPage';
 import {useNavigate} from "react-router-dom"
 import {CategoryFilterContext} from "../utils/CategoryFilterContext"
-import {useContext} from "react"
-import cartIcon from "../assets/cart-icon.png"
+import {useContext, useState, useEffect} from "react"
+import wishListWhite from "../assets/wishListWhite.png"
 import wishListIcon from "../assets/wishlist.png"
 import {WishListContext} from "../utils/WishListContext"
 import starIcon from "../assets/starIcon.png"
 function ProductCard({data}) {
    const {setProductInformationPage} = useContext(CategoryFilterContext)
+const [buttonText, setButtonText]  = useState(false)
    const navigate = useNavigate()
-   const {handleWishList} = useContext(WishListContext)
+   const {handleWishList,handleCancelWishList, wishList} = useContext(WishListContext)
+     useEffect(()=>{
+       let ids = wishList.map((li) => li.id)
+      ids.includes(data.id) ? setButtonText(true) : setButtonText(false)
+     }, [])
+   
   return (
     <Card onClick={() => {
     setProductInformationPage(data);
@@ -26,11 +31,9 @@ function ProductCard({data}) {
         </Card.Text>
         
                               <h5> ₹{data.price} <span style = {{fontSize:"15px"}}>MRP<span className = "text-decoration-line-through"> ₹{data.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2">({Math.ceil((350 / (data.price + 350)) * 100)}% OFF)</span> </span></h5>
-<div className = "d-flex mt-3">
- <Button onClick = {(e) =>e.stopPropagation()} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>
-                     <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation();}} className = "bg-white text-secondary mx-3  custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>WISHLIST</Button>
+               {buttonText ? <Button onClick = {(e)=>{handleCancelWishList(data);  e.stopPropagation();setButtonText(false)}} className = "text-secondary  mt-2 w-100  custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM WISHLIST</Button>
+                  :   <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation(); setButtonText(true)}} className = "bg-white text-secondary  mt-2 w-100  custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>ADD TO WISHLIST</Button>}
           
-</div>
               
       </Card.Body>
     </Card>
