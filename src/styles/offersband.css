@@ -1,16 +1,16 @@
 .offers-container h1{
     font-weight:500;
-    font-size:35px;
-    color:lightgray!important;
+    font-size:30px;
+    color:#0096A6!important;
 }
 .offers-container span{
-    font-size:50px;
+    font-size:40px;
     font-weight:bold;
-    color:black!important;
-    font-style:italic;
+    color:#0096A6;
+    
 }
 .offers-container h3{
-    color:lightgray!important;
+    color:#0096A6!important;
 }
 
 .offers-image img{
@@ -18,7 +18,11 @@
     width:150px;
 }
 .offers-container{
-    background-color: #0096A6 !important;
+    border:1px dashed #0096A6;
+    border-radius:100px;
+    margin-bottom:-25px;
+    position:relative;
+    z-index:100;
 }
 
 

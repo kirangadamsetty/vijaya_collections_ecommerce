@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import wishListEmptyImage from "../assets/emptyWishlist.png"
 import Col from "react-bootstrap/Col"
+import Button from "react-bootstrap/Button"
 import {useContext} from "react"
 import {WishListContext} from "../utils/WishListContext"
 import WishListCard from "../components/WishListCard.jsx"
@@ -10,9 +11,9 @@ function WishListPage(){
     const {wishList} = useContext(WishListContext)
     return(
         <div style = {{marginTop:"150px"}}>
-        <Container  className = "my-5">
-      { wishList.length > 0 ?  (<h1 className ="mb-4 mt-n5" >WishList...</h1>) :    <h1 className ="mt-3 ms-4">WishList is Empty...</h1>
-}
+        <Container  className = "my-5" >
+      { wishList.length > 0 &&  (<h1 className ="mb-4 mt-n5" >WishList...</h1>)}
+
             <Row>
      { wishList.length > 0 ?   
                   (wishList.map((data) =>{
@@ -21,9 +22,22 @@ function WishListPage(){
                     </Col>
                   }))
                    :
-                 ( <Col className = "text-center">
-                <img src = {wishListEmptyImage} style = {{width:"300px"}}/>
-              </Col>)
+
+                 
+
+                   (
+  <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80vh" }}>
+    <div style={{ width: "300px", textAlign: "center" }}>
+      <img src={wishListEmptyImage} style={{ width: "150px", marginBottom: "20px" }} alt="Empty Bag" />
+      <h3 style = {{fontWeight:"bold"}}>Your wishlist is empty</h3>
+      <p>
+        Add items that you like to your wishlist. Review them anytime and easily move them to the bag.
+      </p>
+      <Button className="bg-white custom-button2">CONTINUE SHOPPING</Button>
+    </div>
+  </Col>
+
+                 )
               
 
 

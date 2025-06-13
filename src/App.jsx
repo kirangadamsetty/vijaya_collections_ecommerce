@@ -8,12 +8,15 @@ import MenPage from "./pages/MenPage.jsx"
 import WomenPage from './pages/WomenPage.jsx';
 import KidPage from './pages/KidPage.jsx';
 import CategoryContextProvider from "./utils/CategoryContextProvider.jsx"
+import Cart from "./pages/Cart.jsx"
+import CartContextProvider from "./utils/CartContextProvider"
 import ProductInfoPage from "./components/ProductInfoPage.jsx"
 import WishListContextProvider from "./utils/WishListContextProvider.jsx"
 import WishListPage from './pages/WishListPage.jsx';
 function App(){
   return(
       <div>
+      <CartContextProvider>
       <WishListContextProvider>
       <CategoryContextProvider>
       <Header/>
@@ -21,6 +24,7 @@ function App(){
       <Footer/>
       </CategoryContextProvider>
       </WishListContextProvider>
+      </CartContextProvider>
       </div>
   )
 }
@@ -52,8 +56,12 @@ export const appRouter = createBrowserRouter([
         element : <ProductInfoPage/>,
         errorElement : <Error/>
       },{
-        path : "/wishList",
+        path : "/wishlist",
         element : <WishListPage/>,
+        errorElement : <Error/>
+      },{
+        path : "/cart",
+        element : <Cart/>,
         errorElement : <Error/>
       }
     ]

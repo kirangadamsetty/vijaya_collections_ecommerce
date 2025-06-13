@@ -6,16 +6,18 @@ import Button from 'react-bootstrap/Button';
 import logo from "../assets/logo.png";
 import CartIcon from "../assets/cart-icon.png"
 import "../styles/header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { CategoryFilterContext } from '../utils/CategoryFilterContext';
 import wishListIcon from "../assets/wishlist.png"
 import user from "../assets/user.png"
 import {WishListContext} from "../utils/WishListContext"
-
+import {CartContext} from "../utils/CartContext"
 function Header() {
+  const navigate = useNavigate()
+  const {cartData} = useContext(CartContext)
   const {handlepageshift} = useContext(CategoryFilterContext)
-  const {wishList, setWishList} = useContext(WishListContext)
+  const {wishList} = useContext(WishListContext)
   return (
     <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top" style = {{height:"100px"}}>
       <Container>
@@ -45,18 +47,22 @@ function Header() {
   <Nav.Link  className="nav-links-custom"><img src = {user} width="25px" alt = "user"/></Nav.Link>
   <p>User</p>
                          </div>
-                          <Link to = "/wishList"><div className = "d-flex mt-3 flex-column align-items-center mx-md-3">
-                          <div className = "d-flex">
+                         <div  onClick = {()=>navigate("/wishlist")} style = {{cursor:"pointer"}} className = "d-flex mt-3 flex-column align-items-center mx-md-3">
+                          <div className = "d-flex" style = {{position:"relative"}}> 
 <Nav.Link  className="nav-links-custom"><img src = {wishListIcon} width="25px" alt = "wishlist"/></Nav.Link>
-<p className = "counts">{wishList.length}</p>
+{wishList.length>0 && <p className = "counts" style = {{position:"absolute", marginLeft:"15px"}}>{wishList.length}</p>}
                           </div>
 <p>WishList</p>
-                          </div></Link>
+                          </div>
             
-            <div className = "d-flex flex-column mt-3 align-items-center mx-md-3">
+            <div  onClick = {()=>navigate("/cart")} style = {{cursor:"pointer"}} className = "d-flex mt-3 flex-column align-items-center mx-md-3">
+                          <div className = "d-flex" style = {{position:"relative"}}> 
 <Nav.Link  className="nav-links-custom"><img src = {CartIcon} width="25px" alt = "carticon"/></Nav.Link>
+{cartData.length>0 && <p className = "counts" style = {{position:"absolute", marginLeft:"15px"}}>{cartData.length}</p>}
+                          </div>
 <p>Bag</p>
-            </div>
+                          </div>
+            
 
         
         </Navbar.Collapse>

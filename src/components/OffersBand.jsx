@@ -11,8 +11,9 @@ function OffersBand(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
     return(
+      <Container>
         <div className ="offers-container bg-body-secondary p-3">
- <Container>
+ 
  <div className ="d-flex flex-column flex-md-row justify-content-around align-items-center">
  <div className = "offers-image">
     <img src = {offersImage2} alt = "offers-image"/>
@@ -21,7 +22,7 @@ function OffersBand(){
 <div className  = "text-center">
     <h1>Get <span>10% </span>OFF </h1>
     <h3 className  = "mb-3">On Your First Order at Vijaya Collections!</h3>
-     <Button className = "bg-body-secondary text-dark" onClick={handleShow}>
+     <Button className = "bg-body-secondary text-dark custom-button" onClick={handleShow}>
        T & C Applied
       </Button>
 
@@ -49,7 +50,7 @@ function OffersBand(){
 
 </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button  className = "custom-button" onClick={handleClose}>
             Close
           </Button>
           
@@ -62,9 +63,9 @@ function OffersBand(){
       
  </div>
 
-     </Container>
+    
         </div>    
-
+ </Container>
     )
 }
 export default OffersBand

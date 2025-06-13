@@ -5,12 +5,18 @@ import Button from "react-bootstrap/Button"
 import cartIcon from "../assets/cart-icon.png"
 import Accordion from 'react-bootstrap/Accordion';
 import {CategoryFilterContext} from "../utils/CategoryFilterContext"
-import {useContext} from "react"
+import {useContext, useState} from "react"
 import wishListIcon from "../assets/wishlist.png"
 import starIcon from "../assets/starIcon.png"
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
+import wishListWhite from "../assets/wishListWhite.png"
+import { WishListContext } from "../utils/WishListContext"
+import { CartContext } from "../utils/CartContext"
 function ProductInfoPage(){
     const {productInformationPage} = useContext(CategoryFilterContext)
+    const {handleWishList, handleCancelWishList} = useContext(WishListContext)
+    const {handleCartList} = useContext(CartContext)
+    const [buttonText, setButtonText] = useState(false)
     const data = productInformationPage
     console.log(data.id)
     return(
@@ -49,9 +55,10 @@ function ProductInfoPage(){
                     
                    
                     <div className = "my-3">
-                     <Button className = "bg-white text-secondary px-3 custom-button2 "><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>
-                     <Button className = "bg-white text-secondary mx-3 px-3 custom-button2"><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>WISHLIST</Button>
-                    </div>
+ <Button onClick = {(e) =>{e.stopPropagation(); handleCartList(data);handleCancelWishList(data)}} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>
+{buttonText ? <Button onClick = {(e)=>{handleCancelWishList(data);  e.stopPropagation();setButtonText(false)}} className = "text-secondary  ms-2 custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM WISHLIST</Button>
+                  :   <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation(); setButtonText(true)}} className = "bg-white text-secondary  ms-2 custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>ADD TO WISHLIST</Button>}
+                 </div>
                      <h3 style ={{fontSize:"16px", fontWeight:"600"}} className = "mt-4 mb-2">CUSTOMER REVIEWS</h3>
                      
                     <Accordion defaultActiveKey="0">

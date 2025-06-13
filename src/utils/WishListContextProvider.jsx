@@ -21,9 +21,9 @@ function WishListContextProvider({children}){
     }
 
     return(
-        <WishListContext value  = {{handleWishList, wishList, handleCancelWishList}}>
+        <WishListContext.Provider value  = {{handleWishList, wishList, handleCancelWishList}}>
             {children}
-        </WishListContext>
+        </WishListContext.Provider>
     )
 }
 

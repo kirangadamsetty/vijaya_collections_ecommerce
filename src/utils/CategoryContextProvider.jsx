@@ -130,9 +130,9 @@ setCategoryItem("")
 }
 
     return(
-        <CategoryFilterContext value  = {{productInformationPage, setProductInformationPage,productDescription,setProductDescrition, handlePrice,kidsData,womensData, currentPage, handleCategoryItemKids,handleCategoryItemMens,handleCategoryItemWomens,  categoryItem,handleData , mensData,handlepageshift}}>
+        <CategoryFilterContext.Provider value  = {{productInformationPage, setProductInformationPage,productDescription,setProductDescrition, handlePrice,kidsData,womensData, currentPage, handleCategoryItemKids,handleCategoryItemMens,handleCategoryItemWomens,  categoryItem,handleData , mensData,handlepageshift}}>
             {children}
-        </CategoryFilterContext>
+        </CategoryFilterContext.Provider>
     )
 }
 
