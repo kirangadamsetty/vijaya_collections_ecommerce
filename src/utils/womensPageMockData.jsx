@@ -17,8 +17,7 @@ import womenpagedress1 from "../assets/womensPage/womendresses/women-page-dress1
 import womenpagedress2 from "../assets/womensPage/womendresses/women-page-dress2.avif"
 import womenpagedress3 from "../assets/womensPage/womendresses/women-page-dress3.avif"
 import womenpagedress4 from "../assets/womensPage/womendresses/women-page-dress4.avif"
-import womenpagedress5 from "../assets/womensPage/womendresses/women-page-dress5.jpg"
-
+import womenpagedress5 from "../assets/womensPage/womendresses/women-page-dress5.avif"
 import womenpagehandbag1 from "../assets/womensPage/handbags/women-page-handbag1.avif"
 import womenpagehandbag2 from "../assets/womensPage/handbags/women-page-handbag2.avif"
 import womenpagehandbag3 from "../assets/womensPage/handbags/women-page-handbag3.avif"
