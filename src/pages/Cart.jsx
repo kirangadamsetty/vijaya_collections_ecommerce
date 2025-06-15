@@ -2,6 +2,7 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+import "../styles/productCard.css"
 import Modal from 'react-bootstrap/Modal';
 import closeIcon from "../assets/close.png"
 import {useNavigate} from "react-router-dom"
@@ -48,11 +49,12 @@ function Cart(){
                     <img src = {li.image} style = {{objectFit:"cover", width:"100%", height:"100%"}} alt = "cart-image"/>
                   </div>
                   <div>
-                    <h3>{li.name}</h3>
-                    <p>{li.description}</p>
+                    <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.name}</h3>
+                    <p className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.description}</p>
                      <span onClick = {()=>{handleShow(); setQuantityItem(li);setEvent("sizes")}}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
-                      <span onClick={()=>{handleShow(); setQuantityItem(li);setEvent("quantity")}} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span>
-                    <h5 className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}}>MRP<span className = "text-decoration-line-through"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+                      <span onClick={()=>{handleShow(); setQuantityItem(li);setEvent("quantity")}} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
+                              <h5 className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+
                         <p onClick ={()=>handleCartCancel(li)}  className = "shadow-lg text-dark d-flex justify-content-center align-items-center" style = {{top:"0",right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", width:"30px",cursor:"pointer", height:"30px", margin:"8px 15px", borderRadius:"100%"}}><img src = {closeIcon} alt = "closeIcon" width = "20"/></p>
                   
                    </div>
@@ -62,7 +64,7 @@ function Cart(){
                 </Col>}
              { cartData.length>0 &&  <Col md = {5}>
                      <div className = "my-2" style = {{border:"1px solid #0096A6" , padding:"15px 15px",gap:"20px"}}>
-                      <p style ={{fontWeight:"bold"}}>PRICE DETAILS <span style = {{fontWeight:"500"}}>(Total Items : {cartData.length})</span> </p>
+                      <p style ={{fontWeight:"bold" }}>PRICE DETAILS <span style = {{fontWeight:"500"}}>(Total Items : {cartData.length})</span> </p>
                       <hr/>
                       <div>
                       

@@ -1,0 +1,40 @@
+
+.accordion {
+  max-width: 100%;
+  overflow: hidden; 
+  min-width: 0; 
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; 
+  
+}
+
+.accordion-header-user-text {
+  flex: 1; 
+  min-width: 0;
+  word-break: break-word; 
+  overflow-wrap: anywhere; 
+  white-space: normal; 
+}
+
+.accordion-header span[style*="white-space: nowrap"] {
+  flex-shrink: 0; 
+}
+
+.accordion-body {
+  word-break: break-word;
+  overflow-wrap: anywhere; 
+  white-space: normal; 
+
+@media (max-width: 575px) {
+  .accordion-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .accordion-header span[style*="white-space: nowrap"] {
+    margin-bottom: 5px; 
+  }
+}
