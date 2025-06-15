@@ -32,7 +32,7 @@
   .category-container {
     flex-wrap: nowrap;
     overflow-x: auto;
-    gap: 16px;
+    gap: 20px;
     padding: 10px;
     justify-content: flex-start;
     -webkit-overflow-scrolling: touch;
@@ -48,8 +48,8 @@
   }
 
   .category-box {
-    height: 140px;
-    width: 140px;
+    height: 100px;
+    width: 100px;
   }
 
   .cate-head {

@@ -11,7 +11,7 @@ function Footer() {
         <Row className  = "d-flex justify-content-center">
           {/* About Us */}
           <Col md={3} className="mb-4">
-            <h3 className="fw-bold">About Us</h3>
+            <h3 >About Us</h3>
             <ul className="list-unstyled mt-3">
               <li>Our Story</li>
               <li>Careers</li>
@@ -21,7 +21,7 @@ function Footer() {
 
           {/* Customer Support */}
           <Col md={3} className="mb-4">
-            <h3 className="fw-bold">Customer Support</h3>
+            <h3>Customer Support</h3>
             <ul className="list-unstyled mt-3">
               <li>FAQs</li>
               <li>Shipping & Returns</li>
@@ -31,7 +31,7 @@ function Footer() {
 
           {/* Contact Details */}
           <Col md={3}>
-            <h3 className="fw-bold">Contact</h3>
+            <h3 >Contact</h3>
             <ul className="list-unstyled mt-3">
               <li>8-140, Dhone, AndhraPradesh, IN</li>
               <li>Phone: +91 9876543210</li>

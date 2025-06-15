@@ -13,7 +13,7 @@ function CategorySliderMain({categoryData}){
 <div className = "category-box mx-auto">
             <img src = {data.image} alt = "slider-image"/>
         </div>
-        <h3 className = "text-center my-3 cate-head">{data.name}</h3>
+        <h3 className = "text-center mt-3 cate-head">{data.name}</h3>
             </div>
              </Link>
         })}

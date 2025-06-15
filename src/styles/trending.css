@@ -20,10 +20,16 @@
 
 @media(max-width:768px){
     .custom-button{
-        font-size:13px!important;
+        font-size:10px!important;
         width:100%;
     }
+    .trending-container{
+    margin-top:40px!important;
+    margin-bottom:40px!important;
 }
+}
+
+
 .custom-button{
     width:100%;
 }

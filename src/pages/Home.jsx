@@ -7,6 +7,7 @@ import { homebanner } from "../utils/mockData.jsx"
 import { trendingData } from "../utils/mockData.jsx"
 import CategorySliderMain from "../components/CategorySliderMain.jsx"
 import "../styles/heroBanner.css"
+import HeroBanner2 from "../components/HeroBanner2.jsx"
 function Home(){  
 
     return(
@@ -15,7 +16,7 @@ function Home(){
          
         <CategorySliderMain categoryData = {categoryData}/>
         <TrendingPage trendingData = {trendingData}/>
-         <HeroBanner bannerData = {homebanner}/>
+         <HeroBanner2 bannerData = {homebanner}/>
        
  <TrendingPage trendingData = {brandOffers}/>
         </div>

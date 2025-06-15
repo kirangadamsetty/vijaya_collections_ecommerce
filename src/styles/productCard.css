@@ -1,13 +1,13 @@
 @media(max-width:768px){
     .product-card-container h3{
-        font-size:15px!important;
+        font-size:13px!important;
         overflow : "hidden";
-        font-weight:bold;
+        font-weight:600;
         text-overflow : "ellipsis";
         white-space : "nowrap"
     }
     .product-card-container h5{
-        font-size:15px!important;
+        font-size:13px!important;
         font-weight:600;
         margin-top:-5px;
     }
@@ -27,7 +27,7 @@
         margin-top:2.3px;
     }
     .product-description{
-        font-size:14px!important;
+        font-size:11px!important;
         line-height: 13px;
        
         margin-top:-2px;
