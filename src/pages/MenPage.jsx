@@ -26,13 +26,13 @@ function MenPage(){
         <div>
           <HeroBanner bannerData = {menspagebanner}/>
         <CategorySlider categoryData={menCategory} page = "men"/>
-        <Container className = "my-4">
-        <div className = "d-flex justify-content-between align-items-center my-4"> 
+        <Container className = "my-4"> 
+        <div className = "d-flex flex-column flex-md-row justify-content-between align-items-md-center  my-4"> 
  <h1>Men's Collection...</h1>
          <DropdownButton
   id="dropdown-basic-button"
   className="custom-dropdown-btn"
-  title={<span className="text-white">Sort by <strong className="text-white px-2">{sortTitle}</strong></span>}
+  title={<span className="text-white">Sort by <strong className="text-white px-1">{sortTitle}</strong></span>}
 >
   <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
   <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>
