@@ -24,7 +24,7 @@ function Cart(){
     
     return(
         <div style = {{marginTop:"150px"}}>
-          <Container className = "my-4" >
+          <Container className = "my-4">
             <Row>
             {cartData.length > 0 && <h1>Cart...</h1>}
           {cartData.length === 0 && (
@@ -40,7 +40,7 @@ function Cart(){
   </Col>
 )}
 
-       {cartData.length >0 &&   <Col md = {7} style = {{minHeight:"80dvh"}}>
+       {cartData.length >0 &&   <Col md = {7} >
             {data.map((li)=>{
               return        <div className = "d-flex my-2" style = {{border:"1px solid #0096A6" , padding:"15px 18px",gap:"20px" , position:"relative"}}>
 
