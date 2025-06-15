@@ -21,7 +21,7 @@
 @media(max-width:768px){
     .custom-button{
         font-size:10px!important;
-        width:100%;
+      
     }
     .trending-container{
     margin-top:40px!important;
@@ -30,7 +30,7 @@
 }
 
 
-.custom-button{
+.custom-button3{
     width:100%;
 }
 
