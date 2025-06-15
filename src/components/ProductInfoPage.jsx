@@ -41,7 +41,7 @@ console.log(selectedSize)
 
     return(
          <div style = {{marginTop:"150px"}}>
-       <Container className = "d-flex justify-content-center my-5" style = {{gap:"30px" }}>
+       <Container className = "d-flex flex-column flex-md-row justify-content-center my-5" style = {{gap:"30px" }}>
 
       
                 <div style  ={{height:"500px", width:"350px", overflow:"hidden"}}>

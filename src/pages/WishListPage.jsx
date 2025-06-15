@@ -18,7 +18,7 @@ function WishListPage(){
             <Row>
      { wishList.length > 0 ?   
                   (wishList.map((data) =>{
-                    return <Col md = {3} key = {data.id} className = "my-2">
+                    return <Col xs={6} sm={6} md={3} lg={3}  key = {data.id} className = "my-2">
 <WishListCard data = {data}/>
                     </Col>
                   }))
