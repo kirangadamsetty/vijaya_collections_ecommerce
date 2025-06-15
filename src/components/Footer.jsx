@@ -6,7 +6,7 @@ import '../styles/footer.css';
 
 function Footer() {
   return (
-    <footer className="bg-dark text-light py-5">
+    <footer className="bg-dark footer text-light py-5">
       <Container>
         <Row className  = "d-flex justify-content-center">
           {/* About Us */}

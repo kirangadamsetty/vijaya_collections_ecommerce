@@ -13,12 +13,17 @@ import CartContextProvider from "./utils/CartContextProvider"
 import ProductInfoPage from "./components/ProductInfoPage.jsx"
 import WishListContextProvider from "./utils/WishListContextProvider.jsx"
 import WishListPage from './pages/WishListPage.jsx';
+import { ToastContainer } from 'react-toastify';
+import ScrollToTop from "./components/ScrollToTop"
 function App(){
   return(
       <div>
+    
       <CartContextProvider>
       <WishListContextProvider>
       <CategoryContextProvider>
+        <ToastContainer/>
+      <ScrollToTop/>
       <Header/>
       <Outlet/>
       <Footer/>

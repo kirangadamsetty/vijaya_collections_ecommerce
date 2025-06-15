@@ -1,31 +1,58 @@
-.category-container{
-    display:flex;
-   justify-content:center;
-    width:100%;
-    align-items:center;
-     gap:8%;
-    flex-wrap:wrap;
+/* Base Styles for Larger Screens */
+.category-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  overflow: visible;
 }
 
-.category-box{
-  background-color:lightgray;
-  height:200px;
-  width:200px;
-  border-radius:100%;
- overflow:hidden;
- cursor:pointer;
+/* Category Circle Box */
+.category-box {
+  background-color: lightgray;
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-
-.category-box img{
-    height:100%;
-    width:100%;
-    background-size:cover;
-    object-fit:cover;
-    object-position: center top;
+.category-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
+/* Responsive for Mobile Screens */
+@media (max-width: 767px) {
+  .category-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 10px;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
 
+  .category-container::-webkit-scrollbar {
+    display: none;
+  }
 
+  .category-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
+  .category-box {
+    height: 140px;
+    width: 140px;
+  }
 
+  .cate-head {
+    font-size: 14px;
+  }
+}

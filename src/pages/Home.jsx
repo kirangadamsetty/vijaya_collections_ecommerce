@@ -1,5 +1,4 @@
 import HeroBanner from "../components/HeroBanner.jsx"
-import OffersBand from "../components/OffersBand.jsx"
 import TrendingPage from "../components/TrendingPage.jsx"
 import { bannerData } from "../utils/mockData.jsx"
 import { categoryData } from "../utils/mockData.jsx"
@@ -7,7 +6,7 @@ import { brandOffers } from "../utils/mockData.jsx"
 import { homebanner } from "../utils/mockData.jsx"
 import { trendingData } from "../utils/mockData.jsx"
 import CategorySliderMain from "../components/CategorySliderMain.jsx"
-
+import "../styles/heroBanner.css"
 function Home(){  
 
     return(
@@ -19,7 +18,6 @@ function Home(){
          <HeroBanner bannerData = {homebanner}/>
        
  <TrendingPage trendingData = {brandOffers}/>
-  <OffersBand/>
         </div>
     )
 }

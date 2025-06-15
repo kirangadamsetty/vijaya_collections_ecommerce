@@ -18,14 +18,13 @@ function TrendingPage({trendingData}){
               
                     <Row>
                         {trendingData[1].map((data)=>{
-                            return  <Col md={3} key = {data.id} className = "trending-images my-3 ">
-                            <Card style={{ width: '19rem', height:"100%"}}>
-      <Card.Img variant="top" src={data.image} style = {{height:"400px"}}/>
+                            return  <Col xs={6} sm={6} md={3} lg={3} key = {data.id} className = "trending-images my-3 ">
+                            <Card className="h-100 product-card-container" style={{ height:"100%"}}>
+      <Card.Img variant="top" src={data.image} className = "product-image" style={{ height: "400px", objectFit: "cover" }}/>
     {data.name && <Card.Body>
-        <Card.Title><h3>{data.name}</h3></Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title><h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{data.name}</h3></Card.Title>
+        <Card.Text style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}} >
+        {data.description}
         </Card.Text>
         <Button variant="primary" className = "custom-button">Shop Now</Button>
       </Card.Body>

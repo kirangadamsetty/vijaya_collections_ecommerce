@@ -1,5 +1,3 @@
-import OffersBand from "./OffersBand"
-import womenpagesaree1 from "../assets/womensPage/dailywearSarees/women-page-saree1.avif"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
 import cartIcon from "../assets/cart-icon.png"
@@ -12,13 +10,35 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import wishListWhite from "../assets/wishListWhite.png"
 import { WishListContext } from "../utils/WishListContext"
 import { CartContext } from "../utils/CartContext"
+import {  toast } from 'react-toastify';
+import cartWhite from "../assets/cartWhite.png"
 function ProductInfoPage(){
     const {productInformationPage} = useContext(CategoryFilterContext)
-    const {handleWishList, handleCancelWishList} = useContext(WishListContext)
-    const {handleCartList} = useContext(CartContext)
-    const [buttonText, setButtonText] = useState(false)
+    const [selectedSize, setSelectedSize] = useState("")
+    const {handleWishList, handleCancelWishList, wishList} = useContext(WishListContext)
+    const {handleCartList, cartData, handleCartCancel} = useContext(CartContext)
+    const notifyAdded = () => toast.success("Added to wishlist!", { autoClose: 2000});
+    const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
+   const notifyAddedBag = () => toast.success("Added to Bag!", { autoClose: 2000});
+    const notifyRemovedBag = () =>toast.success("Removed from Bag", {autoClose : 2000})
+   
+   
     const data = productInformationPage
-    console.log(data.id)
+
+     const handleAddToCart = (e, data) =>{
+      if(!selectedSize){
+        toast.error("Please select the size", {autoClose : 2000})
+      }
+      else{
+         e.stopPropagation()
+          handleCartList(data, selectedSize)
+          handleCancelWishList(data)
+          notifyAddedBag()
+      }
+     }
+
+console.log(selectedSize)
+
     return(
          <div style = {{marginTop:"150px"}}>
        <Container className = "d-flex justify-content-center my-5" style = {{gap:"30px" }}>
@@ -46,7 +66,7 @@ function ProductInfoPage(){
                      <ButtonGroup aria-label="Basic example" className = "mb-3">
                      
                      {data.sizes.map((siz) =>{
-                       return <Button className = "custom-button" variant="secondary">{siz}</Button>
+                       return <Button key = {siz} className = {selectedSize === siz ? "custom-button2": "custom-button"} onClick = {()=>setSelectedSize(siz)} variant="secondary">{siz}</Button>
                      })}
       
       
@@ -55,9 +75,21 @@ function ProductInfoPage(){
                     
                    
                     <div className = "my-3">
- <Button onClick = {(e) =>{e.stopPropagation(); handleCartList(data);handleCancelWishList(data)}} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>
-{buttonText ? <Button onClick = {(e)=>{handleCancelWishList(data);  e.stopPropagation();setButtonText(false)}} className = "text-secondary  ms-2 custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM WISHLIST</Button>
-                  :   <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation(); setButtonText(true)}} className = "bg-white text-secondary  ms-2 custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>ADD TO WISHLIST</Button>}
+ 
+ {
+  (cartData.some((li)=>li.id === data.id) )?
+   (<Button onClick = {(e) =>{e.stopPropagation(); handleCartCancel(data);notifyRemovedBag()}} className = "bg-white text-secondary  custom-button" style ={{fontSize:"13px"}}><img src = {cartWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM BAG</Button>)
+   :
+  (<Button onClick = {(e) =>handleAddToCart(e, data)} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>)
+  
+ }
+
+
+
+{( wishList.some((li)=> li.id === data.id)) ? (<Button onClick = {(e)=>{handleCancelWishList(data); notifyRemoved();  e.stopPropagation();}} className = "text-secondary  ms-2 custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM WISHLIST</Button>)
+                  :   (<Button onClick = {(e)=>{handleWishList(data); e.stopPropagation();notifyAdded()}} className = "bg-white text-secondary  ms-2 custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>ADD TO WISHLIST</Button>)
+                  
+                  }
                  </div>
                      <h3 style ={{fontSize:"16px", fontWeight:"600"}} className = "mt-4 mb-2">CUSTOMER REVIEWS</h3>
                      
@@ -77,7 +109,6 @@ function ProductInfoPage(){
                      </div>
 
                  </Container>
-            <OffersBand/>
          </div>
     )
 }

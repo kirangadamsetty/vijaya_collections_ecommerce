@@ -41,7 +41,11 @@ h1{
   font-size:35px;
 font-weight:600!important;
 }
-
+@media(max-width:768px){
+  h1{
+   font-size:23px!important;  
+  }
+}
 .dropdown-toggle:focus,
 .dropdown-toggle:active,
 .show > .dropdown-toggle.btn {
@@ -69,4 +73,8 @@ font-weight:600!important;
   color: white; /* Make sure text is white */
   
 }
-
+@media(max-width:768px){
+  .product-image{
+    height:200px!important;
+  }
+}

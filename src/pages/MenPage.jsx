@@ -1,5 +1,4 @@
 import CategorySlider from "../components/CategorySlider.jsx"
-import OffersBand from "../components/OffersBand.jsx"
 import {  menCategory, menspagebanner } from "../utils/mockData"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -45,7 +44,8 @@ function MenPage(){
                          
                     {mensData.map((data)=>{
 
-                        return  <Col sm={6} md={6} lg={3} key = {data.id} className = "my-3">
+                        return <Col xs={6} sm={6} md={3} lg={3} key={data.id} className="my-3">
+
                          <ProductCard data = {data}/>
                          </Col>
                     })}
@@ -53,7 +53,6 @@ function MenPage(){
             </Row>
         </Container>
 
-<OffersBand />
 
         </div>
     )

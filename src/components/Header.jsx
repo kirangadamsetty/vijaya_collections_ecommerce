@@ -22,10 +22,10 @@ function Header() {
     <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top" style = {{height:"100px"}}>
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} style={{ height: "90px" }} alt="logo" />
+          <img src={logo} style={{ height: "70px" }} alt="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
+        <Navbar.Collapse id="navbarScroll" className = "bg-body-secondary w-100">
           <Nav className="ms-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
             <Nav.Link as={Link} to="/" className="nav-links-custom mx-md-2">Home</Nav.Link>
             <Nav.Link as={Link} onClick = {handlepageshift} to="/women" className="nav-links-custom mx-md-2">Women</Nav.Link>
@@ -68,6 +68,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    
   );
 }
 

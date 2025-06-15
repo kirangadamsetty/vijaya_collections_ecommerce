@@ -18,8 +18,15 @@
     margin-bottom:50px!important;
 }
 
-
-
+@media(max-width:768px){
+    .custom-button{
+        font-size:13px!important;
+        width:100%;
+    }
+}
+.custom-button{
+    width:100%;
+}
 
 
 

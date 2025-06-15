@@ -28,7 +28,46 @@
   margin-top:80px;
   margin-bottom:80px;
 }
+.banner-background {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  height: 80dvh;
+  background-attachment: fixed;
+}
 
+.banner-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Responsive height for mobile */
+@media screen and (max-width: 768px) {
+  .banner-background {
+    height: 30dvh;
+    object-position: top center;
+  }
+ 
+}
+
+/* Optional overlay (if you want it) */
+.banner-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 150, 166, 0.2);
+  z-index: 1;
+}
+
+.banner-top {
+  margin-top: 90px;
+  margin-bottom : 40px;
+}
 
 
 

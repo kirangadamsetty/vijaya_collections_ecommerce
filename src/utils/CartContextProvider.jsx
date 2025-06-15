@@ -31,15 +31,24 @@ function CartContextProvider({children}){
       priceAfterDiscount: priceAfterDiscountResult,
     });
   }, [cartData]);
-  console.log(price)
-const handleCartList = (data) =>{
-       const ids = cartData.map((li) => li.id)
-       if(!ids.includes(data.id)){
-           let including = {...data, quantity : 1}
-           setCartData([...cartData, including])
-       }
+
+const handleCartList = (data, size) =>{
+  let updatedData = [...cartData]
+  let index = updatedData.findIndex((li)=>li.id === data.id)
+
+  if(index !== -1){
+    if(size){
+      let including = {...data, quantity : 1, selectedSize : size}
+      updatedData[index] = including
+      
+    } 
+   
+  }else if(index === -1){
+      updatedData = [...cartData, {...data ,quantity:1, selectedSize : size}]
+    }
+   
               
-       
+       setCartData(updatedData)
     }
     
 
