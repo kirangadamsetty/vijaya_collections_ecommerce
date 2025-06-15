@@ -6,7 +6,17 @@
      font-weight:500!important;
      font-size :20px!important;
 }
+.toggle-icon {
+  height: 40px;
+  outline: none !important;
+  box-shadow: none !important;
+}
 
+.toggle-icon:focus,
+.toggle-icon:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
 .counts{
      background-color: white;
      height:20px;
@@ -18,7 +28,11 @@
      justify-content: center;
      align-items:center;
 }
-
+@media(max-width:768px){
+     .logo{
+          height:50px!important;
+     }
+}
 
 
 

@@ -19,12 +19,12 @@ function Header() {
   const {handlepageshift} = useContext(CategoryFilterContext)
   const {wishList} = useContext(WishListContext)
   return (
-    <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top" style = {{height:"100px"}}>
+    <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top" >
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img src={logo} style={{ height: "70px" }} alt="logo" />
+          <img src={logo} className = "logo" style={{ height: "70px" }} alt="logo" />
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Toggle aria-controls="navbarScroll" className = "toggle-icon" />
         <Navbar.Collapse id="navbarScroll" className = "bg-body-secondary w-100">
           <Nav className="ms-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
             <Nav.Link as={Link} to="/" className="nav-links-custom mx-md-2">Home</Nav.Link>
