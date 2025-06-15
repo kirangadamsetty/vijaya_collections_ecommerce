@@ -16,7 +16,7 @@ function CategorySlider({categoryData, page}){
 <div className = "category-box">
             <img src = {data.image} alt = "slider-image"/>
         </div>
-        <h3 className = "text-center my-3 cate-head">{data.name}</h3>
+        <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}} className = "text-center my-3 cate-head">{data.name}</h3>
             </div>
              
         })}

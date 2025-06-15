@@ -27,12 +27,17 @@ function KidPage(){
           <HeroBanner bannerData = {kidsbanner}/>
         <CategorySlider categoryData={kidCategory} page = "kids"/>
         <Container className = "my-4">
-        <div className = "d-flex justify-content-between align-items-center my-4"> 
+        <div className = "d-flex flex-column flex-md-row justify-content-between my-4"> 
  <h1>Men's Collection...</h1>
           <DropdownButton
   id="dropdown-basic-button"
   className="custom-dropdown-btn"
-  title={<span className="text-white">Sort by <strong className="text-white px-2">{sortTitle}</strong></span>}
+  title={
+    <span className="text-white">
+      Sort by <strong className="text-white px-1">{sortTitle}</strong>
+      <span className="text-white">&#9660;</span> {/* Added text-white here */}
+    </span>
+  }
 >
   <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
   <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>

@@ -29,10 +29,15 @@ function MenPage(){
         <Container className = "my-4"> 
         <div className = "d-flex flex-column flex-md-row justify-content-between align-items-md-center  my-4"> 
  <h1>Men's Collection...</h1>
-         <DropdownButton
+       <DropdownButton
   id="dropdown-basic-button"
   className="custom-dropdown-btn"
-  title={<span className="text-white">Sort by <strong className="text-white px-1">{sortTitle}</strong></span>}
+  title={
+    <span className="text-white">
+      Sort by <strong className="text-white px-1">{sortTitle}</strong>
+      <span className="text-white">&#9660;</span> {/* Added text-white here */}
+    </span>
+  }
 >
   <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
   <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>
