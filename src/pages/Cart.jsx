@@ -28,7 +28,7 @@ function Cart(){
             <Row>
             {cartData.length > 0 && <h1>Cart...</h1>}
           {cartData.length === 0 && (
-  <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80vh" }}>
+  <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80dvh" }}>
     <div style={{ width: "300px", textAlign: "center" }}>
       <img src={emptyBag} style={{ width: "150px", marginBottom: "20px" }} alt="Empty Bag" />
       <h3 style = {{fontWeight:"bold"}}>Hey, it feels so light</h3>
@@ -51,7 +51,7 @@ function Cart(){
                   <div>
                     <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.name}</h3>
                     <p className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.description}</p>
-                     <span onClick = {()=>{handleShow(); setQuantityItem(li);setEvent("sizes")}}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
+                     <span onClick = {()=>{handleShow(); setQuantityItem(li);setEvent("sizes")}}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
                       <span onClick={()=>{handleShow(); setQuantityItem(li);setEvent("quantity")}} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
                               <h5 className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
 
@@ -83,28 +83,23 @@ function Cart(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title><h3>SELECT QUANTITY</h3></Modal.Title>
+          <Modal.Title><h3>{event === "quantity" ? "SELECTED QUANTITY" : "SELECT SIZE"}</h3></Modal.Title>
         </Modal.Header>
         <Modal.Body>
   
   {(event === "quantity") && (
-      quantity.map((num) =>{
-        return <Button onClick = {()=>{handlequantity(quantityItem, num); setQuantitySelected(num)}} key = {num} className = { `${quantitySelected === num ? "custom-button2": "custom-button"} me-2`}>{num}</Button>
+      quantity.map((num, key) =>{
+        return <Button key = {key} onClick = {()=>{handlequantity(quantityItem, num); setQuantitySelected(num); handleClose()}} key = {num} className = { `${quantitySelected === num ? "custom-button2": "custom-button"} me-2 my-2`}>{num}</Button>
       })
      )}
       {(event === "sizes") && (
-      quantityItem.sizes.map((siz) =>{
-        return <Button onClick = {()=>{handleCartList(quantityItem, siz);setSizeSelected(siz)}} key = {siz} className = {`${sizeSelected === siz ? "custom-button2": "custom-button"} me-2`}>{siz}</Button>
+      quantityItem.sizes.map((siz, key) =>{
+        return <Button key  = {key} onClick = {()=>{handleCartList(quantityItem, siz);setSizeSelected(siz); handleClose()}} key = {siz} className = {`${sizeSelected === siz ? "custom-button2": "custom-button"} me-2 my-2`}>{siz}</Button>
       })
      )}
 
         </Modal.Body>
-        <Modal.Footer>
-          <Button className = "custom-button"  onClick={handleClose}>
-            Close
-          </Button>
-          
-        </Modal.Footer>
+       
       </Modal>
     
 

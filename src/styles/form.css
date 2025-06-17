@@ -1,0 +1,25 @@
+.form-container{
+   
+    padding:10px 15px;
+    border:1px solid #0096A6;
+    margin:auto;
+    border-radius:5px;
+    margin-bottom:150px;
+}
+
+.form-container input{
+     border:1px solid #0096A6;
+     border-radius:5px;
+     margin:5px auto;
+     padding:5px 8px;
+     width:100%;
+     font-size:15px;
+}
+.form-container .custom-button{
+    width:100%;
+       margin-top:-4px;
+}
+.form-para{
+    margin-top:10px;
+     cursor:pointer;
+}

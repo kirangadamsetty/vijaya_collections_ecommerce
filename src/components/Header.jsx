@@ -31,14 +31,14 @@ function Header() {
 
   return (
     <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top">
-      <Container fluid className="px-3 px-md-5">
+      <Container  className="px-3 px-md-5">
 
         <Navbar.Brand as={Link} to="/">
           <img src={logo} className="logo" style={{ height: "70px" }} alt="logo" />
         </Navbar.Brand>
 
         {/* Icons for small screens (visible next to toggle, hidden on large) */}
-        <div className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
+        <div onClick={() => navigate("/auth")} className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
             {/* User Icon for small screens */}
             <div className="d-flex flex-column align-items-center mx-1">
                 <Nav.Link className="nav-links-custom p-0"><img src={user} width="25px" alt="user" /></Nav.Link>
@@ -46,7 +46,7 @@ function Header() {
             </div>
 
             {/* Wishlist Icon for small screens */}
-            <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-1">
+            <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
                 <div style={{ position: "relative" }}>
                     <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="25px" alt="wishlist" /></Nav.Link>
                     {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{wishList.length}</p>}
@@ -89,12 +89,12 @@ function Header() {
           </Form>
 
           {/* Icons for large screens (d-none for small, d-lg-flex for large) */}
-          <div className="d-none d-lg-flex align-items-center">
+          <div onClick={() => navigate("/auth")} className="d-none d-lg-flex align-items-center">
             <div className="d-flex flex-column align-items-center mx-2">
                 <Nav.Link className="nav-links-custom p-0"><img src={user} width="25px" alt="user" /></Nav.Link>
                 <p className="header-icon-text">User</p>
             </div>
-            <div onClick={() => { navigate("/wishlist"); closeNavbar(); }} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
+            <div onClick={() => { navigate("/wishlist"); closeNavbar(); }} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-3">
                 <div style={{ position: "relative" }}>
                     <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="25px" alt="wishlist" /></Nav.Link>
                     {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{wishList.length}</p>}

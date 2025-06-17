@@ -34,7 +34,7 @@ const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2
   
 
 <Card.Img variant="top" src={data.image} className = "product-image" style={{ height: "350px", objectFit: "cover", objectPosition:"top center"}} />
-      <p className = "shadow-lg text-dark" style = {{right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", padding:"3px 5px", margin:"4px 5px", borderRadius:"8px"}}>{data.averageRating}<img src = {starIcon} className = "mb-1 ms-1" width = "15"/></p>
+      <p className = "shadow-lg text-dark" style = {{right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", padding:"3px 5px", margin:"4px 5px"}}>{data.averageRating}<img src = {starIcon} className = "mb-1 ms-1" width = "15"/></p>
       <Card.Body>
         <Card.Title><h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{data.name}</h3></Card.Title>
         <Card.Text className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>

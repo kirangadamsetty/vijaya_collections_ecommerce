@@ -27,7 +27,7 @@ function WishListPage(){
                  
 
                    (
-  <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80vh" }}>
+  <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80dvh" }}>
     <div style={{ width: "300px", textAlign: "center" }}>
       <img src={wishListEmptyImage}  style={{ width: "150px", marginBottom: "20px" }} alt="Empty Bag" />
       <h3 style = {{fontWeight:"bold"}}>Your wishlist is empty</h3>

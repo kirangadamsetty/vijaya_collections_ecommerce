@@ -105,5 +105,7 @@ font-weight:600!important;
 }
 
 
-
-
+.product-card-container{
+  border-radius:8px!important;
+  overflow:hidden
+}
