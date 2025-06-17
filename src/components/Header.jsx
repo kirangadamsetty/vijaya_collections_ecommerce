@@ -38,9 +38,9 @@ function Header() {
         </Navbar.Brand>
 
         {/* Icons for small screens (visible next to toggle, hidden on large) */}
-        <div onClick={() => navigate("/auth")} className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
+        <div  className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
             {/* User Icon for small screens */}
-            <div className="d-flex flex-column align-items-center mx-1">
+            <div onClick={() => navigate("/auth")} className="d-flex flex-column align-items-center mx-1">
                 <Nav.Link className="nav-links-custom p-0"><img src={user} width="20px" alt="user" /></Nav.Link>
                 <p className="d-none d-sm-block header-icon-text">User</p>
             </div>
