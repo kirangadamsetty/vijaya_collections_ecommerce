@@ -73,7 +73,7 @@ function ProductInfoPage(){
                         </ButtonGroup>
                         <p>{data.detailedDescription}</p>
 
-                        <div className = "my-3">
+                        <div className = "my-3 d-flex">
                             {
                                 (cartData.some((li)=>li.id === data.id) )?
                                     (<Button onClick = {(e) =>{e.stopPropagation(); handleCartCancel(data);notifyRemovedBag()}} className = "bg-white text-secondary  custom-button" style ={{fontSize:"13px"}}><img src = {cartWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM BAG</Button>)

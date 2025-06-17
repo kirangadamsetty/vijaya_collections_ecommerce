@@ -29,7 +29,7 @@ function KidPage(){
         <Container className = "my-4">
         <div className = "d-flex flex-column flex-md-row justify-content-between my-4"> 
 <div>
- <h3>Playful. Bright. Fun</h3>
+ <h3>Playful. Bright. Fun.</h3>
  <h1>Men's Collection</h1>
 </div>
 

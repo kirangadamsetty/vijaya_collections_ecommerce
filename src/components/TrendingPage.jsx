@@ -14,7 +14,7 @@ function TrendingPage({trendingData}){
             
                 <Container className = "my-3 trending-container">
                   <h3>{trendingData[0].paragraph}</h3>
-                <h1 className ="mb-4 mt-n5" >{trendingData[0].heading}</h1>
+                <h1 className ="mb-2" >{trendingData[0].heading}</h1>
               
                     <Row>
                         {trendingData[1].map((data)=>{

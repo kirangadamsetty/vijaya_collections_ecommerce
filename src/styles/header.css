@@ -45,7 +45,7 @@
     height: 55px !important;
   }
   .nav-links-custom {
-      font-size:15px;
+      font-size:14px!important;
       margin-top:-10px;
   }
   .navbar-nav .nav-link.nav-links-custom {
