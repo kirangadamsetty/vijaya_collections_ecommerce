@@ -28,7 +28,11 @@ function MenPage(){
         <CategorySlider categoryData={menCategory} page = "men"/>
         <Container className = "my-4"> 
         <div className = "d-flex flex-column flex-md-row justify-content-between align-items-md-center  my-4"> 
- <h1>Men's Collection...</h1>
+  <div>
+ <h3>Style meets strength.</h3>
+ <h1>Men's Collection</h1>
+  </div>
+ 
        <DropdownButton
   id="dropdown-basic-button"
   className="custom-dropdown-btn"

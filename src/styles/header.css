@@ -44,7 +44,10 @@
   .logo {
     height: 55px !important;
   }
-  
+  .nav-links-custom {
+      font-size:15px;
+      margin-top:-10px;
+  }
   .navbar-nav .nav-link.nav-links-custom {
     padding-left: 0.5rem;
     padding-right: 0.5rem;

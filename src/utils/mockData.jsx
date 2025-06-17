@@ -66,7 +66,7 @@ export const categoryData = [
 ];
 
 export const trendingData = [
-  { heading: "Hot & Happening Now...", paragraph: "EXPLORE DIVERSE COLLECTIONS" },
+  { heading: "Hot & Happening Now", paragraph: "EXPLORE DIVERSE COLLECTIONS" },
   [
     { id: "trend-1", image: mensTrending, name: "Mens Wear" , description :" Fashion for every man." },
     { id: "trend-2", image: sareeTreding, name: "Bridal Wear" ,description :"For your big day."},
@@ -97,7 +97,7 @@ export const menspagebanner  = [
    {id: "menspagebanner-2", image : menspagebanner2}
 ]
 export const brandOffers = [
-  { heading: "Hottest brands on offer...", paragraph: "IN THE SPOTLIGHT" },
+  { heading: "Hottest brands on offer", paragraph: "IN THE SPOTLIGHT" },
   [
     { id: "brand-1", image: autumnlane },
     { id: "brand-2", image: uspoloBrand },

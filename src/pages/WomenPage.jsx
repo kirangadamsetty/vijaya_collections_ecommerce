@@ -28,7 +28,11 @@ function WomenPage(){
         <CategorySlider categoryData={womenCategory} page = "women"/>
         <Container className = "my-4">
         <div className = "d-flex flex-column flex-md-row justify-content-between  my-4"> 
- <h1>Women's Collection...</h1>
+  <div>
+ <h3>Grace in every thread.</h3>
+ <h1>Women's Collection</h1>
+  </div>
+ 
        <DropdownButton
   id="dropdown-basic-button"
   className="custom-dropdown-btn"
