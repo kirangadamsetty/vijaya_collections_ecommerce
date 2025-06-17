@@ -9,6 +9,7 @@ import {useNavigate} from "react-router-dom"
 import  {useContext, useState} from "react"
 import {CartContext} from "../utils/CartContext"
 import emptyBag from "../assets/emptyBag.webp"
+import Authorization from "../components/Authorization"
 function Cart(){
   const {cartData, handleCartCancel, handleCartList,   handlequantity, price} = useContext(CartContext)
   const [show, setShow] = useState(false);
@@ -42,7 +43,7 @@ function Cart(){
 
        {cartData.length >0 &&   <Col md = {7} >
             {data.map((li)=>{
-              return        <div className = "d-flex my-2" style = {{border:"1px solid #0096A6" , padding:"15px 18px",gap:"20px" , position:"relative"}}>
+              return        <div className = "d-flex my-2" style = {{border:"1px solid #0096A6" ,borderRadius:"8px", padding:"15px 18px",gap:"20px" , position:"relative"}}>
 
                
                   <div  style = {{width:"100px", height:"150px", overflow:"hidden"}} >
@@ -51,8 +52,8 @@ function Cart(){
                   <div>
                     <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.name}</h3>
                     <p className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.description}</p>
-                     <span onClick = {()=>{handleShow(); setQuantityItem(li);setEvent("sizes")}}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
-                      <span onClick={()=>{handleShow(); setQuantityItem(li);setEvent("quantity")}} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
+                     <span onClick = {()=>{handleShow(); setQuantityItem(li);setEvent("Select Size")}}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
+                      <span onClick={()=>{handleShow(); setQuantityItem(li);setEvent("Select Quantity")}} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
                               <h5 className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
 
                         <p onClick ={()=>handleCartCancel(li)}  className = "shadow-lg text-dark d-flex justify-content-center align-items-center" style = {{top:"0",right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", width:"30px",cursor:"pointer", height:"30px", margin:"8px 15px", borderRadius:"100%"}}><img src = {closeIcon} alt = "closeIcon" width = "20"/></p>
@@ -63,7 +64,7 @@ function Cart(){
             })}
                 </Col>}
              { cartData.length>0 &&  <Col md = {5}>
-                     <div className = "my-2" style = {{border:"1px solid #0096A6" , padding:"15px 15px",gap:"20px"}}>
+                     <div className = "my-2" style = {{border:"1px dashed #0096A6",borderRadius:"8px" , padding:"15px 15px",gap:"20px"}}>
                       <p style ={{fontWeight:"bold" }}>PRICE DETAILS <span style = {{fontWeight:"500"}}>(Total Items : {cartData.length})</span> </p>
                       <hr/>
                       <div>
@@ -74,7 +75,7 @@ function Cart(){
                       </div>
                       <hr/>
                        <h3 className = "d-flex justify-content-between"><span>Total Amount</span><span>₹{price.priceAfterDiscount}</span></h3>
-                      <Button className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
+                      <Button onClick = {()=>{setEvent("Create Account");handleShow();}} className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
                      </div>
                 </Col>
              }
@@ -83,21 +84,24 @@ function Cart(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title><h3>{event === "quantity" ? "SELECTED QUANTITY" : "SELECT SIZE"}</h3></Modal.Title>
+          <Modal.Title><h3>{event}</h3></Modal.Title>
         </Modal.Header>
         <Modal.Body>
   
-  {(event === "quantity") && (
+  {(event === "Select Quantity") && (
       quantity.map((num, key) =>{
         return <Button key = {key} onClick = {()=>{handlequantity(quantityItem, num); setQuantitySelected(num); handleClose()}} key = {num} className = { `${quantitySelected === num ? "custom-button2": "custom-button"} me-2 my-2`}>{num}</Button>
       })
      )}
-      {(event === "sizes") && (
+      {(event === "Select Size") && (
       quantityItem.sizes.map((siz, key) =>{
         return <Button key  = {key} onClick = {()=>{handleCartList(quantityItem, siz);setSizeSelected(siz); handleClose()}} key = {siz} className = {`${sizeSelected === siz ? "custom-button2": "custom-button"} me-2 my-2`}>{siz}</Button>
       })
      )}
-
+ 
+      {(event === "Create Account") && (
+     <Authorization/>
+     )}
         </Modal.Body>
        
       </Modal>

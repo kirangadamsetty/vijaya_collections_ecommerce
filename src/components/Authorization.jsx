@@ -73,8 +73,8 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
   return (
     <Container>
     <Row >
-    <Col md = {4} className  = "m-auto">
-    <form onSubmit={handleSubmitForm} style = {{ marginTop:"200px"}} className = "form-container bg-body-secondary">
+    <Col className  = "m-auto">
+    <form onSubmit={handleSubmitForm} className = "form-container bg-body-secondary">
    <h3 className = "my-3">{newUser ? "Signup Form" : "SignIn Form"}</h3>
      {newUser && <input ref={name} type="text" placeholder="Full Name" />}
       <input ref={email} type="text" placeholder="Email" />

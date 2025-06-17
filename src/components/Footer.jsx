@@ -1,10 +1,11 @@
 // components/Footer.jsx
 import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import {useNavigate} from "react-router-dom"
 import '../styles/footer.css';
 
 function Footer() {
+  const navigate = useNavigate()
   return (
     <footer className="bg-dark footer text-light py-5">
       <Container>
@@ -18,7 +19,15 @@ function Footer() {
               <li>Press</li>
             </ul>
           </Col>
-
+<Col md={3} className="mb-4">
+            <h3 >Pages</h3>
+            <ul className="list-unstyled mt-3">
+              <li onClick = {() =>navigate("/men")} >Men</li>
+              <li onClick = {()=>navigate("/women")}>Women</li>
+              <li onClick = {()=>navigate("/kids")}>Kids</li>
+            </ul>
+          </Col>
+          
           {/* Customer Support */}
           <Col md={3} className="mb-4">
             <h3>Customer Support</h3>

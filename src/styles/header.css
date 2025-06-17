@@ -40,7 +40,7 @@
   color: #333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .logo {
     height: 55px !important;
   }
@@ -52,14 +52,25 @@
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
+  .counts{
+    top:-20px!important;
+   
+  }
 }
 .navbar-toggler-icon {
     width: 1.2em!important;
+    margin-bottom:5px;
    
 }
+
+
 @media (max-width: 575.98px) {
   .header-icon-text {
     display: none;
+  }
+  .counts{
+    top:-20px!important;
+   
   }
   /* Remove margin from the specific d-flex group if it causes issues on very small screens */
   /* .d-flex.order-lg-last.align-items-center > div {

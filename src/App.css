@@ -86,6 +86,7 @@ font-weight:600!important;
   }
   li{
     font-size:13px;
+  
   }
   .custom-dropdown-btn span{
     font-size:13px!important;
@@ -107,9 +108,18 @@ font-weight:600!important;
     font-size:10px!important;
   }
 }
-
-
 .product-card-container{
   border-radius:8px!important;
   overflow:hidden
 }
+li{
+  cursor:pointer
+}
+
+
+
+
+
+
+
+

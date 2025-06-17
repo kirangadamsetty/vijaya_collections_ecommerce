@@ -42,14 +42,14 @@ function Header() {
             {/* User Icon for small screens */}
             <div onClick={() => navigate("/auth")} className="d-flex flex-column align-items-center mx-1">
                 <Nav.Link className="nav-links-custom p-0"><img src={user} width="20px" alt="user" /></Nav.Link>
-                <p className="d-none d-sm-block header-icon-text">User</p>
+                <p  className="d-none d-sm-block header-icon-text">User</p>
             </div>
 
             {/* Wishlist Icon for small screens */}
             <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
                 <div style={{ position: "relative" }}>
                     <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="20px" alt="wishlist" /></Nav.Link>
-                    {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{wishList.length}</p>}
+                    {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px" }}>{wishList.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Wishlist</p>
             </div>
@@ -58,7 +58,7 @@ function Header() {
             <div onClick={() => navigate("/cart")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-1">
                 <div style={{ position: "relative" }}>
                     <Nav.Link className="nav-links-custom p-0"><img src={CartIcon} width="20px" alt="carticon" /></Nav.Link>
-                    {cartData.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{cartData.length}</p>}
+                    {cartData.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px" }}>{cartData.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Bag</p>
             </div>
@@ -89,8 +89,8 @@ function Header() {
           </Form>
 
           {/* Icons for large screens (d-none for small, d-lg-flex for large) */}
-          <div onClick={() => navigate("/auth")} className="d-none d-lg-flex align-items-center">
-            <div className="d-flex flex-column align-items-center mx-2">
+          <div className="d-none d-lg-flex align-items-center">
+            <div  onClick={() => navigate("/auth")} className="d-flex flex-column align-items-center mx-2">
                 <Nav.Link className="nav-links-custom p-0"><img src={user} width="25px" alt="user" /></Nav.Link>
                 <p className="header-icon-text">User</p>
             </div>
