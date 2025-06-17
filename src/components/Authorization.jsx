@@ -1,20 +1,27 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import "../styles/form.css"
 import { auth } from "../../firebaseConfig";
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
+import {AuthContext} from "../utils/AuthContext.jsx"
 import Col from "react-bootstrap/Col"
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword } from "firebase/auth";
 import  Button from "react-bootstrap/Button"; // Adjust if you're using a different UI lib
-function Authorization() {
+import {  toast } from 'react-toastify';
+
+function Authorization({handleClose}) {
+    const notifySignUp = () => toast.success("Account created sucessfully", { autoClose: 2000});
+        const notifySignIn = () => toast.success("Logged in sucessfully", { autoClose: 2000});
+
   const name = useRef();
   const email = useRef();
   const password = useRef();
   const [newUser , setNewUser] = useState(true)
   const [errorMessage, setErrorMessage] = useState("")
+  const {setUserData } = useContext(AuthContext)
   const handleSubmitForm = (e) => {
     e.preventDefault(); // Prevent actual form submission
-
+  
     const emailValue = email.current.value;
     const passwordValue = password.current.value;
     const nameValue = newUser ? name.current.value : "";
@@ -40,14 +47,18 @@ createUserWithEmailAndPassword(auth, emailValue, passwordValue)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
-    console.log(user)
-    // ...
+    setErrorMessage("User Created Sucessfully")
+    setUserData(user)
+    handleClose()
+    notifySignUp()
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
-    console.log(errorCode, errorMessage)
-    // ..
+    if(errorCode === "auth/email-already-in-use"){
+  setErrorMessage("User already exist please signIn*" )
+    }
+  
+  
   })
        
 } 
@@ -56,7 +67,10 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    setErrorMessage("Sucess")
+    setErrorMessage("Logged in sucessfully*")
+    setUserData(user)
+    handleClose()
+    notifySignIn()
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -64,16 +78,15 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
     setErrorMessage(errorCode + errorMessage)
   });
    }
-
-
     }
 
   };
 
+
   return (
     <Container>
     <Row >
-    <Col className  = "m-auto">
+    <Col className  = "m-auto" >
     <form onSubmit={handleSubmitForm} className = "form-container bg-body-secondary">
    <h3 className = "my-3">{newUser ? "Signup Form" : "SignIn Form"}</h3>
      {newUser && <input ref={name} type="text" placeholder="Full Name" />}

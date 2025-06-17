@@ -13,7 +13,10 @@ function WishListPage(){
        return(
         <div style = {{marginTop:"150px"}}>
         <Container  className = "my-5" >
-      { wishList.length > 0 &&  (<h1 className ="mb-4 mt-n5" >WishList...</h1>)}
+      { wishList.length > 0 &&  (<div>
+ <h3>Saved with love, just for you.</h3>
+ <h1>Wishlist</h1>
+</div>)}
 
             <Row>
      { wishList.length > 0 ?   
@@ -34,7 +37,7 @@ function WishListPage(){
       <p>
         Add items that you like to your wishlist. Review them anytime and easily move them to the bag.
       </p>
-      <Button className="bg-white custom-button2" onClick = {()=> navigate("/men")}>CONTINUE SHOPPING</Button>
+      <Button className="bg-white custom-button2" onClick = {()=> navigate("/")}>CONTINUE SHOPPING</Button>
     </div>
   </Col>
 

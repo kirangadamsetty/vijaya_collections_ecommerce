@@ -2,9 +2,9 @@ import {AuthContext} from "./AuthContext"
 import {useState} from "react"
 
 function AuthContextProvider({children}){
-    const [user, setUser] = useState("")
+    const [userData, setUserData] = useState("")
     return(
-        <AuthContext.Provider value = {{user , setUser}}>
+        <AuthContext.Provider value = {{userData , setUserData}}>
             {children}
         </AuthContext.Provider>
     )

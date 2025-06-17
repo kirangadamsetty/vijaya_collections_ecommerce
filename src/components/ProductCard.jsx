@@ -16,7 +16,6 @@ const [buttonText, setButtonText]  = useState(false)
    const {handleWishList,handleCancelWishList, wishList} = useContext(WishListContext)
 const notifyAdded = () => toast.success("Added to wishlist!", { autoClose: 2000});
 const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
-
      useEffect(()=>{
        let ids = wishList.map((li) => li.id)
       ids.includes(data.id) ? setButtonText(true) : setButtonText(false)
@@ -43,7 +42,7 @@ const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2
         
                               <h5> ₹{data.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{data.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (data.price + 350)) * 100)}% OFF)</span> </span></h5>
                {buttonText ? <Button onClick = {(e)=>{handleCancelWishList(data);  e.stopPropagation();notifyRemoved();setButtonText(false)}} className = "text-secondary  mt-2 w-100  custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1 button-icon"/>REMOVE FROM WISHLIST</Button>
-                  :   <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation();notifyAdded(); setButtonText(true)}} className = "bg-white text-secondary  mt-2 w-100  custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1 button-icon"/>ADD TO WISHLIST</Button>}
+                  :   <Button onClick = {(e)=>{handleWishList(data); e.stopPropagation(); notifyAdded();setButtonText(true)}} className = "bg-white text-secondary  mt-2 w-100  custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1 button-icon"/>ADD TO WISHLIST</Button>}
           
                  
       </Card.Body>

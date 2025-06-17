@@ -16,10 +16,12 @@ import WishListContextProvider from "./utils/WishListContextProvider.jsx"
 import WishListPage from './pages/WishListPage.jsx';
 import { ToastContainer } from 'react-toastify';
 import ScrollToTop from "./components/ScrollToTop"
+import AuthContextProvider from './utils/AuthContextProvider.jsx';
 function App(){
+ 
   return(
       <div>
-    
+      <AuthContextProvider>
       <CartContextProvider>
       <WishListContextProvider>
       <CategoryContextProvider>
@@ -31,6 +33,7 @@ function App(){
       </CategoryContextProvider>
       </WishListContextProvider>
       </CartContextProvider>
+      </AuthContextProvider>
       </div>
   )
 }
