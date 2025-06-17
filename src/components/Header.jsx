@@ -31,7 +31,7 @@ function Header() {
 
   return (
     <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top">
-      <Container  className="px-3 px-md-5">
+      <Container  className="px-1 px-md-5">
 
         <Navbar.Brand as={Link} to="/">
           <img src={logo} className="logo" style={{ height: "70px" }} alt="logo" />
@@ -41,14 +41,14 @@ function Header() {
         <div onClick={() => navigate("/auth")} className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
             {/* User Icon for small screens */}
             <div className="d-flex flex-column align-items-center mx-1">
-                <Nav.Link className="nav-links-custom p-0"><img src={user} width="25px" alt="user" /></Nav.Link>
+                <Nav.Link className="nav-links-custom p-0"><img src={user} width="20px" alt="user" /></Nav.Link>
                 <p className="d-none d-sm-block header-icon-text">User</p>
             </div>
 
             {/* Wishlist Icon for small screens */}
             <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
                 <div style={{ position: "relative" }}>
-                    <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="25px" alt="wishlist" /></Nav.Link>
+                    <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="20px" alt="wishlist" /></Nav.Link>
                     {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{wishList.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Wishlist</p>
@@ -57,7 +57,7 @@ function Header() {
             {/* Cart Icon for small screens */}
             <div onClick={() => navigate("/cart")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-1">
                 <div style={{ position: "relative" }}>
-                    <Nav.Link className="nav-links-custom p-0"><img src={CartIcon} width="25px" alt="carticon" /></Nav.Link>
+                    <Nav.Link className="nav-links-custom p-0"><img src={CartIcon} width="20px" alt="carticon" /></Nav.Link>
                     {cartData.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px", top: "-5px" }}>{cartData.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Bag</p>
