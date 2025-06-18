@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-
+import {useNavigate} from "react-router-dom"
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
@@ -9,7 +9,7 @@ import Card from 'react-bootstrap/Card';
 import "../styles/trending.css"
 
 function TrendingPage({trendingData}){
-   
+   const navigate  = useNavigate()
     return(
             
                 <Container className = "my-3 trending-container">
@@ -18,7 +18,7 @@ function TrendingPage({trendingData}){
               
                     <Row>
                         {trendingData[1].map((data)=>{
-                            return  <Col xs={6} sm={6} md={3} lg={3} key = {data.id} className = "trending-images my-3 ">
+                            return  <Col onClick = {()=>data.link && navigate(`/${data.link}`)} xs={6} sm={6} md={3} lg={3} key = {data.id} style = {{cursor:"pointer"}} className = "trending-images my-3 ">
                             <Card className="h-100 product-card-container" style={{ height:"100%"}}>
       <Card.Img variant="top" src={data.image} className = "product-image" style={{ height: "400px", objectFit: "cover" }}/>
     {data.name && <Card.Body>

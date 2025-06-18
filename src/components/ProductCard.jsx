@@ -9,9 +9,11 @@ import "../styles/productCard.css"
 import wishListIcon from "../assets/wishlist.png"
 import {WishListContext} from "../utils/WishListContext"
 import starIcon from "../assets/starIcon.png"
+import { CartContext } from '../utils/CartContext';
 function ProductCard({data}) {
    const {setProductInformationPage} = useContext(CategoryFilterContext)
 const [buttonText, setButtonText]  = useState(false)
+const {setSize}  = useContext(CartContext)
    const navigate = useNavigate()
    const {handleWishList,handleCancelWishList, wishList} = useContext(WishListContext)
 const notifyAdded = () => toast.success("Added to wishlist!", { autoClose: 2000});
@@ -26,6 +28,7 @@ const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2
   onClick={() => {
     setProductInformationPage(data);
     navigate("/productInfo");
+setSize("")
   }}
   className="h-100 product-card-container"
   style={{ cursor: "pointer" }}

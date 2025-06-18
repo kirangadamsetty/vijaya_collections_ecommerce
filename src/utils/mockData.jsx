@@ -68,10 +68,10 @@ export const categoryData = [
 export const trendingData = [
   { heading: "Hot & Happening Now", paragraph: "EXPLORE DIVERSE COLLECTIONS" },
   [
-    { id: "trend-1", image: mensTrending, name: "Mens Wear" , description :" Fashion for every man." },
-    { id: "trend-2", image: sareeTreding, name: "Bridal Wear" ,description :"For your big day."},
-    { id: "trend-3", image: kidstrending, name: "Kids Wear" ,description :"Style for little ones."},
-    { id: "trend-4", image: trendingdresses, name: "Traditional & Westren Wear",description :" Ethnic meets modern." },
+    { id: "trend-1", image: mensTrending, name: "Mens Wear" , description :" Fashion for every man." , link :"men"},
+    { id: "trend-2", image: sareeTreding, name: "Bridal Wear" ,description :"For your big day.", link : "women"},
+    { id: "trend-3", image: kidstrending, name: "Kids Wear" ,description :"Style for little ones.", link : "kids"},
+    { id: "trend-4", image: trendingdresses, name: "Traditional & Westren Wear",description :" Ethnic meets modern.", link : "women" },
   ]
 ];
 

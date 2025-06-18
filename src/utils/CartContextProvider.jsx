@@ -4,6 +4,9 @@ import {useState, useEffect} from "react"
 
 function CartContextProvider({children}){
     const [cartData, setCartData]  = useState([])
+    const [quantity, setQuantity] = useState("")
+      const [size, setSize] = useState("")
+    
     const [price, setPrice] = useState({
         totalPrice :null,
         discountPrice:  null,
@@ -36,12 +39,12 @@ const handleCartList = (data, size) =>{
   let updatedData = [...cartData]
   let index = updatedData.findIndex((li)=>li.id === data.id)
 
-  if(index !== -1){
-    if(size){
+  if((index !== -1) && (updatedData[index].selectedSize !== size)){
+  
       let including = {...data, quantity : 1, selectedSize : size}
-      updatedData[index] = including
+      updatedData.push(including)
       
-    } 
+  
    
   }else if(index === -1){
       updatedData = [...cartData, {...data ,quantity:1, selectedSize : size}]
@@ -53,11 +56,19 @@ const handleCartList = (data, size) =>{
     
 
 
-    const handleCartCancel = (data) =>{
+    const handleCartCancel = (data, size) =>{
         let updatedData = [...cartData]
-        let index = updatedData.findIndex((lis) => lis.id === data.id)
+        if(size){
+       let index = updatedData.findIndex((lis) => lis.id === data.id && lis.selectedSize === size)
         updatedData.splice(index, 1)
         setCartData(updatedData)
+      }
+      else{
+        let index = updatedData.findIndex((lis) => lis.id === data.id && lis.selectedSize)
+         updatedData.splice(index, 1)
+        setCartData(updatedData)
+      }
+       
     }
  
     const handlequantity = (data, quant) =>{
@@ -68,7 +79,7 @@ const handleCartList = (data, size) =>{
     }
 
     return(
-        <CartContext.Provider value = {{price, handlequantity, cartData, handleCartList, handleCartCancel}}>
+        <CartContext.Provider value = {{quantity, setQuantity, size, setSize, price, handlequantity, cartData, handleCartList, handleCartCancel}}>
             {children}
         </CartContext.Provider>
     )

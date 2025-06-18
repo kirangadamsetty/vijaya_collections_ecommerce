@@ -9,6 +9,7 @@ import {WishListContext} from "../utils/WishListContext"
 import WishListCard from "../components/WishListCard.jsx"
 function WishListPage(){
     const {wishList} = useContext(WishListContext)
+    
     const navigate = useNavigate()
        return(
         <div style = {{marginTop:"150px"}}>
@@ -47,6 +48,9 @@ function WishListPage(){
 
      }
             </Row>
+                        
+               
+                
         </Container>
         </div>
     )

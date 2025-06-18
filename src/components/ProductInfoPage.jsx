@@ -16,10 +16,9 @@ import cartWhite from "../assets/cartWhite.png"
 
 function ProductInfoPage(){
     const {productInformationPage} = useContext(CategoryFilterContext)
-    const [selectedSize, setSelectedSize] = useState("")
     const[ sizeLength, setSizeLength] = useState("")
     const {handleWishList, handleCancelWishList, wishList} = useContext(WishListContext)
-    const {handleCartList, cartData, handleCartCancel} = useContext(CartContext)
+    const { size, setSize, handleCartList, cartData, handleCartCancel} = useContext(CartContext)
     const notifyAdded = () => toast.success("Added to wishlist!", { autoClose: 2000});
     const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
     const notifyAddedBag = () => toast.success("Added to Bag!", { autoClose: 2000});
@@ -30,9 +29,9 @@ function ProductInfoPage(){
       setSizeLength(data.sizes.length)
     }, [])
     const handleAddToCart = (e, data) =>{
-        if(selectedSize || sizeLength === 1 ){
+        if(size || sizeLength === 1 ){
              e.stopPropagation()
-            handleCartList(data, selectedSize)
+            handleCartList(data, size)
             handleCancelWishList(data)
             notifyAddedBag()
           
@@ -42,8 +41,12 @@ function ProductInfoPage(){
         }
     }
 
-    console.log(selectedSize)
-
+   const handleRemoveToBag = (da) =>{
+    handleCartCancel(da, size);
+    setSize("")
+    
+    notifyRemovedBag()
+   }
     return(
         <div style = {{marginTop:"150px"}}>
             <Container fluid className="px-3 px-md-5 my-5">
@@ -68,15 +71,15 @@ function ProductInfoPage(){
                         <h3 style ={{fontSize:"16px", fontWeight:"500"}}>SELECT SIZE</h3>
                         <ButtonGroup aria-label="Basic example" className = "mb-3">
                             {data.sizes.map((siz) =>{
-                                return <Button key = {siz} className = {selectedSize === siz ? "custom-button2": "custom-button"} onClick = {()=>setSelectedSize(siz)} variant="secondary">{siz}</Button>
+                                return <Button key = {siz} className = {size === siz ? "custom-button2": "custom-button"} onClick = {()=>{setSize(siz)}} variant="secondary">{siz}</Button>
                             })}
                         </ButtonGroup>
                         <p>{data.detailedDescription}</p>
 
-                        <div className = "my-3 d-flex">
+                        <div className = "my-3">
                             {
-                                (cartData.some((li)=>li.id === data.id) )?
-                                    (<Button onClick = {(e) =>{e.stopPropagation(); handleCartCancel(data);notifyRemovedBag()}} className = "bg-white text-secondary  custom-button" style ={{fontSize:"13px"}}><img src = {cartWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM BAG</Button>)
+                                (cartData.some((li)=>li.id === data.id && li.selectedSize === size)  )?
+                                    (<Button onClick = {() =>handleRemoveToBag(data)} className = "bg-white text-secondary  custom-button" style ={{fontSize:"13px"}}><img src = {cartWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM BAG</Button>)
                                     :
                                     (<Button onClick = {(e) =>handleAddToCart(e, data)} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>)
                             }
