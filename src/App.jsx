@@ -5,7 +5,6 @@ import Home from "./pages/Home.jsx"
 import {createBrowserRouter, Outlet} from "react-router-dom"
 import ErrorElement from "./components/ErrorElement.jsx"
 import MenPage from "./pages/MenPage.jsx"
-import Authorization from './components/Authorization.jsx';
 import WomenPage from './pages/WomenPage.jsx';
 import KidPage from './pages/KidPage.jsx';
 import CategoryContextProvider from "./utils/CategoryContextProvider.jsx"
@@ -72,10 +71,6 @@ export const appRouter = createBrowserRouter([
         path : "/cart",
         element : <Cart/>,
         errorElement : <Error/>
-      },{
-        path : "/auth",
-        element : <Authorization/>,
-        errorElement :<Error/>
       }
     ]
   }

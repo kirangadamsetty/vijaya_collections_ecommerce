@@ -5,7 +5,6 @@ import {useState, useEffect} from "react"
 function CartContextProvider({children}){
     const [cartData, setCartData]  = useState([])
     const [quantity, setQuantity] = useState("")
-      const [size, setSize] = useState("")
     
     const [price, setPrice] = useState({
         totalPrice :null,
@@ -37,24 +36,27 @@ function CartContextProvider({children}){
 
 const handleCartList = (data, size) =>{
   let updatedData = [...cartData]
-  let index = updatedData.findIndex((li)=>li.id === data.id)
-
-  if((index !== -1) && (updatedData[index].selectedSize !== size)){
-  
-      let including = {...data, quantity : 1, selectedSize : size}
-      updatedData.push(including)
-      
-  
-   
-  }else if(index === -1){
-      updatedData = [...cartData, {...data ,quantity:1, selectedSize : size}]
-    }
-   
-              
-       setCartData(updatedData)
-    }
+ let generatedId = `${data.id}-${size}`
+ let index = updatedData.findIndex((li)=> li.generatedId === `${data.id}-${size}`)
+ if(index === -1){
+   updatedData.push({...data, generatedId : generatedId, quantity : 1, selectedSize : size})
+ }
+ else if(index !== -1){
+  updatedData[index].quantity = updatedData[index].quantity + 1
+ }
+ setCartData(updatedData)
+}
     
+const handleSize = (data, size) =>{
+  let updatedData = [...cartData]
+  let generatedId = `${data.id}-${size}`
+  let index = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
+  
+  updatedData[index].selectedSize = size
+  updatedData[index].generatedId = generatedId
+  setCartData(updatedData)
 
+}
 
     const handleCartCancel = (data, size) =>{
         let updatedData = [...cartData]
@@ -73,13 +75,13 @@ const handleCartList = (data, size) =>{
  
     const handlequantity = (data, quant) =>{
       let updatedData = [...cartData]
-      let index = updatedData.findIndex((li)=> li.id === data.id)
-      updatedData[index].quantity = quant
-      setCartData(updatedData)
+       let index = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
+       updatedData[index].quantity = quant
+       setCartData(updatedData)
     }
 
     return(
-        <CartContext.Provider value = {{quantity, setQuantity, size, setSize, price, handlequantity, cartData, handleCartList, handleCartCancel}}>
+        <CartContext.Provider value = {{quantity,handleSize,  setQuantity,price, handlequantity, cartData, handleCartList, handleCartCancel}}>
             {children}
         </CartContext.Provider>
     )

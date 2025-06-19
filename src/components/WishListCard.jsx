@@ -10,9 +10,10 @@ import {useContext,useState} from "react"
 import {WishListContext} from "../utils/WishListContext"
 function WishListCard({data}) {
     const {handleCancelWishList} = useContext(WishListContext)
+    const [size, setSize] = useState("")
     const notifyAdded = () => toast.success("Moved to bag!", { autoClose: 2000});
     const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
-    const {handleCartList, size, setSize} = useContext(CartContext)
+    const {handleCartList} = useContext(CartContext)
   const [quantityItem, setQuantityItem] = useState({})
 
         const [show, setShow] = useState(false)
@@ -54,7 +55,7 @@ function WishListCard({data}) {
                     <Modal.Body>
              
                   { quantityItem?.sizes?.map((siz) =>{
-        return <Button key  = {siz} onClick = {()=>{handleCartList(quantityItem, siz);setSize(siz);handleCancelWishList(data); handleClose()}}  className = {`${size === siz ? "custom-button2": "custom-button"} me-2 my-2`}>{siz}</Button>
+        return <Button key  = {siz} onClick = {()=>{setSize(siz);handleCartList(quantityItem, siz);handleCancelWishList(data); handleClose()}}  className = {`${size === siz ? "custom-button2": "custom-button"} me-2 my-2`}>{siz}</Button>
       })
                   }
              

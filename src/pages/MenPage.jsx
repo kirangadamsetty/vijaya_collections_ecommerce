@@ -35,7 +35,7 @@ function MenPage(){
  
        <DropdownButton
   id="dropdown-basic-button"
-  className="custom-dropdown-btn"
+  className="custom-dropdown-btn" 
   title={
     <span className="text-white">
       Sort by <strong className="text-white px-1">{sortTitle}</strong>

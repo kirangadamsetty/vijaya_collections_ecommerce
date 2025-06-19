@@ -12,28 +12,27 @@ import { WishListContext } from "../utils/WishListContext"
 import { CartContext } from "../utils/CartContext"
 import "../styles/accordion.css"
 import {  toast } from 'react-toastify';
-import cartWhite from "../assets/cartWhite.png"
 
 function ProductInfoPage(){
     const {productInformationPage} = useContext(CategoryFilterContext)
     const[ sizeLength, setSizeLength] = useState("")
+    const [size, setSize]  = useState("")
     const {handleWishList, handleCancelWishList, wishList} = useContext(WishListContext)
-    const { size, setSize, handleCartList, cartData, handleCartCancel} = useContext(CartContext)
+    const { handleCartList} = useContext(CartContext)
     const notifyAdded = () => toast.success("Added to wishlist!", { autoClose: 2000});
     const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
     const notifyAddedBag = () => toast.success("Added to Bag!", { autoClose: 2000});
-    const notifyRemovedBag = () =>toast.success("Removed from Bag", {autoClose : 2000})
 
     const data = productInformationPage
     useEffect(()=>{
       setSizeLength(data.sizes.length)
     }, [])
-    const handleAddToCart = (e, data) =>{
+    const handleAddToCart = ( data) =>{
         if(size || sizeLength === 1 ){
-             e.stopPropagation()
             handleCartList(data, size)
-            handleCancelWishList(data)
+           
             notifyAddedBag()
+            setSize("")
           
         }
         else{
@@ -41,12 +40,7 @@ function ProductInfoPage(){
         }
     }
 
-   const handleRemoveToBag = (da) =>{
-    handleCartCancel(da, size);
-    setSize("")
-    
-    notifyRemovedBag()
-   }
+  
     return(
         <div style = {{marginTop:"150px"}}>
             <Container fluid className="px-3 px-md-5 my-5">
@@ -77,12 +71,10 @@ function ProductInfoPage(){
                         <p>{data.detailedDescription}</p>
 
                         <div className = "my-3">
-                            {
-                                (cartData.some((li)=>li.id === data.id && li.selectedSize === size)  )?
-                                    (<Button onClick = {() =>handleRemoveToBag(data)} className = "bg-white text-secondary  custom-button" style ={{fontSize:"13px"}}><img src = {cartWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM BAG</Button>)
-                                    :
-                                    (<Button onClick = {(e) =>handleAddToCart(e, data)} className = "bg-white text-secondary  custom-button2 " style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>)
-                            }
+                            
+                                  <Button onClick = {() =>{handleAddToCart(data, size)}} className = "bg-white text-secondary  custom-button2" style ={{fontSize:"13px"}}><img src = {cartIcon} width = "20" className = "me-2 mb-1"/>ADD TO BAG</Button>
+                                    
+                            
 
                             {( wishList.some((li)=> li.id === data.id)) ? (<Button onClick = {(e)=>{handleCancelWishList(data); notifyRemoved();  e.stopPropagation();}} className = "text-secondary   ms-2 custom-button" style ={{fontSize:"13px"}}><img src = {wishListWhite} width = "20" className = "me-2 mb-1"/>REMOVE FROM WISHLIST</Button>)
                                 :   (<Button onClick = {(e)=>{handleWishList(data); e.stopPropagation();notifyAdded()}} className = "bg-white text-secondary  ms-2 custom-button2" style ={{fontSize:"13px"}}><img src = {wishListIcon} width = "20" className = "me-2 mb-1"/>ADD TO WISHLIST</Button>)
