@@ -12,7 +12,7 @@ function WishListPage(){
     
     const navigate = useNavigate()
        return(
-        <div style = {{marginTop:"150px"}}>
+        <div style = {{marginTop:"120px"}}>
         <Container  className = "my-5" >
       { wishList.length > 0 &&  (<div>
  <h3>Saved with love, just for you.</h3>

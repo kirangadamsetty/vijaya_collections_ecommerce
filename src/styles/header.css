@@ -45,7 +45,7 @@
     height: 55px !important;
   }
   .nav-links-custom {
-      font-size:14px!important;
+      font-size:15px!important;
       margin-top:-10px;
   }
   .navbar-nav .nav-link.nav-links-custom {
@@ -58,7 +58,7 @@
   }
 }
 .navbar-toggler-icon {
-    width: 1.2em!important;
+    width: 1.5em!important;
     margin-bottom:5px;
    
 }

@@ -48,7 +48,7 @@ function Header() {
             {/* Wishlist Icon for small screens */}
             <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
                 <div style={{ position: "relative" }}>
-                    <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="20px" alt="wishlist" /></Nav.Link>
+                    <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="28px" alt="wishlist" /></Nav.Link>
                     {wishList.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px" }}>{wishList.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Wishlist</p>
@@ -57,7 +57,7 @@ function Header() {
             {/* Cart Icon for small screens */}
             <div onClick={() => navigate("/cart")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-1">
                 <div style={{ position: "relative" }}>
-                    <Nav.Link className="nav-links-custom p-0"><img src={CartIcon} width="20px" alt="carticon" /></Nav.Link>
+                    <Nav.Link className="nav-links-custom p-0"><img src={CartIcon} width="28px" alt="carticon" /></Nav.Link>
                     {cartData.length > 0 && <p className="counts" style={{ position: "absolute", marginLeft: "15px" }}>{cartData.length}</p>}
                 </div>
                 <p className="d-none d-sm-block header-icon-text">Bag</p>

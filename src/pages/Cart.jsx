@@ -15,12 +15,14 @@ import {CartContext} from "../utils/CartContext"
   import { auth } from "../../firebaseConfig"
 import emptyBag from "../assets/emptyBag.webp"
 import Authorization from "../components/Authorization"
+import { CategoryFilterContext } from "../utils/CategoryFilterContext"
 function Cart(){
   const {cartData, handleCartCancel,  handleSize, handlequantity, price} = useContext(CartContext)
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
   const {userData,setUserData} = useContext(AuthContext)
   const [sizeSelected, setSizeSelected] = useState("")
+  const {setProductInformationPage} = useContext(CategoryFilterContext)
   const [quantitySelected, setQuantitySelected] = useState("")
   const [event, setEvent] = useState("")
   const [quantityItem, setQuantityItem] = useState([])
@@ -35,7 +37,9 @@ console.log(userData)
       setEvent("Select Quantity")
     }
     const handleProductSize = (li) =>{
+      setSizeSelected("")
       handleShow(); 
+      
       setQuantityItem(li);
       setEvent("Select Size")
     }
@@ -49,7 +53,7 @@ signOut(auth).then(() => {
 });
     }
     return(
-        <div style = {{marginTop:"150px"}}>
+        <div style = {{marginTop:"120px"}}>
           <Container className = "my-4">
             <Row>
            {userData && <Col className = "d-flex flex-column align-items-end mb-4 mb-md-2">
@@ -83,12 +87,12 @@ signOut(auth).then(() => {
   </Col>
 )}
 
-       {cartData.length >0 &&   <Col md = {7} >
+       {cartData.length >0 &&   <Col md = {7}>
             {data.map((li)=>{
-              return        <div className = "d-flex my-2 " style = {{border:"1px solid #0096A6" ,borderRadius:"8px", padding:"15px 18px",gap:"20px" , position:"relative"}}>
+              return        <div className = "d-flex my-2" style = {{border:"1px solid #0096A6" ,borderRadius:"8px", padding:"15px 18px",gap:"20px" , position:"relative"}}>
 
                
-                  <div  style = {{width:"100px", height:"150px", overflow:"hidden"}} >
+                  <div  style = {{width:"100px", height:"150px", overflow:"hidden",cursor:"pointer"}}  onClick = {()=>{setProductInformationPage(li);navigate("/productInfo");}}>
                     <img src = {li.image} style = {{objectFit:"cover", width:"100%", height:"100%"}} alt = "cart-image"/>
                   </div>
                   <div>

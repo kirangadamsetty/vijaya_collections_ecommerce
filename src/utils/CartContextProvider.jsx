@@ -50,14 +50,25 @@ const handleCartList = (data, size) =>{
 const handleSize = (data, size) =>{
   let updatedData = [...cartData]
   let generatedId = `${data.id}-${size}`
-  let index = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
+ let index = updatedData.findIndex((li)=>li.generatedId === generatedId)
+ if(index === -1){
+  let origin = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
+updatedData[origin].generatedId = generatedId
+  updatedData[origin].selectedSize = size
+ }
+ else if(index !== -1){
+updatedData.splice(index, 1)
+ let origin = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
+updatedData[origin].generatedId = generatedId
+  updatedData[origin].selectedSize = size
+ }
+ 
+
   
-  updatedData[index].selectedSize = size
-  updatedData[index].generatedId = generatedId
   setCartData(updatedData)
-
+ 
 }
-
+console.log(cartData)
     const handleCartCancel = (data, size) =>{
         let updatedData = [...cartData]
         if(size){
