@@ -8,7 +8,7 @@ function CategorySlider({categoryData, page}){
 
     return(
         
-       <Container fluid>
+       <Container >
         <div className ="category-container">
         {categoryData.map((data)=>{
 

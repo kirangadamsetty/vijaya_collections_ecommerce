@@ -5,7 +5,7 @@ import "../styles/category.css"
 function CategorySliderMain({categoryData}){
     return(
         
-       <Container fluid>
+       <Container >
         <div className ="category-container">
         {categoryData.map((data)=>{
 

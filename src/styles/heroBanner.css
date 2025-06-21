@@ -55,7 +55,17 @@
 }
 
 }
+@media screen and (max-width: 992px) {
+  .banner-background {
+    height: 40dvh;
+    object-position: top center;
+  }
+ .banner-top {
+  margin-top: 70px!important;
+  margin-bottom : 40px;
+}
 
+}
 /* Optional overlay (if you want it) */
 .banner-overlay::after {
   content: "";
