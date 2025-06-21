@@ -12,7 +12,7 @@ function TrendingPage({trendingData}){
    const navigate  = useNavigate()
     return(
             
-                <Container className = "my-3 trending-container">
+                <Container className = "my-1 trending-container">
                   <h3>{trendingData[0].paragraph}</h3>
                 <h1 className ="mb-2" >{trendingData[0].heading}</h1>
               

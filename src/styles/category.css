@@ -35,7 +35,6 @@
     padding: 10px;
     justify-content:center;
     -webkit-overflow-scrolling: touch;
-    margin-bottom:50px;
   }
 @media(max-width:768px){
   .category-container{
