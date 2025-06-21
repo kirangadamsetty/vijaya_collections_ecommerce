@@ -81,12 +81,12 @@ font-weight:600!important;
   font-size:13px!important;
  }
  .cart-price{
-  font-size:15px!important;
+  font-size:17px!important;
  }.cart-rating{
   margin-bottom:0px!important;
  }
-  h3{
-    font-size:15px;
+  .cart-container h3{
+    font-size: 17px !important;
   }
   h1{
     font-size:20px!important;
@@ -129,11 +129,11 @@ li{
 }
 
 .cart-price{
-  font-size:20px!important;
+  font-size:20px;
 }
 
 
 .cart-container h3{
-  font-size:19px!important;
+  font-size:19px;
 }
 
