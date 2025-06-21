@@ -12,50 +12,57 @@ const CategoryContextProvider = ({children}) =>{
     const [productDescription, setProductDescrition] = useState([])
     const [productInformationPage, setProductInformationPage] = useState([])
     const [currentSort, setCurrentSort] = useState("")
+
+    //this function used for sliders to changes the products according to the user selection 
     const handleData = (page, filterCategory) =>{
          let result1 = filterCategory.category
+         console.log(currentSort)
        setCategoryItem(result1)
        setCurrentPage(page)
-        if(page === "men"){
+       let updatedData;
+       switch(page){
+        case "men":
+          updatedData = [...menspagesData]
+          break;
+          case "women":
+            updatedData = [...womenspagesData]
+            break;
+            case "kids":
+              updatedData =[...kidspagesData]
+              break;
+       }
+     let filteredData =  updatedData.filter((data)=>data.category === result1)
+       if(currentSort === "Low"){
+        filteredData.sort((data, data2) => data.price -data2.price )
+       }else if(currentSort === "High"){
+         filteredData.sort((data, data2)=> data2.price - data.price)
+       }else if(currentSort === "TopRating"){
+        filteredData.sort((data1, data2)=>data2.averageRating - data1.averageRating)
+       }
+      
 
-      
-       let updatedData = menspagesData.filter((data) =>data.category === result1)
-       if(currentSort === "Low"){
-        updatedData.sort((data, data2) => data.price -data2.price )
-       }else{
-         updatedData.sort((data, data2)=> data2.price - data.price)
+        switch(page){
+        case "men":
+           setMensData(filteredData)
+          break;
+          case "women":
+             setWomensData(filteredData)
+            break;
+            case "kids":
+              setKidsData(filteredData)
+              break;
        }
-       setMensData(updatedData)
-     
-        }
-         if(page === "women"){
-      
-       let updatedData = womenspagesData.filter((data) =>data.category === result1)
-       if(currentSort === "Low"){
-        updatedData.sort((data, data2) => data.price -data2.price )
-       }else if(currentSort === "High"){
-         updatedData.sort((data, data2)=> data2.price - data.price)
-       }
-       setWomensData(updatedData)
-        }
-       if(page === "kids"){
-       
-       let updatedData = kidspagesData.filter((data) =>data.category === result1)
-       if(currentSort === "Low"){
-        updatedData.map((data, data2) => data.price -data2.price )
-       }else if(currentSort === "High"){
-         updatedData.map((data, data2)=> data2.price - data.price)
-       }
-       setKidsData(updatedData)
-        }
+    
+        
     }
-
+//function will called when user removed the selected categoty like tshirts or hoddies in certain pages
    const handleCategoryItemMens = () =>{
   setCurrentSort(""); // reset sort
     setCategoryItem("")
    let updatedMensData = menspagesData
    setMensData(updatedMensData)
    }
+
    const handleCategoryItemWomens = () =>{
     setCurrentSort("");
     setCategoryItem("")   
@@ -71,6 +78,7 @@ const CategoryContextProvider = ({children}) =>{
    }
 
    const handlePrice = (data, page) =>{
+    // here we are sorting data according to price by taking page and sort price
       setCurrentSort(data)
     if(data === "Low"){
       
@@ -125,12 +133,48 @@ updatedList.sort((item, item2) => item.price - item2.price)
     }
     } 
 }
+
+const handleRating = (page) =>{
+  //setCurrentSort help us in handleData() when user in slider change the category it will get filtered according to the currentsort
+  setCurrentSort("TopRating")
+  let updatedData;
+  switch(page){
+        case "men":
+          updatedData = [...mensData]
+          break;
+          case "women":
+            updatedData = [...womensData]
+            break;
+            case "kids":
+              updatedData =[...kidsData]
+              break;
+       }
+  
+  
+       updatedData.sort((data1, data2)=>data1.averageRating - data2.averageRating)
+      updatedData.reverse()
+  
+  setKidsData(updatedData)
+  switch(page){
+        case "men":
+          setMensData(updatedData)
+          break;
+          case "women":
+           setWomensData(updatedData)
+            break;
+            case "kids":
+            setKidsData(updatedData)
+              break;
+       }
+}
+
 const handlepageshift  = ()=>{
+  //while user shifting the page selected category will become  empty
 setCategoryItem("")
 }
 
     return(
-        <CategoryFilterContext.Provider value  = {{productInformationPage, setProductInformationPage,productDescription,setProductDescrition, handlePrice,kidsData,womensData, currentPage, handleCategoryItemKids,handleCategoryItemMens,handleCategoryItemWomens,  categoryItem,handleData , mensData,handlepageshift}}>
+        <CategoryFilterContext.Provider value  = {{handleRating,productInformationPage, setProductInformationPage,productDescription,setProductDescrition, handlePrice,kidsData,womensData, currentPage, handleCategoryItemKids,handleCategoryItemMens,handleCategoryItemWomens,  categoryItem,handleData , mensData,handlepageshift}}>
             {children}
         </CategoryFilterContext.Provider>
     )

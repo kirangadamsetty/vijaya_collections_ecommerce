@@ -9,10 +9,10 @@ import Row from "react-bootstrap/Row"
 import Button from "react-bootstrap/Button"
 import Col from "react-bootstrap/Col"
 function SearchInfoPage(){
-    const {products}  = useContext(SearchContext)
+    const {searchResult}  = useContext(SearchContext)
     return(
         <div style = {{marginTop:"150px", marginBottom : "60px"}}>
-       {products.length !== 0 && (
+       {searchResult.length === 0 && (
   <Col md={12} className="d-flex justify-content-center align-items-center" style={{ height: "80dvh" }}>
     <div style={{ width: "350px", textAlign: "center" }}>
       <img src={searchempty} style={{ width: "150px", marginBottom: "20px" }} alt="searchempty" />
@@ -34,12 +34,12 @@ function SearchInfoPage(){
     </div>
   </Col>
 )}
-{ products.length===0 && <Container>
+{ searchResult.length!==0 && <Container>
  <h3>Style meets strength.</h3>
    <h1>Recommended for you.</h1>
 <Row>
    
-       {products.map((data)=>{
+       {searchResult.map((data)=>{
 
         return <Col xs={6} sm={6} md={3} lg={3} key={data.id} className="my-3">
          <ProductCard data  ={data}/>

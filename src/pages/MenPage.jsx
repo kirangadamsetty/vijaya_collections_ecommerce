@@ -12,15 +12,21 @@ import HeroBanner from "../components/HeroBanner.jsx"
 
 
 function MenPage(){
-   const {mensData, categoryItem, handleCategoryItemMens, handlePrice} = useContext(CategoryFilterContext)
+   const {mensData, categoryItem,handleRating, handleCategoryItemMens, handlePrice} = useContext(CategoryFilterContext)
    const [sortTitle, setSortTitle] = useState("")
-  const handleLow = () =>{
+  //applied when sort with low to high
+   const handleLow = () =>{
     handlePrice("Low", "men")
     setSortTitle("Price : Low to High")
   }
+  //applied when sort with high to low
   const handleHigh = () =>{
     handlePrice("High", "men")
     setSortTitle("Price : High to Low")
+  }
+  const handleProductsRating = () =>{
+     handleRating("men")
+     setSortTitle("Top Rated")
   }
     return(
         <div>
@@ -45,8 +51,10 @@ function MenPage(){
 >
   <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
   <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>
+  <Dropdown.Item onClick = {handleProductsRating}>Top Rated</Dropdown.Item>
 </DropdownButton>
         </div>
+        {/**when user selected category like tshirt hoddies category item will change and when we pressed x mark onClick function executes */}
       {categoryItem && <h3 className  = "bg-body-secondary" style = {{maxWidth: "fit-content",padding:"8px 15px", borderRadius:"40px", fontSize:"20px", cursor:"pointer"}}>{categoryItem} <span onClick = {handleCategoryItemMens} className = "px-2">x</span></h3>}
     
             <Row> 

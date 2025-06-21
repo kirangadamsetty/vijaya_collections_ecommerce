@@ -2,10 +2,12 @@ import { menspagesData } from "./mensPageMockData.jsx"
 import { womenspagesData } from "./womensPageMockData.jsx"
 import { kidspagesData } from "./kidsPageMockData.jsx"
 import {SearchContext} from "./SearchContext.jsx"
-import {useState} from "react"
+import {useState, useEffect} from "react"
 function SearchContextProvider({children}){
     const products = [...menspagesData, ...womenspagesData, ...kidspagesData]
     const [searchValue, setSearchValue] = useState("")
+    const [searchResult, setSearchResult] = useState([])
+    console.log(searchResult)
     const searchSuggestions = [
   // 🔹 Category-Based Keywords
   "Casual Shirts",
@@ -68,10 +70,25 @@ function SearchContextProvider({children}){
   "Linen Shirts",
   "Silk Saree",
   "Denim Jeans",
-];
+]; 
+   useEffect(()=>{
+     let timer;
+     timer = setTimeout(()=>{
+        let filteredData =  products.filter((item)=>{
+            return(
+                [item.name, item.category, item.description].join(" ").toLowerCase().includes(searchValue.toLowerCase())
+            )
+          })
+          setSearchResult(filteredData)
+     }, 500)
+     return()=>{
+         clearTimeout(timer)
+     }
+
+   },[searchValue])
 
     return(
-        <SearchContext.Provider value = {{products, searchSuggestions, searchValue, setSearchValue}}>
+        <SearchContext.Provider value = {{searchResult,products, searchSuggestions, searchValue, setSearchValue}}>
             {children}
         </SearchContext.Provider>
     )

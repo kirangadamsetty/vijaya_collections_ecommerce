@@ -65,7 +65,7 @@ function ProductInfoPage(){
                         <h3 style ={{fontSize:"16px", fontWeight:"500"}}>SELECT SIZE</h3>
                         <ButtonGroup aria-label="Basic example" className = "mb-3">
                             {data.sizes.map((siz) =>{
-                                return <Button key = {siz} className = {size === siz ? "custom-button2": "custom-button"} onClick = {()=>{setSize(siz)}} variant="secondary">{siz}</Button>
+                                return <Button key = {siz} className = {`py-1 ${size === siz ? "custom-button2": "custom-button"}`}  onClick = {()=>{setSize(siz)}} variant="secondary">{siz}</Button>
                             })}
                         </ButtonGroup>
                         <p>{data.detailedDescription}</p>

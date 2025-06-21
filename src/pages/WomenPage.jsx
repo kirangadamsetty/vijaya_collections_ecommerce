@@ -11,7 +11,7 @@ import {CategoryFilterContext} from "../utils/CategoryFilterContext"
 import HeroBanner from "../components/HeroBanner.jsx"
 
 function WomenPage(){
-   const {womensData, categoryItem, handleCategoryItemWomens, handlePrice} = useContext(CategoryFilterContext)
+   const {womensData, categoryItem,handleRating, handleCategoryItemWomens, handlePrice} = useContext(CategoryFilterContext)
    const [sortTitle, setSortTitle] = useState("")
   const handleLow = () =>{
     handlePrice("Low","women")
@@ -21,7 +21,10 @@ function WomenPage(){
     handlePrice("High", "women")
     setSortTitle("Price : High to Low")
   }
-
+const handleProductsRating = () =>{
+     handleRating("women")
+     setSortTitle("Top Rated")
+  }
     return(
         <>
          <HeroBanner bannerData = {homebanner}/>
@@ -45,6 +48,7 @@ function WomenPage(){
 >
   <Dropdown.Item onClick={handleLow}>Price : Low to High</Dropdown.Item>
   <Dropdown.Item onClick={handleHigh}>Price : High to Low</Dropdown.Item>
+   <Dropdown.Item onClick = {handleProductsRating}>Top Rated</Dropdown.Item>
 </DropdownButton>
         </div>
       {categoryItem && <h3 className  = "bg-body-secondary" style = {{maxWidth: "fit-content",padding:"8px 15px", borderRadius:"40px", fontSize:"20px", cursor:"pointer"}}>{categoryItem} <span onClick = {handleCategoryItemWomens} className = "px-2">x</span></h3>}

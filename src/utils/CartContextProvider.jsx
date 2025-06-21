@@ -68,7 +68,6 @@ updatedData[origin].generatedId = generatedId
   setCartData(updatedData)
  
 }
-console.log(cartData)
     const handleCartCancel = (data, size) =>{
         let updatedData = [...cartData]
         if(size){

@@ -33,7 +33,7 @@
     overflow-x: auto;
     gap: 60px;
     padding: 10px;
-    justify-content:center;
+    justify-content:space-evenly;
     -webkit-overflow-scrolling: touch;
   }
 @media(max-width:768px){

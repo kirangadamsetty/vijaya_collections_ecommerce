@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from "../assets/logo.png";
 import CartIcon from "../assets/cart-icon.png"
+import {SearchContext} from "../utils/SearchContext"
 import "../styles/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useRef } from 'react'; // Import useRef for Navbar collapse ref
@@ -18,9 +19,8 @@ function Header() {
   const { cartData } = useContext(CartContext);
   const { handlepageshift } = useContext(CategoryFilterContext);
   const { wishList } = useContext(WishListContext);
-
+  const {setSearchValue} = useContext(SearchContext)
   const navbarRef = useRef(); // Ref for the Navbar.Collapse component
-
   // Function to close the navbar dropdown
   const closeNavbar = () => {
     if (navbarRef.current && navbarRef.current.classList.contains('show')) {
@@ -82,6 +82,7 @@ function Header() {
               placeholder="Search for products..."
               className="me-2"
               aria-label="Search"
+              onChange = {(e)=>setSearchValue(e.target.value)}
               style={{ outline: 'none', boxShadow: 'none' }}
             />
             <Button variant="outline-success" className="custom-button">Search</Button>
