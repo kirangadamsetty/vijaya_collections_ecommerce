@@ -99,13 +99,13 @@ signOut(auth).then(() => {
                   <div>
                     <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.name}</h3>
                     <p className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.description}</p>
-                     <div className = "d-flex mb-1">
+                     <div className = "d-flex mb-1 cart-rating">
                                                 <p style ={{border:"1px solid lightgray", padding:"3px 5px"}}>{li.averageRating} <img style = {{marginLeft : "3px", marginBottom:"4px"}} src = {starIcon} width = "20"/></p>
                                                 <p style ={{border:"1px solid lightgray", padding:"3px 5px"}}>{li.totalRatings}+ Ratings</p>
                                             </div>
-                     <span onClick = {()=>handleProductSize(li)}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
-                      <span onClick={()=>handleProductQuantity(li)} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
-                              <h5 style = {{fontSize:"19px"}} className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+                     <span onClick = {()=>handleProductSize(li)}  className = "me-3 bg-body-secondary cart-size" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
+                      <span onClick={()=>handleProductQuantity(li)} className = "bg-body-secondary cart-size" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
+                              <h5 style = {{fontSize:"19px"}} className = "mt-3 cart-price"> ₹{li.price} <span style = {{fontSize:"14px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
 
                               
 
