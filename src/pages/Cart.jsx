@@ -54,7 +54,7 @@ signOut(auth).then(() => {
 });
     }
     return(
-        <div style = {{marginTop:"120px"}}>
+        <div style = {{marginTop:"120px"}} className = "cart-container">
           <Container className = "my-4">
             <Row>
            {userData && <Col className = "d-flex flex-column align-items-end mb-4 mb-md-2">
@@ -105,7 +105,7 @@ signOut(auth).then(() => {
                                             </div>
                      <span onClick = {()=>handleProductSize(li)}  className = "me-3 bg-body-secondary cart-size" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
                       <span onClick={()=>handleProductQuantity(li)} className = "bg-body-secondary cart-size" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
-                              <h5 style = {{fontSize:"19px"}} className = "mt-3 cart-price"> ₹{li.price} <span style = {{fontSize:"14px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+                              <h5 style = {{fontSize:"16px"}} className = "mt-3 cart-price"> ₹{li.price} <span style = {{fontSize:"14px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
 
                               
 

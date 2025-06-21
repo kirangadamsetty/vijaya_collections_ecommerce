@@ -29,7 +29,7 @@ function Header() {
   };
 
   return (
-    <Navbar expand="lg" className="bg-body-secondary shadow-md fixed-top">
+    <Navbar expand="lg" className="bg-body-secondary header shadow-md fixed-top">
       <Container  className="px-1 px-md-5">
 
         <Navbar.Brand as={Link} to="/">
