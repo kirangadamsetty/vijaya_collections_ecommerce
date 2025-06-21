@@ -13,14 +13,17 @@ import CartContextProvider from "./utils/CartContextProvider"
 import ProductInfoPage from "./components/ProductInfoPage.jsx"
 import WishListContextProvider from "./utils/WishListContextProvider.jsx"
 import WishListPage from './pages/WishListPage.jsx';
+import SearchInfoPage from "./pages/SearchInfoPage.jsx"
 import { ToastContainer } from 'react-toastify';
 import ScrollToTop from "./components/ScrollToTop"
+import SearchContextProvider from "./utils/SearchContextProvider.jsx"
 import AuthContextProvider from './utils/AuthContextProvider.jsx';
 function App(){
  
   return(
       <div>
       <AuthContextProvider>
+      <SearchContextProvider>
       <CartContextProvider>
       <WishListContextProvider>
       <CategoryContextProvider>
@@ -32,6 +35,7 @@ function App(){
       </CategoryContextProvider>
       </WishListContextProvider>
       </CartContextProvider>
+      </SearchContextProvider>
       </AuthContextProvider>
       </div>
   )
@@ -71,6 +75,10 @@ export const appRouter = createBrowserRouter([
         path : "/cart",
         element : <Cart/>,
         errorElement : <Error/>
+      },{
+        path : "/search",
+        element : <SearchInfoPage/>,
+        error : <Error/>
       }
     ]
   }

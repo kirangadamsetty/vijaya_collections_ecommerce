@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 import {useContext} from "react"
 import {useNavigate} from "react-router-dom"
+import Faq from "../components/Faq.jsx"
 import {WishListContext} from "../utils/WishListContext"
 import WishListCard from "../components/WishListCard.jsx"
 function WishListPage(){
@@ -50,8 +51,9 @@ function WishListPage(){
             </Row>
                         
                
-                
+                 <Faq/> 
         </Container>
+      
         </div>
     )
 }

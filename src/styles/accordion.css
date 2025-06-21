@@ -28,7 +28,7 @@
   word-break: break-word;
   overflow-wrap: anywhere; 
   white-space: normal; 
-
+}
 @media (max-width: 575px) {
   .accordion-header {
     flex-direction: column;
@@ -38,3 +38,9 @@
     margin-bottom: 5px; 
   }
 }
+
+
+
+
+
+

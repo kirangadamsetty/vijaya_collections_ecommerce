@@ -13,7 +13,9 @@ import heart from "../assets/heart.png"
 import {CartContext} from "../utils/CartContext"
     import { signOut } from "firebase/auth";
   import { auth } from "../../firebaseConfig"
+  import starIcon from "../assets/starIcon.png"
 import emptyBag from "../assets/emptyBag.webp"
+import Faq from "../components/Faq.jsx"
 import Authorization from "../components/Authorization"
 import { CategoryFilterContext } from "../utils/CategoryFilterContext"
 function Cart(){
@@ -30,7 +32,6 @@ function Cart(){
     const handleShow = () => setShow(true);
      const handleClose = () => setShow(false); 
      const data = cartData
-console.log(userData)
     const handleProductQuantity = (li) =>{
       handleShow(); 
       setQuantityItem(li);
@@ -92,15 +93,21 @@ signOut(auth).then(() => {
               return        <div className = "d-flex my-2" style = {{border:"1px solid #0096A6" ,borderRadius:"8px", padding:"15px 18px",gap:"20px" , position:"relative"}}>
 
                
-                  <div  style = {{width:"100px", height:"150px", overflow:"hidden",cursor:"pointer"}}  onClick = {()=>{setProductInformationPage(li);navigate("/productInfo");}}>
+                  <div  style = {{width:"100px", height:"180px", overflow:"hidden",cursor:"pointer"}}  onClick = {()=>{setProductInformationPage(li);navigate("/productInfo");}}>
                     <img src = {li.image} style = {{objectFit:"cover", width:"100%", height:"100%"}} alt = "cart-image"/>
                   </div>
                   <div>
                     <h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.name}</h3>
                     <p className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{li.description}</p>
+                     <div className = "d-flex mb-1">
+                                                <p style ={{border:"1px solid lightgray", padding:"3px 5px"}}>{li.averageRating} <img style = {{marginLeft : "3px", marginBottom:"4px"}} src = {starIcon} width = "20"/></p>
+                                                <p style ={{border:"1px solid lightgray", padding:"3px 5px"}}>{li.totalRatings}+ Ratings</p>
+                                            </div>
                      <span onClick = {()=>handleProductSize(li)}  className = "me-3 bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px" ,fontWeight:"bold" , cursor:"pointer"}}>Size: {li.selectedSize || (li.sizes && li.sizes[0]) || "N/A"}</span>
                       <span onClick={()=>handleProductQuantity(li)} className = "bg-body-secondary" style ={{padding:"3px 5px", borderRadius:"5px", fontWeight:"bold", cursor:"pointer"}} >Qty : {li.quantity}</span> 
-                              <h5 className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+                              <h5 style = {{fontSize:"19px"}} className = "mt-3"> ₹{li.price} <span style = {{fontSize:"15px"}} className = "offer-price">MRP<span className = "text-decoration-line-through offer-price"> ₹{li.price+350}</span><span style = {{fontSize:"15px"}} className = "mx-2 offer-price">({Math.ceil((350 / (li.price + 350)) * 100)}% OFF)</span> </span></h5>
+
+                              
 
                         <p onClick ={()=>handleCartCancel(li)}  className = "shadow-lg text-dark d-flex justify-content-center align-items-center" style = {{top:"0",right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", width:"30px",cursor:"pointer", height:"30px", margin:"8px 15px", borderRadius:"100%"}}><img src = {closeIcon} alt = "closeIcon" width = "20"/></p>
                   
@@ -157,8 +164,9 @@ signOut(auth).then(() => {
     
 
     
-      
+          <Faq/>
           </Container>
+       
         </div>
     )
 }

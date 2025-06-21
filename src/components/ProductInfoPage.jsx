@@ -29,7 +29,7 @@ function ProductInfoPage(){
     }, [])
     const handleAddToCart = ( data) =>{
         if(size || sizeLength === 1 ){
-            handleCartList(data, size)
+            handleCartList(data, sizeLength ===1 ? "OneSize": size)
            
             notifyAddedBag()
             setSize("")
@@ -83,9 +83,9 @@ function ProductInfoPage(){
 
                         <h3 style ={{fontSize:"16px", fontWeight:"600"}} className = "mt-4 mb-2">CUSTOMER REVIEWS</h3>
 
-                        <Accordion defaultActiveKey="0" className="w-100">
+                        <Accordion defaultActiveKey="0" className="w-100" style = {{border:"1px solid #0096A6", borderRadius:"5px"}}>
                             {data.customerReviews.map((rev) => (
-                                <Accordion.Item eventKey={rev.id} key={rev.id}>
+                                <Accordion.Item eventKey={rev.id} key={rev.id} className="custom-accordion-item">
                                     <Accordion.Header>
                                         <span
                                             style={{

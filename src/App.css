@@ -115,7 +115,11 @@ font-weight:600!important;
 li{
   cursor:pointer
 }
-
+.custom-accordion-item .accordion-button {
+  background-color:#e9ecef !important;
+  font-weight:500;
+  font-size:15px;
+}
 
 
 

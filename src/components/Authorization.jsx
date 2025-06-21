@@ -1,10 +1,7 @@
 import { useContext, useRef, useState } from "react";
 import "../styles/form.css"
 import { auth } from "../../firebaseConfig";
-import Container from "react-bootstrap/Container"
-import Row from "react-bootstrap/Row"
 import {AuthContext} from "../utils/AuthContext.jsx"
-import Col from "react-bootstrap/Col"
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword } from "firebase/auth";
 import  Button from "react-bootstrap/Button"; // Adjust if you're using a different UI lib
 import {  toast } from 'react-toastify';
@@ -84,9 +81,7 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
 
 
   return (
-    <Container>
-    <Row >
-    <Col className  = "m-auto" >
+    
     <form onSubmit={handleSubmitForm} className = "form-container bg-body-secondary">
    <h3 className = "my-3">{newUser ? "Signup Form" : "SignIn Form"}</h3>
      {newUser && <input ref={name} type="text" placeholder="Full Name" />}
@@ -96,9 +91,7 @@ signInWithEmailAndPassword(auth, emailValue, passwordValue)
       <Button  className="custom-button mb-1" type="submit">Submit</Button>
        <p onClick = {()=>{setNewUser(!newUser);setErrorMessage("")}} className = "form-para">{newUser ? "Existing user?" : "New User?"} <strong >{ newUser ? "SignIn" : "SignUp"}</strong></p>
     </form>
-    </Col>
-    </Row>
-    </Container>
+  
   );
 }
 
