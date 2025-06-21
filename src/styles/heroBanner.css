@@ -59,7 +59,7 @@
 }
 @media screen and (max-width: 600px) {
   .banner-background {
-    height: 30dvh;
+    height: 35dvh;
     object-position: top center;
   }
  .banner-top {
