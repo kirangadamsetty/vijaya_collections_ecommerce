@@ -44,9 +44,11 @@
 }
 
 /* Responsive height for mobile */
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 992px) {
   .banner-background {
-    height: 30dvh;
+    height: 40dvh;
     object-position: top center;
   }
  .banner-top {
@@ -55,9 +57,9 @@
 }
 
 }
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 600px) {
   .banner-background {
-    height: 40dvh;
+    height: 30dvh;
     object-position: top center;
   }
  .banner-top {
