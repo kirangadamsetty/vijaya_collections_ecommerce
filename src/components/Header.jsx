@@ -10,7 +10,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useRef } from 'react'; // Import useRef for Navbar collapse ref
 import { CategoryFilterContext } from '../utils/CategoryFilterContext';
 import wishListIcon from "../assets/wishlist.png"
-import user from "../assets/user.png"
 import {WishListContext} from "../utils/WishListContext"
 import {CartContext} from "../utils/CartContext"
 

@@ -53,7 +53,7 @@ function KidPage(){
                          
                     {kidsData.map((data)=>{
 
-                        return  <Col xs={6} sm={6} md={3} lg={3} key = {data.id} className = "my-3">
+                        return  <Col xs={6} sm={6} md={4} lg={4} xl={3} key = {data.id} className = "my-3">
                          <ProductCard data = {data}/>
                          </Col>
                     })}

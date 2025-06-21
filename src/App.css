@@ -73,9 +73,9 @@ font-weight:600!important;
   color: white; /* Make sure text is white */
   
 }
-@media(max-width:768px){
+@media(max-width:992px){
   .product-image{
-    height:200px!important;
+    height:230px!important;
   }
  .cart-size{
   font-size:13px!important;
