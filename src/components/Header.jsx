@@ -101,7 +101,7 @@ function Header() {
       >
       {showSearchResults &&
         searchQuery.slice(0,5).map((data)=>{
-            return <p onClick = {()=>{ navigate("/search");setSearchValue(data);showQueryResultProducts();setShowSearchResult(!showSearchResults)}} style={{ margin: 0, padding: "8px" ,cursor:"pointer"}}>🔍 {data}</p>
+            return <p  onClick = {()=>{ navigate("/search");setSearchValue(data);showQueryResultProducts();setShowSearchResult(!showSearchResults);closeNavbar();}} style={{ margin: 0, padding: "8px" ,cursor:"pointer"}}>🔍 {data}</p>
         })
       }
         
@@ -114,6 +114,7 @@ function Header() {
         navigate("/search");
        
         showQueryResultProducts();
+        closeNavbar();
       }}
       variant="outline-success"
       className="custom-button"
