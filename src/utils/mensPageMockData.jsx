@@ -43,6 +43,7 @@ export const menspagesData = [
       { id: 2, user: "Priya R.", rating: 4, review: "Good quality for the price. Fits well, but the color is slightly darker than expected." },
       { id: 3, user: "Rahul K.", rating: 4, review: "Decent shirt, fabric is soft. Would recommend sizing up if you prefer a looser fit." },
     ],
+    search_keywords: ["mufti", "men's shirt", "men shirt", "casual shirt", "printed shirt", "blue shirt", "cotton shirt", "half sleeve shirt", "stylish shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1012,
@@ -61,6 +62,7 @@ export const menspagesData = [
       { id: 2, user: "Divya N.", rating: 4, review: "Got this for my husband, he likes it. Good for casual outings." },
       { id: 3, user: "Kiran P.", rating: 4, review: "Decent shirt, fabric is soft. Would recommend sizing up if you prefer a looser fit." },
     ],
+    search_keywords: ["roadster", "men's shirt", "men shirt", "casual shirt", "checked shirt", "cotton shirt", "regular fit shirt", "everyday shirt", "plaid shirt", "half sleeve shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1013,
@@ -79,6 +81,7 @@ export const menspagesData = [
       { id: 2, user: "Anjali M.", rating: 5, review: "Bought this for my brother, he really likes the slim fit." },
       { id: 3, user: "Harish S.", rating: 4, review: "Stylish shirt, but it's a true slim fit, so order accordingly." },
     ],
+    search_keywords: ["highlander", "men's shirt", "men shirt", "casual shirt", "slim fit shirt", "striped shirt", "cotton linen shirt", "smart casual", "modern shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1014,
@@ -97,6 +100,7 @@ export const menspagesData = [
       { id: 2, user: "Shweta L.", rating: 5, review: "My husband wears this all the time. Very classic." },
       { id: 3, user: "Prakash D.", rating: 4, review: "Good value, the denim is soft after a few washes." },
     ],
+    search_keywords: ["us polo assn", "us polo", "men's shirt", "men shirt", "casual shirt", "denim shirt", "classic fit shirt", "durable shirt", "versatile shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1015,
@@ -115,7 +119,10 @@ export const menspagesData = [
       { id: 2, user: "Meera C.", rating: 3, review: "Fabric is a bit thin, but good for summer." },
       { id: 3, user: "Gaurav H.", rating: 4, review: "Good for the price, fits well." },
     ],
+    search_keywords: ["dennis lingo", "men's shirt", "men shirt", "casual shirt", "mandarin collar shirt", "solid shirt", "trendy shirt", "cotton shirt", "chinese collar shirt", "menswear", "top", "shirts"],
   },
+
+
 
   // Formal Shirts
   {
@@ -136,6 +143,7 @@ export const menspagesData = [
       { id: 3, user: "Ashok M.", rating: 4, review: "Good formal shirt, but requires regular ironing." },
       { id: 4, user: "Pooja V.", rating: 4, review: "Classic white shirt, good for office wear." },
     ],
+    search_keywords: ["raymond", "men's shirt", "men shirt", "formal shirt", "white shirt", "slim fit shirt", "professional shirt", "premium fabric shirt", "office wear", "menswear", "top", "shirts"],
   },
   {
     id: 1017,
@@ -154,6 +162,7 @@ export const menspagesData = [
       { id: 2, user: "Anita D.", rating: 5, review: "Perfect for office, my husband wears it often." },
       { id: 3, user: "Vivek G.", rating: 4, review: "Good shirt, holds up well after washes." },
     ],
+    search_keywords: ["van heusen", "men's shirt", "men shirt", "formal shirt", "sky blue shirt", "cotton blend shirt", "wrinkle resistant shirt", "office shirt", "semi-formal shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1018,
@@ -172,6 +181,7 @@ export const menspagesData = [
       { id: 2, user: "Nisha R.", rating: 5, review: "Arrow never disappoints. This shirt is top-notch." },
       { id: 3, user: "Siddharth B.", rating: 4, review: "A bit pricey but worth it for the quality." },
     ],
+    search_keywords: ["arrow", "men's shirt", "men shirt", "formal shirt", "striped shirt", "regular fit shirt", "business shirt", "durable shirt", "sophisticated shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1019,
@@ -190,6 +200,7 @@ export const menspagesData = [
       { id: 2, user: "Priyanka A.", rating: 3, review: "Decent, but the fabric feels a little thin." },
       { id: 3, user: "Rohit D.", rating: 4, review: "Satisfied with the purchase, good for daily use." },
     ],
+    search_keywords: ["peter england", "men's shirt", "men shirt", "formal shirt", "plain shirt", "sky blue shirt", "classic shirt", "wardrobe essential", "daily office wear", "menswear", "top", "shirts"],
   },
   {
     id: 1020,
@@ -208,7 +219,10 @@ export const menspagesData = [
       { id: 2, user: "Neha C.", rating: 4, review: "Great shirt for formal occasions. Looks premium." },
       { id: 3, user: 3, user: "Ajay G.", rating: 4, review: "Good quality, though the slim fit is quite snug." },
     ],
+    search_keywords: ["louis philippe", "men's shirt", "men shirt", "formal shirt", "textured shirt", "slim fit shirt", "sophisticated shirt", "formal attire", "premium shirt", "menswear", "top", "shirts"],
   },
+
+
 
   // Traditional Wear
   {
@@ -228,6 +242,7 @@ export const menspagesData = [
       { id: 2, user: "Meena K.", rating: 5, review: "Bought for my son's wedding, he looked fantastic." },
       { id: 3, user: "Preeti D.", rating: 4, review: "A bit heavy due to the silk, but very elegant." },
     ],
+    search_keywords: ["manyavar", "men's traditional wear", "mens ethnic wear", "kurta", "kurta for men", "embroidered kurta", "silk kurta", "wedding wear", "festive wear", "indian wear", "grand look", "traditional clothing"],
   },
   {
     id: 1022,
@@ -246,6 +261,7 @@ export const menspagesData = [
       { id: 2, user: "Alok V.", rating: 4, review: "Good for pujas and small family gatherings." },
       { id: 3, user: "Deepak G.", rating: 3, review: "Print is nice, but the fabric could be softer." },
     ],
+    search_keywords: ["fabindia", "men's traditional wear", "mens ethnic wear", "cotton ethnic wear", "printed ethnic wear", "casual festive wear", "cultural wear", "traditional prints", "kurta", "menswear", "indian wear", "traditional clothing"],
   },
   {
     id: 1023,
@@ -264,6 +280,7 @@ export const menspagesData = [
       { id: 2, user: "Sneha M.", rating: 5, review: "The set is complete and looks very good." },
       { id: 3, user: "Aditya R.", rating: 4, review: "Good for the price, the fit is decent." },
     ],
+    search_keywords: ["sojanya", "men's traditional wear", "mens ethnic wear", "kurta set", "designer kurta", "festive kurta", "celebration wear", "matching bottoms", "indian wear", "traditional clothing"],
   },
   {
     id: 1024,
@@ -282,6 +299,7 @@ export const menspagesData = [
       { id: 2, user: "Geeta P.", rating: 4, review: "Bought for a family function, happy with the purchase." },
       { id: 3, user: "Kunal H.", rating: 3, review: "Good, but I wish there were more color options." },
     ],
+    search_keywords: ["indus route", "men's traditional wear", "mens ethnic wear", "pathani suit", "solid color suit", "regal look", "traditional look", "kurta pajama", "menswear", "indian wear", "traditional clothing"],
   },
   {
     id: 1025,
@@ -300,7 +318,9 @@ export const menspagesData = [
       { id: 2, user: "Shalini K.", rating: 4, review: "Nice for daily wear, the color is vibrant." },
       { id: 3, user: "Pranav S.", rating: 4, review: "Good traditional option, fits well." },
     ],
+    search_keywords: ["biba men", "men's traditional wear", "mens ethnic wear", "long kurta", "cotton kurta", "everyday ethnic wear", "festive kurta", "classic design", "menswear", "indian wear", "traditional clothing"],
   },
+
 
   // Hoodies
   {
@@ -320,6 +340,7 @@ export const menspagesData = [
       { id: 2, user: "Disha P.", rating: 4, review: "Great for chilly evenings. The fleece is very soft." },
       { id: 3, user: "Rohit M.", rating: 4, review: "Good hoodie for the price, but the color is a bit muted." },
     ],
+    search_keywords: ["h&m", "men's hoodie", "mens hoodie", "oversized hoodie", "fleece hoodie", "olive hoodie", "cozy hoodie", "relaxed fit", "sweatshirt", "hooded sweatshirt", "menswear", "jacket", "winter wear", "outerwear"],
   },
   {
     id: 1027,
@@ -338,6 +359,7 @@ export const menspagesData = [
       { id: 2, user: "Kavya N.", rating: 4, review: "My brother loves this hoodie. Very practical." },
       { id: 3, user: "Pratik D.", rating: 4, review: "Comfortable and durable. Puma never disappoints." },
     ],
+    search_keywords: ["puma", "men's hoodie", "mens hoodie", "zip-up hoodie", "training hoodie", "athletic hoodie", "casual hoodie", "sports hoodie", "sweatshirt", "hooded sweatshirt", "menswear", "jacket", "gym wear", "outerwear"],
   },
   {
     id: 1028,
@@ -356,6 +378,7 @@ export const menspagesData = [
       { id: 2, user: "Priya V.", rating: 5, review: "Good quality, the logo is well printed." },
       { id: 3, user: "Karan S.", rating: 4, review: "A bit expensive, but the brand value is there." },
     ],
+    search_keywords: ["adidas", "men's hoodie", "mens hoodie", "logo hoodie", "printed hoodie", "athletic wear", "casual hoodie", "iconic logo", "sweatshirt", "hooded sweatshirt", "menswear", "jacket", "sports wear", "outerwear"],
   },
   {
     id: 1029,
@@ -374,6 +397,7 @@ export const menspagesData = [
       { id: 2, user: "Shreya T.", rating: 5, review: "Bought for my son, he wears it everywhere. Excellent quality." },
       { id: 3, user: "Vikas M.", rating: 4, review: "Worth the price, very durable and warm." },
     ],
+    search_keywords: ["nike", "men's hoodie", "mens hoodie", "sportswear hoodie", "fleece hoodie", "club fleece", "comfortable hoodie", "sporty look", "casual hoodie", "sweatshirt", "hooded sweatshirt", "menswear", "jacket", "outerwear"],
   },
   {
     id: 1030,
@@ -392,7 +416,10 @@ export const menspagesData = [
       { id: 2, user: "Divya C.", rating: 4, review: "Good fit and comfortable, but a bit pricey." },
       { id: 3, user: "Arjun P.", rating: 5, review: "Love Superdry products. This hoodie lives up to expectations." },
     ],
+    search_keywords: ["superdry", "men's hoodie", "mens hoodie", "vintage hoodie", "graphic hoodie", "black hoodie", "trendy hoodie", "distinct style", "sweatshirt", "hooded sweatshirt", "menswear", "jacket", "outerwear"],
   },
+
+
 
   // T-Shirts
   {
@@ -412,6 +439,7 @@ export const menspagesData = [
       { id: 2, user: "Priya L.", rating: 3, review: "The fit is good, but the fabric is a bit thin." },
       { id: 3, user: "Rahul G.", rating: 4, review: "Great value for money, stylish design." },
     ],
+    search_keywords: ["jack & jones", "men's t-shirt", "mens tee", "tshirt", "graphic tee", "slim fit tee", "cotton tee", "casual t-shirt", "printed t-shirt", "half sleeve t-shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1032,
@@ -430,6 +458,7 @@ export const menspagesData = [
       { id: 2, user: "Meera D.", rating: 4, review: "Good basic tee, washes well." },
       { id: 3, user: "Sanjay N.", rating: 5, review: "Levi's quality is always good. Happy with the purchase." },
     ],
+    search_keywords: ["levi's", "men's t-shirt", "mens tee", "tshirt", "red t-shirt", "crew neck tee", "classic t-shirt", "cotton t-shirt", "casual t-shirt", "wardrobe essential", "half sleeve t-shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1033,
@@ -448,6 +477,7 @@ export const menspagesData = [
       { id: 2, user: "Neha P.", rating: 3, review: "Fabric is a bit thin, but good for summer." },
       { id: 3, user: "Gaurav H.", rating: 4, review: "Unique designs, great for a relaxed look." },
     ],
+    search_keywords: ["bewakoof", "men's t-shirt", "mens tee", "tshirt", "printed tee", "half sleeve tee", "quirky t-shirt", "funky t-shirt", "casual t-shirt", "unique style", "menswear", "top", "shirts"],
   },
   {
     id: 1034,
@@ -466,6 +496,7 @@ export const menspagesData = [
       { id: 2, user: "Sneha B.", rating: 4, review: "A bit expensive for a plain white tee, but it's Zara quality." },
       { id: 3, user: "Punit C.", rating: 4, review: "Comfortable and versatile. A must-have." },
     ],
+    search_keywords: ["zara", "men's t-shirt", "mens tee", "tshirt", "white t-shirt", "minimalist tee", "basic tee", "wardrobe staple", "clean look", "casual t-shirt", "half sleeve t-shirt", "menswear", "top", "shirts"],
   },
   {
     id: 1035,
@@ -484,5 +515,6 @@ export const menspagesData = [
       { id: 2, user: "Pooja G.", rating: 4, review: "Good sports tee, the fit is snug but comfortable." },
       { id: 3, user: "Akash M.", rating: 4, review: "Effective moisture-wicking. Happy with the performance." },
     ],
+    search_keywords: ["hrx", "men's t-shirt", "mens tee", "tshirt", "athletic tee", "sports t-shirt", "moisture-wicking tee", "workout shirt", "gym wear", "running shirt", "performance tee", "half sleeve t-shirt", "menswear", "top", "shirts"],
   },
 ];

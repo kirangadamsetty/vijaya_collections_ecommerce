@@ -45,6 +45,7 @@ export const womenspagesData = [
       { id: 2, user: "Priya S.", rating: 4, review: "Good quality cotton, easy to manage. Slightly lighter color than expected." },
       { id: 3, user: "Anjali K.", rating: 4, review: "Affordable and stylish. Perfect for office wear." },
     ],
+    search_keywords: ["silk route", "daily wear saree", "cotton saree", "floral printed saree", "lightweight saree", "everyday saree", "comfortable saree", "office wear saree", "printed cotton saree", "womens saree", "casual saree"],
   },
   {
     id: 2012,
@@ -63,6 +64,7 @@ export const womenspagesData = [
       { id: 2, user: "Sunita G.", rating: 4, review: "Very light and comfortable. Good for humid weather." },
       { id: 3, user: "Deepa N.", rating: 4, review: "Decent saree for the price. Happy with the purchase." },
     ],
+    search_keywords: ["ishin", "daily wear saree", "casual saree", "lightweight saree", "soft fabric saree", "everyday saree", "comfortable saree", "humid weather saree", "womens saree", "affordable saree"],
   },
   {
     id: 2013,
@@ -81,6 +83,7 @@ export const womenspagesData = [
       { id: 2, user: "Ritu S.", rating: 3, review: "Good for the price, but the material wrinkles easily." },
       { id: 3, user: "Poonam L.", rating: 4, review: "Comfortable daily wear saree. Very happy." },
     ],
+    search_keywords: ["vishudh", "daily wear saree", "ethnic printed saree", "traditional print saree", "casual saree", "comfortable saree", "easy drape saree", "womens saree", "everyday saree"],
   },
   {
     id: 2014,
@@ -99,6 +102,7 @@ export const womenspagesData = [
       { id: 2, user: "Geeta H.", rating: 4, review: "Soft fabric and good drape. Worth buying." },
       { id: 3, user: "Sarita J.", rating: 4, review: "My go-to saree for everyday. Lightweight and easy to maintain." },
     ],
+    search_keywords: ["satrani", "daily wear saree", "cotton blend saree", "comfortable saree", "breathable saree", "easy movement saree", "everyday saree", "lightweight saree", "womens saree", "affordable saree"],
   },
   {
     id: 2015,
@@ -117,7 +121,10 @@ export const womenspagesData = [
       { id: 2, user: "Tina K.", rating: 3, review: "The print is nice, but the fabric is a little stiff." },
       { id: 3, user: "Rohan D.", rating: 4, review: "Bought for my wife, she likes the modern design." },
     ],
+    search_keywords: ["anouk", "daily wear saree", "abstract print saree", "cotton saree", "modern saree", "stylish saree", "comfortable saree", "casual saree", "womens saree", "printed cotton saree"],
   },
+
+
 
   // Pattu Sarees
   {
@@ -137,6 +144,7 @@ export const womenspagesData = [
       { id: 2, user: "Suresh P.", rating: 5, review: "Bought for my daughter's wedding. It's a true heirloom piece." },
       { id: 3, user: "Meena K.", rating: 4, review: "Beautiful, but very heavy to wear for long hours." },
     ],
+    search_keywords: ["kanchipuram weaves", "pattu saree", "pure silk saree", "traditional pattu", "wedding saree", "grand celebration saree", "kanchipuram silk", "silk saree", "heirloom saree", "south indian saree", "bridal saree"],
   },
   {
     id: 2022,
@@ -155,6 +163,7 @@ export const womenspagesData = [
       { id: 2, user: "Ramya N.", rating: 4, review: "Very beautiful, but the color was slightly different than shown online." },
       { id: 3, user: "Anand M.", rating: 5, review: "A classic Pothys saree. Excellent value." },
     ],
+    search_keywords: ["pothys", "pattu saree", "bridal saree", "woven silk saree", "wedding saree", "traditional motifs saree", "silk saree", "womens bridal wear", "festive saree"],
   },
   {
     id: 2023,
@@ -173,6 +182,7 @@ export const womenspagesData = [
       { id: 2, user: "Vivek T.", rating: 4, review: "A bit expensive, but the quality of silk is undeniable." },
       { id: 3, user: "Kavya P.", rating: 4, review: "Received many compliments wearing this saree." },
     ],
+    search_keywords: ["samudrika", "pattu saree", "gold border saree", "designer silk saree", "luxurious saree", "grand occasion saree", "traditional silk saree", "womens festive saree", "silk saree"],
   },
   {
     id: 2024,
@@ -191,6 +201,7 @@ export const womenspagesData = [
       { id: 2, user: "Rajesh S.", rating: 5, review: "Bought for my mother, she loved the richness of the saree." },
       { id: 3, user: "Poonam H.", rating: 5, review: "Feels very luxurious. Worth every penny." },
     ],
+    search_keywords: ["silkalay", "pattu saree", "pure zari saree", "rich pattu", "zari work saree", "traditional saree", "grand festivities saree", "luxurious silk saree", "wedding saree", "festive saree"],
   },
   {
     id: 2025,
@@ -209,7 +220,10 @@ export const womenspagesData = [
       { id: 2, user: "Siddharth J.", rating: 4, review: "Very grand and heavy. Best for specific occasions." },
       { id: 3, user: "Swati L.", rating: 5, review: "An investment piece. The weaving is just incredible." },
     ],
+    search_keywords: ["nalli", "pattu saree", "heavy banarasi saree", "banarasi pattu", "timeless elegance saree", "traditional craftsmanship saree", "grand event saree", "silk saree", "wedding saree", "festive saree", "womens traditional wear"],
   },
+
+
 
   // Nightwear
   {
@@ -229,6 +243,7 @@ export const womenspagesData = [
       { id: 2, user: "Kiran P.", rating: 4, review: "Good for summer nights. The fit is perfect." },
       { id: 3, user: "Anjali S.", rating: 4, review: "Clovia never disappoints. Decent quality for the price." },
     ],
+    search_keywords: ["clovia", "nightwear", "night suit set", "cotton night suit", "soft nightwear", "comfortable nightwear", "breathable nightwear", "relaxed fit nightwear", "pajama set", "sleepwear", "womens night dress", "summer nightwear"],
   },
   {
     id: 2032,
@@ -247,6 +262,7 @@ export const womenspagesData = [
       { id: 2, user: "Pooja V.", rating: 3, review: "The style is nice, but it runs a little small." },
       { id: 3, user: "Sunita C.", rating: 4, review: "Good for a casual night dress. Easy to wash." },
     ],
+    search_keywords: ["zivame", "nightwear", "lounge style dress", "night dress", "comfortable night dress", "breathable nightwear", "relaxed fit nightwear", "loungewear", "womens night dress", "casual nightwear"],
   },
   {
     id: 2033,
@@ -265,6 +281,7 @@ export const womenspagesData = [
       { id: 2, user: "Divya N.", rating: 4, review: "Soft fabric, perfect for a good night's sleep." },
       { id: 3, user: "Kavita D.", rating: 4, review: "A bit pricey but the comfort level is worth it." },
     ],
+    search_keywords: ["enamor", "nightwear", "printed nightwear", "comfort fit nightwear", "soft nightwear", "skin-friendly nightwear", "relaxed fit nightwear", "sleepwear", "womens night suit", "pajamas"],
   },
   {
     id: 2034,
@@ -283,6 +300,7 @@ export const womenspagesData = [
       { id: 2, user: "Akash R.", rating: 4, review: "Bought for my wife, she says it's very comfortable." },
       { id: 3, user: "Priya S.", rating: 4, review: "Good quality material, holds up well after washing." },
     ],
+    search_keywords: ["prettysecrets", "nightwear", "full sleeve pajama set", "cozy pajama set", "winter nightwear", "stylish nightwear", "comfortable pajama", "womens night suit", "sleepwear"],
   },
   {
     id: 2035,
@@ -301,7 +319,10 @@ export const womenspagesData = [
       { id: 2, user: "Gita P.", rating: 5, review: "Love the breathable material. Perfect for summer." },
       { id: 3, user: "Rahul T.", rating: 4, review: "Good quality nightwear, worth the price." },
     ],
+    search_keywords: ["jockey", "nightwear", "breathable night dress", "lounge night dress", "comfortable sleepwear", "quality nightwear", "relaxed evenings nightwear", "womens night dress", "summer nightwear"],
   },
+
+ 
 
   // Dresses
   {
@@ -321,6 +342,7 @@ export const womenspagesData = [
       { id: 2, user: "Priyanka S.", rating: 4, review: "Great for summer, very comfortable. A bit short for my liking." },
       { id: 3, user: "Neha D.", rating: 4, review: "Stylish and flattering. Received many compliments." },
     ],
+    search_keywords: ["and", "dress", "floral dress", "fit & flare dress", "casual dress", "semi-formal dress", "vibrant floral print", "summer dress", "womens dress", "party dress", "midi dress"],
   },
   {
     id: 2042,
@@ -339,6 +361,7 @@ export const womenspagesData = [
       { id: 2, user: "Deepa N.", rating: 3, review: "The fabric is a bit sheer, but overall a nice dress." },
       { id: 3, user: "Smita P.", rating: 4, review: "Perfect for a casual Indian look. Very stylish." },
     ],
+    search_keywords: ["global desi", "dress", "ethnic maxi dress", "bohemian dress", "festive dress", "traditional prints", "flowy dress", "comfortable dress", "stylish dress", "womens dress", "long dress"],
   },
   {
     id: 2043,
@@ -357,6 +380,7 @@ export const womenspagesData = [
       { id: 2, user: "Kajal T.", rating: 5, review: "Zara's quality is evident. Fits perfectly." },
       { id: 3, user: "Rajesh K.", rating: 4, review: "A bit pricey for a simple dress, but the fabric and fit are great." },
     ],
+    search_keywords: ["zara", "dress", "minimalist dress", "a-line dress", "black dress", "timeless dress", "versatile dress", "classic dress", "womens dress", "formal dress", "cocktail dress", "little black dress"],
   },
   {
     id: 2044,
@@ -375,6 +399,7 @@ export const womenspagesData = [
       { id: 2, user: "Ankit V.", rating: 3, review: "Good for the price, but the color faded slightly after first wash." },
       { id: 3, user: "Radha C.", rating: 4, review: "Simple and elegant. Happy with the purchase." },
     ],
+    search_keywords: ["biba", "dress", "casual dress", "summer dress", "cotton dress", "everyday wear dress", "light dress", "breathable dress", "stylish dress", "womens dress", "day dress"],
   },
   {
     id: 2045,
@@ -393,7 +418,10 @@ export const womenspagesData = [
       { id: 2, user: "Vivek G.", rating: 4, review: "Bought for my sister, she really likes the style." },
       { id: 3, user: "Swati B.", rating: 4, review: "Great for parties and casual events. Good material." },
     ],
+    search_keywords: ["only", "dress", "layered dress", "ruffle dress", "midi dress", "trendy dress", "feminine dress", "stylish dress", "party dress", "casual events dress", "womens dress"],
   },
+
+ 
 
   // Handbags
   {
@@ -413,6 +441,7 @@ export const womenspagesData = [
       { id: 2, user: "Pooja L.", rating: 4, review: "Good everyday bag. The strap is comfortable." },
       { id: 3, user: "Anjali S.", rating: 4, review: "Caprese always delivers. Good quality for the price." },
     ],
+    search_keywords: ["caprese", "handbag", "shoulder bag", "solid bag", "textured bag", "everyday bag", "chic bag", "spacious bag", "womens handbag", "casual bag"],
   },
   {
     id: 2052,
@@ -431,6 +460,7 @@ export const womenspagesData = [
       { id: 2, user: "Kavita M.", rating: 3, review: "A bit flimsy compared to other Lavie bags I own." },
       { id: 3, user: "Rahul T.", rating: 4, review: "Bought as a gift, my sister liked it." },
     ],
+    search_keywords: ["lavie", "handbag", "tote bag", "everyday tote", "stylish tote", "spacious tote", "trendy design bag", "womens handbag", "casual bag"],
   },
   {
     id: 2053,
@@ -449,6 +479,7 @@ export const womenspagesData = [
       { id: 2, user: "Arjun K.", rating: 4, review: "Good quality faux leather, looks like real leather." },
       { id: 3, user: "Priya P.", rating: 4, review: "Spacious and well-designed. Perfect for office." },
     ],
+    search_keywords: ["baggit", "handbag", "faux leather handbag", "elegant handbag", "ethical fashion bag", "sophisticated design bag", "vegan bag", "womens handbag", "office bag", "party bag"],
   },
   {
     id: 2054,
@@ -467,6 +498,7 @@ export const womenspagesData = [
       { id: 2, user: "Sneha B.", rating: 5, review: "A true investment piece. It looks better with age." },
       { id: 3, user: "Varun D.", rating: 4, review: "Expensive, but the quality justifies the price. Very durable." },
     ],
+    search_keywords: ["hidesign", "handbag", "genuine leather bag", "classic leather bag", "timeless bag", "superior craftsmanship bag", "durable bag", "investment bag", "womens handbag", "luxury bag"],
   },
   {
     id: 2055,
@@ -485,5 +517,6 @@ export const womenspagesData = [
       { id: 2, user: "Rohit N.", rating: 4, review: "Good spacious bag, fits laptop and other essentials." },
       { id: 3, user: "Shalini K.", rating: 4, review: "Unique design and good quality. Happy to support a sustainable brand." },
     ],
+    search_keywords: ["zouk", "handbag", "vegan bag", "handmade bag", "office bag", "indian aesthetics bag", "modern functionality bag", "sustainable bag", "womens handbag", "laptop bag", "work bag"],
   },
 ];

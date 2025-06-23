@@ -78,6 +78,7 @@ export const trendingData = [
 export const bannerData = [
      { id: "banner-3", image: sareeBanner1 },
   { id: "banner-1", image: womenBanner },
+ { id: "banner-2", image: menspagebanner1 },
 
  
   { id: "banner-4", image: kidsBanner },
@@ -89,6 +90,7 @@ export const kidsbanner = [
 export const homebanner = [
   { id: "homebanner-1", image: womenBanner },
   { id: "homebanner-2", image: womenBanner2 },
+  { id: "homebanner-3", image: menspagebanner2 },
     // { id: "homebanner-3", image: menBanner },
 ];
 

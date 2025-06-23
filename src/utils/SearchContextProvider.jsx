@@ -3,92 +3,49 @@ import { womenspagesData } from "./womensPageMockData.jsx"
 import { kidspagesData } from "./kidsPageMockData.jsx"
 import {SearchContext} from "./SearchContext.jsx"
 import {useState, useEffect} from "react"
+import {Searchkeywords} from "./Searchkeywords.jsx"
 function SearchContextProvider({children}){
     const products = [...menspagesData, ...womenspagesData, ...kidspagesData]
     const [searchValue, setSearchValue] = useState("")
     const [searchResult, setSearchResult] = useState([])
-    console.log(searchResult)
-    const searchSuggestions = [
-  // 🔹 Category-Based Keywords
-  "Casual Shirts",
-  "T-Shirts",
-  "Formal Shirts",
-  "Hoodies",
-  "Jeans",
-  "Kurti",
-  "Sarees",
-  "Dresses",
-  "Ethnic Wear",
-  "Western Wear",
-  "Kids Wear",
-  "Party Wear",
-  "Traditional Dresses",
-  "Fusion Wear",
-  "Festive Collection",
+    const [searchQuery, setSearchQuery] = useState([])
+    
 
-  // 🔹 Gender-Specific Keywords
-  "T-Shirts for Men",
-  "T-Shirts for Women",
-  "Girls Dresses",
-  "Men's Hoodies",
-  "Women Kurtis",
-  "Kids Ethnic Wear",
+  const showQueryResultProducts = () =>{
+  let filteredData =  products.filter((item)=>{
+             const combinedString = [item.name,item.detailedDescription, item.category, item.description, ...item.search_keywords].join(" ").toLowerCase();
+             const searchTerms = searchValue.toLowerCase().split(' ').filter(term => term.length > 0); // Split by space and remove empty strings
 
-  // 🔹 Seasonal & Use-Case Keywords
-  "Summer Collection",
-  "Winter Collection",
-  "Wedding Outfits",
-  "Office Wear",
-  "Casual Outfits",
-  "College Wear",
-  "Nightwear",
-  "Street Style",
+             // Check if ALL search terms are present in the combined string
+             const allTermsMatch = searchTerms.every(term => combinedString.includes(term));
 
-  // 🔹 Brand-Based Keywords (from your data)
-  "Mufti",
-  "Roadster",
-  "Superdry",
-  "Max",
-  "Allen Solly",
-  "H&M",
-  "Puma",
-  "Nike",
-  "Levi's",
-  "Zara",
+             return allTermsMatch;
+           })
 
-  // 🔹 Color/Style Keywords
-  "Black Hoodie",
-  "White Kurti",
-  "Blue Jeans",
-  "Printed Shirts",
-  "Checked Shirts",
-  "Graphic Tees",
-  "Plain T-Shirts",
 
-  // 🔹 Fabric/Material Keywords
-  "Cotton Kurti",
-  "Linen Shirts",
-  "Silk Saree",
-  "Denim Jeans",
-]; 
-   useEffect(()=>{
-     let timer;
+           setSearchResult(filteredData)
+  }
+         
+    
+  
+
+useEffect(()=>{
+    let timer;
      timer = setTimeout(()=>{
-        let filteredData =  products.filter((item)=>{
-            return(
-                [item.name, item.category, item.description].join(" ").toLowerCase().includes(searchValue.toLowerCase())
-            )
-          })
-          setSearchResult(filteredData)
-     }, 500)
-     return()=>{
-         clearTimeout(timer)
-     }
-
-   },[searchValue])
-
+        let filteredData = Searchkeywords.filter((data)=>{
+         return data.toLowerCase().includes(searchValue.toLowerCase())
+    })
+    setSearchQuery(filteredData)
+    },1000)
+    
+    return () =>{
+        clearTimeout(timer)
+    }
+},[searchValue])
+   
+console.log(searchQuery)
     return(
-        <SearchContext.Provider value = {{searchResult,products, searchSuggestions, searchValue, setSearchValue}}>
+        <SearchContext.Provider value = {{searchResult,showQueryResultProducts,searchValue,setSearchResult,products,  searchValue, setSearchValue}}>
             {children}
         </SearchContext.Provider>
     )

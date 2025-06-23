@@ -46,6 +46,7 @@ export const kidspagesData = [
       { id: 2, user: "Alok V.", rating: 4, review: "Good quality and comfortable. Fits true to size." },
       { id: 3, user: "Priya K.", rating: 4, review: "Nice traditional wear for kids. A bit pricey but worth it." },
     ],
+    search_keywords: ["bownbee", "kids traditional", "boys traditional", "ethnic wear boys", "kurta pajama set", "kurta for boys", "pajama for boys", "festive wear kids", "family gathering outfit", "indian wear kids", "boys ethnic", "kids ethnic"],
   },
   {
     id: 3012,
@@ -64,6 +65,7 @@ export const kidspagesData = [
       { id: 2, user: "Gaurav P.", rating: 4, review: "Good quality fabric and stitching. A bit difficult to iron." },
       { id: 3, user: "Nisha R.", rating: 5, review: "Perfect for traditional functions. Very stylish." },
     ],
+    search_keywords: ["tiber taber", "kids traditional", "boys traditional", "dhoti kurta set", "dhoti for boys", "kurta for boys", "festive dhoti", "wedding wear kids", "cultural event outfit", "indian wear kids", "boys ethnic", "kids ethnic"],
   },
   {
     id: 3013,
@@ -82,6 +84,7 @@ export const kidspagesData = [
       { id: 2, user: "Rajesh S.", rating: 4, review: "Good for the price, decent quality. My niece looked lovely." },
       { id: 3, user: "Smita G.", rating: 4, review: "Comfortable material for kids. Recommended for light functions." },
     ],
+    search_keywords: ["biba kids", "kids traditional", "girls traditional", "ethnic wear girls", "lehenga choli set", "printed lehenga", "girls lehenga", "choli for girls", "festive lehenga", "indian wear kids", "girls ethnic", "kids ethnic"],
   },
   {
     id: 3014,
@@ -100,6 +103,7 @@ export const kidspagesData = [
       { id: 2, user: "Vivek L.", rating: 4, review: "The detailing is nice, but the dupatta is a bit slippery." },
       { id: 3, user: "Arti P.", rating: 4, review: "Good for a one-time event. Looks very festive." },
     ],
+    search_keywords: ["aarika", "kids traditional", "girls traditional", "traditional dress kids", "dupatta dress", "girls ethnic dress", "special event dress kids", "indian wear girls", "kids ethnic gown"],
   },
   {
     id: 3015,
@@ -118,7 +122,10 @@ export const kidspagesData = [
       { id: 2, user: "Amit K.", rating: 5, review: "Perfect for weddings! Looks very grand." },
       { id: 3, user: "Deepika V.", rating: 4, review: "A bit heavy for daily wear, but amazing for special occasions." },
     ],
+    search_keywords: ["hopscotch", "kids traditional", "boys traditional", "sherwani suit", "embroidered sherwani", "formal traditional wear", "wedding sherwani kids", "boys sherwani", "indian wear boys", "kids ethnic suit"],
   },
+
+
 
   // Hoodies
   {
@@ -138,6 +145,7 @@ export const kidspagesData = [
       { id: 2, user: "Kunal M.", rating: 4, review: "Good for mild winters. True to Mothercare's quality." },
       { id: 3, user: "Preeti N.", rating: 4, review: "Cute design and comfortable. Washes well." },
     ],
+    search_keywords: ["mothercare", "kids hoodie", "baby hoodie", "cotton hoodie", "soft hoodie", "cozy hoodie", "everyday hoodie", "kids sweatshirt", "toddler hoodie", "infant hoodie", "winter wear kids"],
   },
   {
     id: 3022,
@@ -156,6 +164,7 @@ export const kidspagesData = [
       { id: 2, user: "Rahul T.", rating: 3, review: "Decent hoodie, but the zipper can be a bit sticky sometimes." },
       { id: 3, user: "Shweta B.", rating: 4, review: "Comfortable and colorful. Good value." },
     ],
+    search_keywords: ["mini klub", "kids hoodie", "printed hoodie", "zip-up hoodie", "playful hoodie", "layered clothing kids", "kids sweatshirt", "toddler hoodie", "boys hoodie", "girls hoodie"],
   },
   {
     id: 3023,
@@ -174,6 +183,7 @@ export const kidspagesData = [
       { id: 2, user: "Varun D.", rating: 5, review: "Bought as a gift, the parents loved it for their baby." },
       { id: 3, user: "Neha C.", rating: 4, review: "Soft material, perfect for newborns. Highly recommend." },
     ],
+    search_keywords: ["babyhug", "kids hoodie", "baby hoodie", "fleece hoodie", "cute ears hoodie", "adorable hoodie", "warm hoodie kids", "infant hoodie", "newborn hoodie", "kids sweatshirt", "outerwear kids"],
   },
   {
     id: 3024,
@@ -192,6 +202,7 @@ export const kidspagesData = [
       { id: 2, user: "Pooja V.", rating: 5, review: "Carter's quality is unmatched. This hoodie is perfect." },
       { id: 3, user: "Vikas G.", rating: 4, review: "Holds up well after multiple washes. Worth the price." },
     ],
+    search_keywords: ["carter's", "kids hoodie", "winter hoodie", "cozy hoodie", "warm hoodie kids", "durable hoodie", "toddler hoodie", "kids sweatshirt", "boys hoodie", "girls hoodie", "outerwear kids"],
   },
   {
     id: 3025,
@@ -210,7 +221,10 @@ export const kidspagesData = [
       { id: 2, user: "Smriti L.", rating: 4, review: "Good for everyday use. Material is soft." },
       { id: 3, user: "Ajay C.", rating: 3, review: "A bit thin for very cold weather, but good otherwise." },
     ],
+    search_keywords: ["h&m kids", "kids hoodie", "minimalist hoodie", "full sleeve hoodie", "modern kids wear", "comfortable hoodie", "kids sweatshirt", "boys hoodie", "girls hoodie", "everyday hoodie"],
   },
+
+
 
   // Baby Girl Dresses
   {
@@ -230,6 +244,7 @@ export const kidspagesData = [
       { id: 2, user: "Ankit R.", rating: 4, review: "Good quality dress. The net is soft and not scratchy." },
       { id: 3, user: "Divya M.", rating: 4, review: "Perfect for parties, but needs delicate washing." },
     ],
+    search_keywords: ["aarika", "baby girl dress", "girls dress", "princess dress", "net frock", "frock dress", "birthday party dress", "special occasion dress girls", "kids party wear", "girls gown", "toddler dress", "fairy dress"],
   },
   {
     id: 3032,
@@ -248,6 +263,7 @@ export const kidspagesData = [
       { id: 2, user: "Sumit H.", rating: 4, review: "Good for summer parties. The print is very cheerful." },
       { id: 3, user: "Shalini J.", rating: 4, review: "Comfortable and stylish. Highly recommend." },
     ],
+    search_keywords: ["cherry crumble", "baby girl dress", "girls dress", "floral dress", "party dress girls", "celebration dress", "vibrant print dress", "comfortable dress kids", "kids party wear", "toddler dress", "summer dress girls"],
   },
   {
     id: 3033,
@@ -266,6 +282,7 @@ export const kidspagesData = [
       { id: 2, user: "Pooja A.", rating: 3, review: "A bit loose fit, but the ruffles are cute." },
       { id: 3, user: "Rahul M.", rating: 4, review: "Comfortable and easy to wear. Happy with the purchase." },
     ],
+    search_keywords: ["kookie kids", "baby girl dress", "girls dress", "ruffle dress", "sleeveless dress kids", "everyday dress girls", "casual dress girls", "play dress", "soft fabric dress", "toddler dress"],
   },
   {
     id: 3034,
@@ -284,6 +301,7 @@ export const kidspagesData = [
       { id: 2, user: "Manish R.", rating: 3, review: "Fabric is okay for the price. Simple daily dress." },
       { id: 3, user: "Divya C.", rating: 4, review: "Easy to wash and maintain. Baby looks comfortable." },
     ],
+    search_keywords: ["fiffy", "baby girl dress", "girls dress", "cotton dress kids", "printed dress girls", "daily wear dress", "breathable dress", "infant dress", "toddler dress", "play dress"],
   },
   {
     id: 3035,
@@ -302,7 +320,10 @@ export const kidspagesData = [
       { id: 2, user: "Rajesh K.", rating: 5, review: "Perfect for a birthday party. Highly recommended." },
       { id: 3, user: "Poonam D.", rating: 4, review: "My daughter loves it, but it's a bit delicate." },
     ],
+    search_keywords: ["firstcry", "baby girl dress", "girls dress", "lace dress", "fit & flare dress", "party frock", "special occasion dress girls", "kids party wear", "girls gown", "toddler party dress"],
   },
+
+
 
   // Baby Boy Dresses
   {
@@ -322,6 +343,7 @@ export const kidspagesData = [
       { id: 2, user: "Anuj P.", rating: 4, review: "Good quality fabric. The dungaree is adorable." },
       { id: 3, user: "Ria S.", rating: 4, review: "Practical and stylish. A great everyday outfit." },
     ],
+    search_keywords: ["babyoye", "baby boy dress", "boys outfit", "dungaree set", "t-shirt set boys", "kids dungaree", "baby boy clothes", "playtime outfit", "casual outfit boys", "toddler boy clothes", "infant boy outfit"],
   },
   {
     id: 3042,
@@ -340,6 +362,7 @@ export const kidspagesData = [
       { id: 2, user: "Meera C.", rating: 3, review: "Good for the price, but the shorts fabric is a bit thin." },
       { id: 3, user: "Vikram D.", rating: 4, review: "Comfortable and looks good on my son." },
     ],
+    search_keywords: ["little kangaroos", "baby boy dress", "boys outfit", "shirt shorts set", "2 piece set boys", "summer outfit boys", "trendy kids wear", "toddler boy clothes", "casual outfit boys"],
   },
   {
     id: 3043,
@@ -358,6 +381,7 @@ export const kidspagesData = [
       { id: 2, user: "Deepa R.", rating: 4, review: "Good quality jeans and shirt. A bit snug fit for my active boy." },
       { id: 3, user: "Prakash V.", rating: 4, review: "Stylish and comfortable. Perfect for family outings." },
     ],
+    search_keywords: ["juniors", "baby boy dress", "boys outfit", "plaid shirt", "jeans combo boys", "denim pants boys", "smart casual boys", "everyday wear boys", "kids fashion boy", "boys casual"],
   },
   {
     id: 3044,
@@ -376,6 +400,7 @@ export const kidspagesData = [
       { id: 2, user: "Kavya M.", rating: 3, review: "Decent set, but the colors are a bit dull." },
       { id: 3, user: "Arjun N.", rating: 4, review: "Comfortable and practical for everyday wear." },
     ],
+    search_keywords: ["peppermint", "baby boy dress", "boys outfit", "full sleeve set boys", "winter outfit boys", "cozy outfit boys", "warm clothes kids", "toddler boy clothes", "everyday wear boys"],
   },
   {
     id: 3045,
@@ -394,7 +419,10 @@ export const kidspagesData = [
       { id: 2, user: "Rahul K.", rating: 4, review: "Comfortable combo, easy to dress up or down." },
       { id: 3, user: "Smita V.", rating: 4, review: "Nice for daily wear. Holds up well after washing." },
     ],
+    search_keywords: ["toffyhouse", "baby boy dress", "boys outfit", "cotton shirt pant combo", "daily wear boys", "casual outfit boys", "soft fabric boys", "breathable clothes kids", "toddler boy clothes"],
   },
+
+
 
   // T-Shirts
   {
@@ -414,6 +442,7 @@ export const kidspagesData = [
       { id: 2, user: "Amit S.", rating: 3, review: "Good for the price, but the fabric is a bit thin." },
       { id: 3, user: "Rina J.", rating: 4, review: "Comfortable and easy to wash. Happy with the purchase." },
     ],
+    search_keywords: ["babyhug", "kids t-shirt", "baby t-shirt", "cartoon t-shirt", "printed t-shirt kids", "cotton t-shirt kids", "everyday t-shirt kids", "fun t-shirt", "toddler t-shirt", "infant t-shirt"],
   },
   {
     id: 3052,
@@ -432,6 +461,7 @@ export const kidspagesData = [
       { id: 2, user: "Sanjay B.", rating: 4, review: "Comfortable and durable. Good for everyday use." },
       { id: 3, user: "Deepika G.", rating: 3, review: "Simple but effective. No complaints." },
     ],
+    search_keywords: ["lilliput", "kids t-shirt", "baby t-shirt", "solid t-shirt", "round neck t-shirt", "basic tee kids", "cotton t-shirt kids", "versatile t-shirt", "everyday t-shirt", "toddler t-shirt"],
   },
   {
     id: 3053,
@@ -450,6 +480,7 @@ export const kidspagesData = [
       { id: 2, user: "Smita H.", rating: 3, review: "The fabric could be softer, but it's okay." },
       { id: 3, user: "Rajesh L.", rating: 4, review: "Comfortable and fits well. Happy with the purchase." },
     ],
+    search_keywords: ["mini klub", "kids t-shirt", "baby t-shirt", "striped t-shirt", "cotton t-shirt kids", "casual t-shirt kids", "stylish t-shirt kids", "breathable t-shirt", "toddler t-shirt"],
   },
   {
     id: 3054,
@@ -468,6 +499,7 @@ export const kidspagesData = [
       { id: 2, user: "Meera D.", rating: 4, review: "Good quality and the print hasn't faded after washes." },
       { id: 3, user: "Gaurav S.", rating: 4, review: "Comfortable and very appealing to kids." },
     ],
+    search_keywords: ["firstcry", "kids t-shirt", "baby t-shirt", "dinosaur print t-shirt", "dinosaur t-shirt kids", "fun t-shirt", "cotton t-shirt kids", "play t-shirt", "boys t-shirt", "girls t-shirt"],
   },
   {
     id: 3055,
@@ -486,5 +518,6 @@ export const kidspagesData = [
       { id: 2, user: "Rohit N.", rating: 5, review: "Soft fabric, perfect for sensitive skin." },
       { id: 3, user: "Swati R.", rating: 4, review: "A bit expensive for a t-shirt, but the quality justifies it." },
     ],
+    search_keywords: ["marks & spencer", "m&s", "kids t-shirt", "baby t-shirt", "colorful t-shirt", "crew neck t-shirt", "vibrant t-shirt", "quality t-shirt kids", "comfortable t-shirt", "versatile t-shirt", "boys t-shirt", "girls t-shirt"],
   },
 ];

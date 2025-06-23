@@ -34,7 +34,9 @@ function SearchInfoPage(){
     </div>
   </Col>
 )}
-{ searchResult.length!==0 && <Container>
+
+
+{ searchResult.length !== 0 && <Container>
  <h3>Style meets strength.</h3>
    <h1>Recommended for you.</h1>
 <Row>

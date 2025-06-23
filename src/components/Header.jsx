@@ -5,12 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import logo from "../assets/logo.png";
 import CartIcon from "../assets/cart-icon.png"
-import {SearchContext} from "../utils/SearchContext"
 import "../styles/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useRef } from 'react'; // Import useRef for Navbar collapse ref
 import { CategoryFilterContext } from '../utils/CategoryFilterContext';
 import wishListIcon from "../assets/wishlist.png"
+import { SearchContext } from '../utils/SearchContext';
 import {WishListContext} from "../utils/WishListContext"
 import {CartContext} from "../utils/CartContext"
 
@@ -19,8 +19,9 @@ function Header() {
   const { cartData } = useContext(CartContext);
   const { handlepageshift } = useContext(CategoryFilterContext);
   const { wishList } = useContext(WishListContext);
-  const {setSearchValue} = useContext(SearchContext)
+  const {searchResult, setSearchValue,showQueryResultProducts, searchValue,setSearchResult} = useContext(SearchContext)
   const navbarRef = useRef(); // Ref for the Navbar.Collapse component
+
   // Function to close the navbar dropdown
   const closeNavbar = () => {
     if (navbarRef.current && navbarRef.current.classList.contains('show')) {
@@ -39,11 +40,7 @@ function Header() {
         {/* Icons for small screens (visible next to toggle, hidden on large) */}
         <div  className="d-flex align-items-center d-lg-none ms-auto me-2"> {/* ms-auto to push to right, me-2 for spacing from toggle */}
             {/* User Icon for small screens */}
-            {/* <div onClick={() => navigate("/auth")} className="d-flex flex-column align-items-center mx-1">
-                <Nav.Link className="nav-links-custom p-0"><img src={user} width="20px" alt="user" /></Nav.Link>
-                <p  className="d-none d-sm-block header-icon-text">User</p>
-            </div> */}
-
+          
             {/* Wishlist Icon for small screens */}
             <div onClick={() => navigate("/wishlist")} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-2">
                 <div style={{ position: "relative" }}>
@@ -77,6 +74,7 @@ function Header() {
           </Nav>
 
           <Form className="d-flex mx-3 my-2 my-lg-0">
+        
             <Form.Control
               type="search"
               placeholder="Search for products..."
@@ -85,15 +83,13 @@ function Header() {
               onChange = {(e)=>setSearchValue(e.target.value)}
               style={{ outline: 'none', boxShadow: 'none' }}
             />
-            <Button variant="outline-success" className="custom-button">Search</Button>
+           
+            <Button onClick = {()=>{navigate("/search"); setSearchResult(searchValue);showQueryResultProducts(searchValue)}} variant="outline-success" className="custom-button">Search</Button>
           </Form>
 
           {/* Icons for large screens (d-none for small, d-lg-flex for large) */}
           <div className="d-none d-lg-flex align-items-center">
-            {/* <div  onClick={() => navigate("/auth")} className="d-flex flex-column align-items-center mx-2">
-                <Nav.Link className="nav-links-custom p-0"><img src={user} width="25px" alt="user" /></Nav.Link>
-                <p className="header-icon-text">User</p>
-            </div> */}
+          
             <div onClick={() => { navigate("/wishlist"); closeNavbar(); }} style={{ cursor: "pointer" }} className="d-flex flex-column align-items-center mx-3">
                 <div style={{ position: "relative" }}>
                     <Nav.Link className="nav-links-custom p-0"><img src={wishListIcon} width="25px" alt="wishlist" /></Nav.Link>
