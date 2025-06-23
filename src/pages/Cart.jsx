@@ -134,6 +134,7 @@ signOut(auth).then(() => {
                          <RazorpayCheckout amount={price.priceAfterDiscount} userData={userData} />
 
 
+
                      }
                      </div>
                 </Col>

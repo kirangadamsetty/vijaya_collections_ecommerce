@@ -1,12 +1,14 @@
 import logo from "../assets/logo.png";
 import { toast } from "react-toastify";
-import { Button } from "bootstrap";
+import Button from "react-bootstrap/Button"; // ✅ Fixed import
+
 const RazorpayCheckout = ({ amount, userData }) => {
-  const notifySuccess = () => toast.success("Payment Successful", { autoClose: 2000 });
-  const notifyError = () => toast.error("Razorpay failed to load", { autoClose: 3000 });
+  const notifySuccess = () =>
+    toast.success("Payment Successful", { autoClose: 2000 });
+  const notifyError = () =>
+    toast.error("Razorpay failed to load", { autoClose: 3000 });
 
   const loadRazorpay = () => {
-    // ✅ Check if Razorpay script is loaded
     if (!window.Razorpay) {
       notifyError();
       return;
@@ -14,7 +16,7 @@ const RazorpayCheckout = ({ amount, userData }) => {
 
     const options = {
       key: "rzp_test_GoJpVAQtMPkzJu", // Replace with your actual test key
-      amount: amount.priceAfterDiscount * 100, // convert ₹ to paise
+      amount: amount * 100, // Convert ₹ to paise
       currency: "INR",
       name: "Vijaya Collections",
       description: "Fashion Order Payment",
@@ -22,7 +24,7 @@ const RazorpayCheckout = ({ amount, userData }) => {
       handler: function (response) {
         notifySuccess();
         console.log("Payment ID:", response.razorpay_payment_id);
-        // You can also send this to your backend for verification
+        // Send this ID to backend if needed
       },
       prefill: {
         name: userData?.name || "Customer",
@@ -42,7 +44,10 @@ const RazorpayCheckout = ({ amount, userData }) => {
   };
 
   return (
-    <Button className="text-secondary mt-2 w-100 custom-button" onClick={loadRazorpay}>
+    <Button
+      className="text-secondary mt-2 w-100 custom-button"
+      onClick={loadRazorpay}
+    >
       Place Order
     </Button>
   );
