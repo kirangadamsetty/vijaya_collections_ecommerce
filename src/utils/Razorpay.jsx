@@ -1,7 +1,6 @@
-import React from "react";
 import logo from "../assets/logo.png";
 import { toast } from "react-toastify";
-import Buttton from "react-bootstrap/Button"
+import { Button } from "bootstrap";
 const RazorpayCheckout = ({ amount, userData }) => {
   const notifySuccess = () => toast.success("Payment Successful", { autoClose: 2000 });
   const notifyError = () => toast.error("Razorpay failed to load", { autoClose: 3000 });
