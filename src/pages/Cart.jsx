@@ -18,6 +18,7 @@ import emptyBag from "../assets/emptyBag.webp"
 import Faq from "../components/Faq.jsx"
 import Authorization from "../components/Authorization"
 import { CategoryFilterContext } from "../utils/CategoryFilterContext"
+import RazorpayCheckout from "../utils/Razorpay.jsx"
 function Cart(){
   const {cartData, handleCartCancel,  handleSize, handlequantity, price} = useContext(CartContext)
   const [show, setShow] = useState(false);
@@ -130,7 +131,9 @@ signOut(auth).then(() => {
                        <h3 className = "d-flex justify-content-between"><span>Total Amount</span><span>₹{price.priceAfterDiscount}</span></h3>
                      {!userData ? <Button onClick = {()=>{setEvent("Create Account");handleShow();}} className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
                              :
-                             <Button className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
+                         <RazorpayCheckout amount={price.priceAfterDiscount} userData={userData} />
+
+
                      }
                      </div>
                 </Col>
