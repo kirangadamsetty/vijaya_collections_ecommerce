@@ -96,6 +96,9 @@ export const appRouter = createBrowserRouter([
         path: "/search",
         element: <SearchInfoPage />,
         errorElement: <ErrorElement />,
+      },{
+        path :"/shimmer",
+        element : <Shimmer/>
       }
     ]
   }
