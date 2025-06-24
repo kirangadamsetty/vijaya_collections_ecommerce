@@ -3,9 +3,25 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 import {useNavigate} from "react-router-dom"
 import '../styles/footer.css';
+import { useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate()
+ 
+const location = useLocation();
+
+useEffect(() => {
+  const hash = location.hash;
+  
+  if (hash) {
+    const element = document.querySelector(hash);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+}, [location]);
+
   return (
     <footer className="bg-dark footer text-light py-5">
       <Container>
@@ -32,9 +48,9 @@ function Footer() {
           <Col md={3} className="mb-4">
             <h3>Customer Support</h3>
             <ul className="list-unstyled mt-3">
-              <li>FAQs</li>
-              <li>Shipping & Returns</li>
-              <li>Order Tracking</li>
+              <li onClick = {()=>navigate("/wishlist#faq")}>FAQs</li>
+              <li onClick = {()=>navigate("/wishlist#faq")}>Shipping & Returns</li>
+              <li onClick = {()=>navigate("/wishlist#faq")}>Order Tracking</li>
             </ul>
           </Col>
 

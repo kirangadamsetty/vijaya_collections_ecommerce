@@ -168,7 +168,9 @@ signOut(auth).then(() => {
     
 
     
-          <Faq/>
+         <Row>
+                 <Faq/> 
+                 </Row>
           </Container>
        
         </div>

@@ -5,7 +5,7 @@ import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import ErrorElement from "./components/ErrorElement.jsx";
-
+import Shimmer from "./components/Shimmer.jsx"
 import CategoryContextProvider from "./utils/CategoryContextProvider.jsx";
 import CartContextProvider from "./utils/CartContextProvider.jsx";
 import WishListContextProvider from "./utils/WishListContextProvider.jsx";
@@ -35,7 +35,7 @@ function App() {
                 <ToastContainer />
                 <ScrollToTop />
                 <Header />
-                <Suspense fallback={<div style={{ textAlign: "center", marginTop: "100px" }}>Loading...</div>}>
+                <Suspense fallback={<div>{<Shimmer/>}</div>}>
                   <Outlet />
                 </Suspense>
                 <Footer />

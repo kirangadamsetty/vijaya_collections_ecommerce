@@ -20,7 +20,7 @@ function Header() {
   const { handlepageshift } = useContext(CategoryFilterContext);
   const { wishList } = useContext(WishListContext);
   const [showSearchResults, setShowSearchResult] = useState(false)
-  const {  searchQuery,setSearchValue,showQueryResultProducts, searchValue} = useContext(SearchContext)
+  const { handleSearchSuggestions, searchQuery,setSearchValue,showQueryResultProducts, searchValue} = useContext(SearchContext)
   const navbarRef = useRef(); // Ref for the Navbar.Collapse component
 
   // Function to close the navbar dropdown
@@ -101,7 +101,7 @@ function Header() {
       >
       {showSearchResults &&
         searchQuery.slice(0,5).map((data)=>{
-            return <p  onClick = {()=>{ navigate("/search");setSearchValue(data);showQueryResultProducts();setShowSearchResult(!showSearchResults);closeNavbar();}} style={{ margin: 0, padding: "8px" ,cursor:"pointer"}}>🔍 {data}</p>
+            return <p  onClick = {()=>{ navigate("/search");setSearchValue(data);handleSearchSuggestions(data);showQueryResultProducts();setShowSearchResult(!showSearchResults);closeNavbar();}} style={{ margin: 0, padding: "8px" ,cursor:"pointer"}}>🔍 {data}</p>
         })
       }
         

@@ -50,8 +50,9 @@ function WishListPage(){
      }
             </Row>
                         
-               
+               <Row id = "faq">
                  <Faq/> 
+                 </Row>
         </Container>
       
         </div>

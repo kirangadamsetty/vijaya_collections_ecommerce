@@ -33,26 +33,33 @@ function SearchContextProvider({children}){
 };
 
          
-    
+const handleSearchSuggestions = (data)=>{
+ let filteredData = Searchkeywords.filter((arg)=>{
+     return arg.toLowerCase().includes(data.toLowerCase())
+ })
+ setSearchQuery(filteredData)
+}
   
+useEffect(() => {
+  if (searchValue.length === 0) {
+    setSearchQuery([]); // clear results when input is empty (optional)
+    return;
+  }
 
-useEffect(()=>{
-    let timer;
-     timer = setTimeout(()=>{
-        let filteredData = Searchkeywords.filter((data)=>{
-         return data.toLowerCase().includes(searchValue.toLowerCase())
-    })
-    setSearchQuery(filteredData)
-    },500)
-    
-    return () =>{
-        clearTimeout(timer)
-    }
-},[searchValue])
+  const timer = setTimeout(() => {
+    const filteredData = Searchkeywords.filter((data) =>
+      data.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    setSearchQuery(filteredData);
+  }, 500);
+
+  return () => clearTimeout(timer);
+}, [searchValue]);
+
    
 
     return(
-        <SearchContext.Provider value = {{searchQuery,setSearchQuery,searchResult,showQueryResultProducts,searchValue,setSearchResult,products,   setSearchValue}}>
+        <SearchContext.Provider value = {{handleSearchSuggestions,searchQuery,setSearchQuery,searchResult,showQueryResultProducts,searchValue,setSearchResult,products,   setSearchValue}}>
             {children}
         </SearchContext.Provider>
     )
