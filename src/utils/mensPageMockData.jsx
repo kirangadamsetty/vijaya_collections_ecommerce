@@ -217,7 +217,7 @@ export const menspagesData = [
     customerReviews: [
       { id: 1, user: "Varun N.", rating: 5, review: "The texture is subtle and elegant. Fits perfectly." },
       { id: 2, user: "Neha C.", rating: 4, review: "Great shirt for formal occasions. Looks premium." },
-      { id: 3, user: 3, user: "Ajay G.", rating: 4, review: "Good quality, though the slim fit is quite snug." },
+      { id: 3, user: "Ajay G.", rating: 4, review: "Good quality, though the slim fit is quite snug." },
     ],
     search_keywords: ["louis philippe", "men's shirt", "men shirt", "formal shirt", "textured shirt", "slim fit shirt", "sophisticated shirt", "formal attire", "premium shirt", "menswear", "top", "shirts"],
   },

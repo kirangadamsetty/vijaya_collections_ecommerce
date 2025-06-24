@@ -90,7 +90,12 @@ font-weight:600!important;
  }
   .cart-container h3{
     font-size: 17px !important;
-  }
+  } .product-description{
+        font-size:11px!important;
+        line-height: 13px;
+       
+        margin-top:-2px;
+    }
   h3{
     font-size:14px!important;
   }
