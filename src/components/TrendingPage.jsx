@@ -23,8 +23,8 @@ function TrendingPage({trendingData}){
       <Card.Img variant="top" src={data.image} className = "product-image" style={{ height: "400px", objectFit: "cover" }}/>
     {data.name && <Card.Body>
         <Card.Title><h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{data.name}</h3></Card.Title>
-        <Card.Text style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}} >
-        {data.description}
+        <Card.Text className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>
+          {data.description}
         </Card.Text>
         <Button variant="primary" className = "custom-button custom-button3">Shop Now</Button>
       </Card.Body>
