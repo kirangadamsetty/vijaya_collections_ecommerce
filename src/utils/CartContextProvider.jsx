@@ -1,17 +1,19 @@
 import {CartContext} from "./CartContext"
 import {useState, useEffect} from "react"
-
+import { products } from "./mockData"
 
 function CartContextProvider({children}){
     const [cartData, setCartData]  = useState([])
     const [quantity, setQuantity] = useState("")
-    
+    const [cartListRecommended, setCartListRecommended] = useState([])
     const [price, setPrice] = useState({
         totalPrice :null,
         discountPrice:  null,
         priceAfterDiscount  : null,
 
     })
+
+
      useEffect(() => {
     const totalPriceResult = cartData.reduce(
       (acc, item) => acc + (item.price + 350) * item.quantity,
@@ -33,6 +35,26 @@ function CartContextProvider({children}){
       priceAfterDiscount: priceAfterDiscountResult,
     });
   }, [cartData]);
+
+
+useEffect(() => {
+  if (cartData.length === 0) {
+    setCartListRecommended([]);
+    return;
+  }
+
+  // Extract all unique categories from the wishlist
+  const categoriesInWishlist = [...new Set(cartData.map(item => item.category.toLowerCase()))];
+  const categoryId = cartData.map((li)=>li.id)
+  // Filter products that match any category in the wishlist
+  const filteredData = products.filter(product =>
+    categoriesInWishlist.includes(product.category.toLowerCase()) && !categoryId.includes(product.id)
+  );
+
+  setCartListRecommended(filteredData);
+}, [cartData]);
+
+
 
 const handleCartList = (data, size) =>{
   let updatedData = [...cartData]
@@ -90,8 +112,11 @@ updatedData[origin].generatedId = generatedId
        setCartData(updatedData)
     }
 
+
+
+
     return(
-        <CartContext.Provider value = {{quantity,handleSize,  setQuantity,price, handlequantity, cartData, handleCartList, handleCartCancel}}>
+        <CartContext.Provider value = {{cartListRecommended,quantity,handleSize,  setQuantity,price, handlequantity, cartData, handleCartList, handleCartCancel}}>
             {children}
         </CartContext.Provider>
     )

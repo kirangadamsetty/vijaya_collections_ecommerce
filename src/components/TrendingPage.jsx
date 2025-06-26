@@ -26,7 +26,7 @@ function TrendingPage({trendingData}){
         <Card.Text className = "product-description" style ={{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>
           {data.description}
         </Card.Text>
-        <Button variant="primary" className = "custom-button custom-button3">Shop Now</Button>
+        <Button className = "bg-white text-secondary   w-100  custom-button2" style ={{fontSize:"13px"}}>Shop now</Button>
       </Card.Body>
     }  
     </Card>

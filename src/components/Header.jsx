@@ -87,7 +87,7 @@ function Header() {
       />
 
       {/* ✅ Results box positioned below input */}
-      <div
+      {showSearchResults && <div
         style={{
           position: "absolute",
           top: "100%",
@@ -99,14 +99,14 @@ function Header() {
           zIndex: 1000,
         }}
       >
-      {showSearchResults &&
-        searchQuery.slice(0,5).map((data)=>{
-            return <p  onClick = {()=>{ navigate("/search");setSearchValue(data);handleSearchSuggestions(data);showQueryResultProducts();setShowSearchResult(!showSearchResults);closeNavbar();}} style={{ margin: 0, padding: "8px" ,cursor:"pointer"}}>🔍 {data}</p>
-        })
-      }
+   
+        {searchQuery.slice(0,5).map((data)=>{
+            return <p  onClick = {()=>{ navigate("/search");setSearchValue(data);handleSearchSuggestions(data);showQueryResultProducts();setShowSearchResult(!showSearchResults);closeNavbar();}} style={{ margin: 0, padding: "8px",cursor:"pointer"}}>🔍 {data}</p>
+        })}
+      
         
         
-      </div>
+      </div>}
     </div>
 
     <Button 

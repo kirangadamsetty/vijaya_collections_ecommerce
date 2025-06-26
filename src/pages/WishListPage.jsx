@@ -8,8 +8,9 @@ import {useNavigate} from "react-router-dom"
 import Faq from "../components/Faq.jsx"
 import {WishListContext} from "../utils/WishListContext"
 import WishListCard from "../components/WishListCard.jsx"
+import ProductCard from "../components/ProductCard.jsx"
 function WishListPage(){
-    const {wishList} = useContext(WishListContext)
+    const {wishList,wishListRecommended} = useContext(WishListContext)
     
     const navigate = useNavigate()
        return(
@@ -49,7 +50,21 @@ function WishListPage(){
 
      }
             </Row>
-                        
+                        <Row className = "mt-5">
+                            { wishList.length > 0 &&  (<div>
+ <h3>Curated just for your fashion taste.</h3>
+ <h1>Recommended for you</h1>
+</div>)}
+  { wishList.length > 0 &&   
+                  (wishListRecommended.map((data) =>{
+                    return <Col xs={6} sm={6} md={3} lg={3}  key = {data.id} className = "my-2">
+<ProductCard data = {data} button= "Save in wishlist"/>
+                    </Col>
+                  }))
+  }
+                        </Row>
+
+
                <Row id = "faq">
                  <Faq/> 
                  </Row>

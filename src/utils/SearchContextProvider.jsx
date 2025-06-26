@@ -1,15 +1,13 @@
-import { menspagesData } from "./mensPageMockData.jsx"
-import { womenspagesData } from "./womensPageMockData.jsx"
-import { kidspagesData } from "./kidsPageMockData.jsx"
+
 import {SearchContext} from "./SearchContext.jsx"
 import {useState, useEffect} from "react"
+import { products } from "./mockData.jsx"
 import {Searchkeywords} from "./Searchkeywords.jsx"
 function SearchContextProvider({children}){
-    const products = [...menspagesData, ...womenspagesData, ...kidspagesData]
     const [searchValue, setSearchValue] = useState("")
     const [searchResult, setSearchResult] = useState([])
     const [searchQuery, setSearchQuery] = useState([])
-    
+  
 
  const showQueryResultProducts = () => {
   const keywords = searchQuery.map(word => word.toLowerCase());

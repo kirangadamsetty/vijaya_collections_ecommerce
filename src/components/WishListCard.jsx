@@ -5,17 +5,20 @@ import closeIcon from "../assets/close.png"
 import {CartContext} from "../utils/CartContext"
 import {  toast } from 'react-toastify';
 import "../styles/productCard.css"
+import {useNavigate} from "react-router-dom"
 import Modal from 'react-bootstrap/Modal';
 import {useContext,useState} from "react"
 import {WishListContext} from "../utils/WishListContext"
+import { CategoryFilterContext } from '../utils/CategoryFilterContext';
 function WishListCard({data}) {
     const {handleCancelWishList} = useContext(WishListContext)
     const [size, setSize] = useState("")
+     const {setProductInformationPage} = useContext(CategoryFilterContext)
     const notifyAdded = () => toast.success("Moved to bag!", { autoClose: 2000});
     const notifyRemoved = () =>toast.success("Removed from wishlist", {autoClose : 2000})
     const {handleCartList} = useContext(CartContext)
   const [quantityItem, setQuantityItem] = useState({})
-
+const navigate = useNavigate()
         const [show, setShow] = useState(false)
     const handleShow = () => setShow(true);
          const handleClose = () => setShow(false); 
@@ -35,8 +38,8 @@ function WishListCard({data}) {
     }
   return (
     <>
-    <Card className = "h-100 product-card-container" style={{cursor:"pointer" }}>
-<Card.Img variant="top" src={data.image} className = "product-image" style={{ height: "350px", objectFit: "cover", objectPosition:"top center"}} />
+    <Card    className = "h-100 product-card-container" style={{cursor:"pointer" }}>
+<Card.Img onClick = {()=>{setProductInformationPage(data);navigate("/productInfo")}} variant="top" src={data.image} className = "product-image" style={{ height: "350px", objectFit: "cover", objectPosition:"top center"}} />
       <p onClick = {() =>{handleCancelWishList(data); notifyRemoved()}} className = "shadow-lg text-dark d-flex justify-content-center align-items-center" style = {{right:"0",color:"white",position:"absolute", backgroundColor:"lightgray", width:"30px", height:"30px", margin:"4px 5px", borderRadius:"100%"}}><img src = {closeIcon} alt = "closeIcon" width = "20"/></p>
       <Card.Body>
         <Card.Title><h3 style = {{overflow : "hidden",textOverflow : "ellipsis", whiteSpace : "nowrap"}}>{data.name}</h3></Card.Title>

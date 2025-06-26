@@ -16,7 +16,6 @@ const CategoryContextProvider = ({children}) =>{
     //this function used for sliders to changes the products according to the user selection 
     const handleData = (page, filterCategory) =>{
          let result1 = filterCategory.category
-         console.log(currentSort)
        setCategoryItem(result1)
        setCurrentPage(page)
        let updatedData;

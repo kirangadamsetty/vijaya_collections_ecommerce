@@ -19,8 +19,9 @@ import Faq from "../components/Faq.jsx"
 import Authorization from "../components/Authorization"
 import { CategoryFilterContext } from "../utils/CategoryFilterContext"
 import RazorpayCheckout from "../utils/Razorpay.jsx"
+import WishListCard from "../components/WishListCard.jsx"
 function Cart(){
-  const {cartData, handleCartCancel,  handleSize, handlequantity, price} = useContext(CartContext)
+  const {cartListRecommended,cartData, handleCartCancel,  handleSize, handlequantity, price} = useContext(CartContext)
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
   const {userData,setUserData} = useContext(AuthContext)
@@ -166,6 +167,21 @@ signOut(auth).then(() => {
        
       </Modal>
     
+<Row>
+       <Row className = "mt-5">
+                            { cartData.length > 0 &&  (<div>
+ <h3>Curated just for your fashion taste.</h3>
+ <h1>Recommended for you</h1>
+</div>)}
+  { cartData.length > 0 &&   
+                  (cartListRecommended.map((data) =>{
+                    return <Col xs={6} sm={6} md={3} lg={3}  key = {data.id} className = "my-2">
+<WishListCard data = {data} button= "Save in wishlist"/>
+                    </Col>
+                  }))
+  }
+                        </Row>
+</Row>
 
     
          <Row>

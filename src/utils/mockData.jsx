@@ -38,9 +38,9 @@ import menspagebanner1 from "../assets/bannerImages/menspagebannerimage1.webp"
 import menspagebanner2 from "../assets/bannerImages/menspagebannerimage2.webp"
 import kidspagebanner1 from "../assets/bannerImages/kidspagebannerimage6.webp"
 import kidspagebanner2 from "../assets/bannerImages/kidspagebannerimage5.jpg"
-
-
-
+import { menspagesData } from "./mensPageMockData"
+import { womenspagesData } from "./womensPageMockData"
+import { kidspagesData } from "./kidsPageMockData"
 
 export const womenCategory = [
   { id: "women-1", image: womensaree, name: "Daily Wear Sarees", category :"dailywearsaree" },
@@ -76,12 +76,13 @@ export const trendingData = [
 ];
 
 export const bannerData = [
-     { id: "banner-3", image: sareeBanner1 },
+   
   { id: "banner-1", image: womenBanner },
+    { id: "banner-3", image: sareeBanner1 },
  { id: "banner-2", image: menspagebanner1 },
-
+ {id : "banner-4", image : kidspagebanner2}
  
-  { id: "banner-4", image: kidsBanner },
+ 
 ];
 export const kidsbanner = [
     {id : "kidsbaner-1", image : kidspagebanner1},
@@ -123,7 +124,7 @@ export const menCategory = [
 
 
 
-
+export const products =  [...menspagesData, ...womenspagesData, ...kidspagesData]
 
 
 
