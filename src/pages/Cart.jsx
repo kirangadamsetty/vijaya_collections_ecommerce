@@ -169,7 +169,7 @@ signOut(auth).then(() => {
     
 <Row>
        <Row className = "mt-5">
-                            { cartData.length > 0 &&  (<div>
+                            { cartData.length > 0 &&  cartListRecommended.length >0 && (<div>
  <h3>Curated just for your fashion taste.</h3>
  <h1>Recommended for you</h1>
 </div>)}

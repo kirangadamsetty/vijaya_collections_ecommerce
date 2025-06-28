@@ -15,7 +15,7 @@
   font-weight:500!important;
   transform: scale(1); 
   transition:transform 0.3s ease;
-   
+   border:none!important;
 }
 .custom-button:hover{
    transform:scale(1.02);
@@ -147,4 +147,9 @@ li{
 .cart-container h3{
   font-size:19px;
 }
+.accordion-button {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 

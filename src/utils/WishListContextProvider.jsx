@@ -3,14 +3,20 @@ import {useState,useEffect} from "react"
 import { products } from "./mockData"
 
 function WishListContextProvider({children}){
-    const [wishList, setWishList] = useState([])
-    
+    const [wishList, setWishList] = useState(()=>{
+      let storedData  = JSON.parse(localStorage.getItem("wishList"))
+      return  storedData ? storedData  : []
+    })
+  
     const [wishListRecommended, setWishListRecommended] = useState([])
    
     const handleWishList = (data) =>{
        const ids = wishList.map((li) => li.id)
        if(!ids.includes(data.id)){
-           setWishList([...wishList, data])
+          let updatedData = [...wishList, data]
+           setWishList(updatedData)
+           localStorage.setItem("wishList", JSON.stringify(updatedData))
+          
        }
                      
     }
@@ -40,6 +46,7 @@ function WishListContextProvider({children}){
         let index = updatedData.findIndex((lis) => lis.id === data.id)
         updatedData.splice(index, 1)
         setWishList(updatedData)
+        localStorage.setItem("wishList", JSON.stringify(updatedData))
     }
 
     return(

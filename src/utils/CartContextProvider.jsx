@@ -3,7 +3,14 @@ import {useState, useEffect} from "react"
 import { products } from "./mockData"
 
 function CartContextProvider({children}){
-    const [cartData, setCartData]  = useState([])
+    const [cartData, setCartData]  = useState(()=>{
+     try{
+       let storedData = JSON.parse(localStorage.getItem("cartList"))
+        return Array.isArray(storedData) ? storedData : []
+     }catch(error){
+        return []
+     }
+    })
     const [quantity, setQuantity] = useState("")
     const [cartListRecommended, setCartListRecommended] = useState([])
     const [price, setPrice] = useState({
@@ -15,6 +22,8 @@ function CartContextProvider({children}){
 
 
      useEffect(() => {
+
+    
     const totalPriceResult = cartData.reduce(
       (acc, item) => acc + (item.price + 350) * item.quantity,
       0
@@ -62,11 +71,14 @@ const handleCartList = (data, size) =>{
  let index = updatedData.findIndex((li)=> li.generatedId === `${data.id}-${size}`)
  if(index === -1){
    updatedData.push({...data, generatedId : generatedId, quantity : 1, selectedSize : size})
- }
+ 
+  }
  else if(index !== -1){
   updatedData[index].quantity = updatedData[index].quantity + 1
+  
  }
  setCartData(updatedData)
+ localStorage.setItem("cartList", JSON.stringify(updatedData))
 }
     
 const handleSize = (data, size) =>{
@@ -88,20 +100,22 @@ updatedData[origin].generatedId = generatedId
 
   
   setCartData(updatedData)
- 
+ localStorage.setItem("cartList", JSON.stringify(updatedData))
 }
     const handleCartCancel = (data, size) =>{
         let updatedData = [...cartData]
         if(size){
        let index = updatedData.findIndex((lis) => lis.id === data.id && lis.selectedSize === size)
         updatedData.splice(index, 1)
-        setCartData(updatedData)
+       
       }
       else{
         let index = updatedData.findIndex((lis) => lis.id === data.id && lis.selectedSize)
          updatedData.splice(index, 1)
-        setCartData(updatedData)
+    
       }
+       setCartData(updatedData)
+       localStorage.setItem("cartList" , JSON.stringify(updatedData))
        
     }
  
@@ -110,6 +124,7 @@ updatedData[origin].generatedId = generatedId
        let index = updatedData.findIndex((li)=>li.generatedId === data.generatedId)
        updatedData[index].quantity = quant
        setCartData(updatedData)
+       localStorage.setItem("cartList", JSON.stringify(updatedData))
     }
 
 
