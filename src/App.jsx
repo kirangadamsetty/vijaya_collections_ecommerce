@@ -11,7 +11,6 @@ import CartContextProvider from "./utils/CartContextProvider.jsx";
 import WishListContextProvider from "./utils/WishListContextProvider.jsx";
 import SearchContextProvider from "./utils/SearchContextProvider.jsx";
 import AuthContextProvider from "./utils/AuthContextProvider.jsx";
-
 import "./App.css";
 
 // ✅ Lazy loaded components

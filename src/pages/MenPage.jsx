@@ -57,17 +57,15 @@ function MenPage(){
         {/**when user selected category like tshirt hoddies category item will change and when we pressed x mark onClick function executes */}
       {categoryItem && <h3 className  = "bg-body-secondary" style = {{maxWidth: "fit-content",padding:"8px 15px", borderRadius:"40px", fontSize:"20px", cursor:"pointer"}}>{categoryItem} <span onClick = {handleCategoryItemMens} className = "px-2">x</span></h3>}
     
-            <Row> 
-                         
-                    {mensData.map((data)=>{
+  
+  <Row>
+    {mensData.map((data) => (
+      <Col xs={6} sm={6} md={4} lg={4} xl={3} key={data.id} className="my-3">
+        <ProductCard data={data} />
+      </Col>
+    ))}
+  </Row>
 
-                        return <Col xs={6} sm={6} md={4} lg={4} xl={3} key={data.id} className="my-3">
-
-                         <ProductCard data = {data}/>
-                         </Col>
-                    })}
-            
-            </Row>
         </Container>
 
 
