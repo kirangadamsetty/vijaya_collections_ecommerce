@@ -145,15 +145,15 @@ signOut(auth).then(() => {
                       <p className = "d-flex justify-content-between"><span>Shipping Fee</span><span>FREE</span></p>
                       </div>
                       <hr/>
-                      <input value = {offersCoupon} onChange = {(e)=>setOffersCoupon(e.target.value)} className = " px-2 py-2" style = {{outline:"none",borderRadius:"5px" , border:"1px solid"}} type = "text" placeholder = "Enter coupon code"/>
-                     <Button onClick = {handleCouponCode} className = "custom-button mx-2 py-2 px-2">Apply coupon</Button>
+                      <input value = {offersCoupon} onChange = {(e)=>setOffersCoupon(e.target.value)} className = "mb-2 w-100 px-2 py-2 me-2" style = {{outline:"none",borderRadius:"5px" , border:"1px solid"}} type = "text" placeholder = "Enter coupon code"/>
+                     <Button onClick = {handleCouponCode} className = "custom-button2 py-2 px-2">Apply coupon</Button>
                       <p>{couponErrorMessage}</p>
-                                           {priceAfterCoupon && <p className = "d-flex justify-content-between"><span>🎉 You got 10% OFF on the total amount!</span><span  className = "overline-price">₹{priceAfterCoupon}</span></p>}
+                                           {priceAfterCoupon && <p className = "d-flex justify-content-between"><span>🎉 You got 10% OFF on the total amount!</span><span  className = "overline-price">₹{Math.round(priceAfterCoupon)}</span></p>}
 
-                       <h3 className = "d-flex justify-content-between"><span>Total Amount</span><span>₹{price.priceAfterDiscount}</span></h3>
+                       <h3 className = "d-flex justify-content-between"><span>Total Amount</span><span>₹{Math.round(price.priceAfterDiscount)}</span></h3>
                      {!userData ? <Button onClick = {()=>{setEvent("Create Account");handleShow();}} className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
                              :
-                         <RazorpayCheckout amount={price.priceAfterDiscount} userData={userData} />
+                         <RazorpayCheckout amount={Math.round(price.priceAfterDiscount)} userData={userData} />
 
 
 

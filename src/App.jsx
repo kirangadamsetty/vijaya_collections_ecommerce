@@ -12,7 +12,7 @@ import WishListContextProvider from "./utils/WishListContextProvider.jsx";
 import SearchContextProvider from "./utils/SearchContextProvider.jsx";
 import AuthContextProvider from "./utils/AuthContextProvider.jsx";
 import "./App.css";
-
+import OffersModal from './utils/OffersModal.jsx';
 // ✅ Lazy loaded components
 const Home = lazy(() => import("./pages/Home.jsx"));
 const MenPage = lazy(() => import("./pages/MenPage.jsx"));
