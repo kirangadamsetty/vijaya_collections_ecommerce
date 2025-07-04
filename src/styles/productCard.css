@@ -6,6 +6,7 @@
         text-overflow : "ellipsis";
         white-space : "nowrap"
     }
+    
     .product-card-container h5{
         font-size:13px!important;
         font-weight:600;
