@@ -131,7 +131,7 @@ updatedData[origin].generatedId = generatedId
 
 
     return(
-        <CartContext.Provider value = {{cartListRecommended,quantity,handleSize,  setQuantity,price, handlequantity, cartData, handleCartList, handleCartCancel}}>
+        <CartContext.Provider value = {{setPrice,cartListRecommended,quantity,handleSize,  setQuantity,price, handlequantity, cartData, handleCartList, handleCartCancel}}>
             {children}
         </CartContext.Provider>
     )

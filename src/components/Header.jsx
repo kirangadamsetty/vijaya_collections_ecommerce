@@ -117,7 +117,8 @@ function Header() {
         closeNavbar();
       }}
       variant="outline-success"
-      className="custom-button"
+      className="custom-button py-1 d-flex justify-content-center align-items-center"
+      
     >
       Search
     </Button>

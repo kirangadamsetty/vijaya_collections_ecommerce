@@ -21,14 +21,17 @@ import { CategoryFilterContext } from "../utils/CategoryFilterContext"
 import RazorpayCheckout from "../utils/Razorpay.jsx"
 import WishListCard from "../components/WishListCard.jsx"
 function Cart(){
-  const {cartListRecommended,cartData, handleCartCancel,  handleSize, handlequantity, price} = useContext(CartContext)
+  const {cartListRecommended,cartData, handleCartCancel,  handleSize, handlequantity, price, setPrice} = useContext(CartContext)
   const [show, setShow] = useState(false);
   const navigate = useNavigate()
+  const [offersCoupon, setOffersCoupon] = useState("")
   const {userData,setUserData} = useContext(AuthContext)
   const [sizeSelected, setSizeSelected] = useState("")
+  const [priceAfterCoupon, setPriceAfterCoupon ] = useState("")
   const {setProductInformationPage} = useContext(CategoryFilterContext)
   const [quantitySelected, setQuantitySelected] = useState("")
   const [event, setEvent] = useState("")
+  const [couponErrorMessage, setCouponErrorMessage] = useState("")
   const [quantityItem, setQuantityItem] = useState([])
     let quantity  = [1, 2, 3, 4, 5, 6,7, 8, 9 ,10]
     const handleShow = () => setShow(true);
@@ -55,6 +58,19 @@ signOut(auth).then(() => {
   console.log("signout", error)
 });
     }
+
+   const handleCouponCode = () =>{
+    if(offersCoupon === "") return setCouponErrorMessage("Please enter your coupon code**")
+     else if(offersCoupon === "VIJAYA10"){
+       setCouponErrorMessage("")
+       let finalPrice = price.priceAfterDiscount * 0.10
+       setPriceAfterCoupon(finalPrice)
+       setPrice(data => ({...data, priceAfterDiscount : price.priceAfterDiscount - finalPrice}))
+     }else{
+      return setCouponErrorMessage("Coupon Invalid or expired")
+     }
+   }
+
     return(
         <div style = {{marginTop:"120px"}} className = "cart-container">
           <Container className = "my-4">
@@ -125,10 +141,15 @@ signOut(auth).then(() => {
                       <div>
                       
                         <p className = "d-flex justify-content-between"><span>Total MRP</span><span>₹{price.totalPrice}</span></p>
-                      <p className = "d-flex justify-content-between"><span>Discount on MRP</span><span>- ₹{price.discountPrice}</span></p>
+                      <p className = "d-flex justify-content-between"><span>Discount on MRP</span><span className = "overline-price"> ₹{price.discountPrice}</span></p>
                       <p className = "d-flex justify-content-between"><span>Shipping Fee</span><span>FREE</span></p>
                       </div>
                       <hr/>
+                      <input value = {offersCoupon} onChange = {(e)=>setOffersCoupon(e.target.value)} className = " px-2 py-2" style = {{outline:"none",borderRadius:"5px" , border:"1px solid"}} type = "text" placeholder = "Enter coupon code"/>
+                     <Button onClick = {handleCouponCode} className = "custom-button mx-2 py-2 px-2">Apply coupon</Button>
+                      <p>{couponErrorMessage}</p>
+                                           {priceAfterCoupon && <p className = "d-flex justify-content-between"><span>🎉 You got 10% OFF on the total amount!</span><span  className = "overline-price">₹{priceAfterCoupon}</span></p>}
+
                        <h3 className = "d-flex justify-content-between"><span>Total Amount</span><span>₹{price.priceAfterDiscount}</span></h3>
                      {!userData ? <Button onClick = {()=>{setEvent("Create Account");handleShow();}} className = "text-secondary  mt-2 w-100  custom-button">Place Order</Button>
                              :
